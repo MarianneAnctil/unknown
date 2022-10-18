@@ -11,9 +11,9 @@ if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0,
 // Selon l'environnement d'exécution (développement ou production)
 if ($blnLocal) {
     $strHost = 'localhost';
-    $strBD='course_pwem2_2022_v2';
-    $strUser = 'course_pwem2_2022_v2';
-    $strPassword= 'MadameWatson1105';
+    $strBD='22_pwem2_OFF';
+    $strUser = '22_pwem2_OFF';
+    $strPassword= '22_pwem2_OFF_mdp+!2';
     error_reporting(E_ALL);
 } else {
     $strHost = 'timunix2.cegep-ste-foy.qc.ca';
