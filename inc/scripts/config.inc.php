@@ -18,8 +18,8 @@ if ($blnLocal) {
 } else {
     $strHost = 'localhost';
     $strBD = '22_pwem2_OFF';
-    $strUser = 'etudiantsPWEM2';
-    $strPassword = 't1M582+=$yy';
+    $strUser = 'unknown';
+    $strPassword = 'unknown_team2022';
     error_reporting(E_ALL & ~E_NOTICE);
 }
 

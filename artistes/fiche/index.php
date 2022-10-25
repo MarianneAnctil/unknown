@@ -6,13 +6,8 @@ $arrayMois= array('janvier','février','mars','avril','mai','juin','juillet','ao
 //Détection de idSport dans la querystring?
 $strIdArtiste = $_GET['id_artiste'];
 var_dump( $strIdArtiste);
-if(isset($_GET['idStyle']) == true) {
-    $strIdStyle = $_GET['id_style'];
-}else{
-    //Dans le cas ou il n'y a pas de Querystring
-    $strIdStyle = 0;
-}
-$strRequeteArtiste = 'SELECT provenance, site_web_artiste, nom_artiste, id_artiste, description FROM t_artiste';
+
+$strRequeteArtiste = 'SELECT provenance, site_web_artiste, nom_artiste, id_artiste, description FROM t_artiste WHERE id_artiste='.$strIdArtiste;
 
 
 //Exécution de la requête
@@ -62,7 +57,7 @@ for ($intCpt = 0; $ligne = $pdosResultat->fetch(); $intCpt++) {
 //Libération de la requête
 $pdosResultat->closeCursor();
 
-$strRequete = 'SELECT ti_evenement.id_artiste, MONTH(date_et_heure) AS mois, YEAR(date_et_heure) AS annee, DAYOFMONTH(date_et_heure) AS jourMois, Time(date_et_heure) AS heure, ti_evenement.id_lieu, nom_lieu 
+$strRequete = 'SELECT ti_evenement.id_artiste, MONTH(date_et_heure) AS mois, YEAR(date_et_heure) AS annee, DAYOFMONTH(date_et_heure) AS jourMois, HOUR(date_et_heure) AS heure, MINUTE(date_et_heure) AS minutes, ti_evenement.id_lieu, nom_lieu 
                 FROM ti_evenement INNER JOIN t_lieu
                 ON ti_evenement.id_lieu = t_lieu.id_lieu
                 WHERE ti_evenement.id_artiste=' . $strIdArtiste . '
@@ -83,14 +78,19 @@ for ($intCpt = 0; $ligne = $pdosResultat->fetch(); $intCpt++) {
     $arrLieu[$intCpt]['annee'] = $ligne['annee'];
     $arrLieu[$intCpt]['jourMois'] = $ligne['jourMois'];
     $arrLieu[$intCpt]['heure'] = $ligne['heure'];
+    $arrLieu[$intCpt]['minute'] = $ligne['minutes'];
     $arrLieu[$intCpt]['id_lieu'] = $ligne['id_lieu'];
     $arrLieu[$intCpt]['nom_lieu'] = $ligne['nom_lieu'];
+
+    if ($arrLieu[$intCpt]['minute'] == '0') {
+        $arrLieu[$intCpt]['minute'] = '00';
+    }
 };
 
 //Libération de la requête
 $pdosResultat->closeCursor();
 
-$strRequeteArtisteSug = 'SELECT DISTINCT t_artiste.id_artiste, nom_artiste FROM t_artiste INNER JOIN
+$strRequeteArtisteSug = 'SELECT DISTINCT t_artiste.id_artiste, t_artiste.provenance, nom_artiste FROM t_artiste INNER JOIN
 ti_style_artiste ON t_artiste.id_artiste=ti_style_artiste.id_artiste WHERE id_style
 IN(SELECT id_style FROM ti_style_artiste WHERE id_artiste=' . $strIdArtiste. ') AND
 ti_style_artiste.id_artiste!=' . $strIdArtiste;
@@ -101,6 +101,7 @@ $arrArtistesSug = array();
 for ($intCptArtisteSug = 0; $ligne = $pdoResultatArtistesSug->fetch(); $intCptArtisteSug++) {
     $arrArtistesSug[$intCptArtisteSug]['id_artiste'] = $ligne['id_artiste'];
     $arrArtistesSug[$intCptArtisteSug]['nom_artiste'] = $ligne['nom_artiste'];
+    $arrArtistesSug[$intCptArtisteSug]['provenance'] = $ligne['provenance'];
 };
 $pdoResultatArtistesSug->closeCursor();
 
@@ -112,6 +113,8 @@ for ($cpt=0;$cpt<=2;$cpt++){
         array_splice($arrArtistesSug, $artisteChoisi, 1);
     }
 }
+$nbImages = rand(3,5);
+var_dump($nbImages);
 ?>
 
 <!DOCTYPE html>
@@ -126,50 +129,56 @@ for ($cpt=0;$cpt<=2;$cpt++){
 </head>
 
 <body class="demo">
+<?php include($niveau . "inc/fragments/navigation.html")?>
 
-<img src="<?php $niveau?>/images/<?php $strIdArtiste?>/imageArtiste.jpg">
-
-<h1><?php $arrArtistes[0]['nom_artiste']?></h1>
-<ul>
+<h1>Fiche de l'artiste</h1>
+<div class="artiste-info">
+<ul class="info-sup">
+    <li class="nom-artiste">
+        <?php echo $arrArtistes[0]['nom_artiste'];?>
+    </li>
     <li class="provenance">
-        <?php echo $arrArtistes[$intCpt]['provenance']?>
+        <?php echo $arrArtistes[0]['provenance'];?>
     </li>
-
-    <li class="website">
-        <?php echo $arrArtistes[$intCpt]['site_web_artiste']?>
+    <li class="style">
+        <?php echo $strStyles;?>
     </li>
+    <li class="site">
+        <a><?php echo $arrArtistes[0]['site_web_artiste'];?></a>
+    </li>
+        <ul class="spectacle">
+            <?php
+            for($cptEnr=0;$cptEnr<count($arrLieu);$cptEnr++){?>
+            <li class="date">
+                <p><?php echo $arrLieu[$cptEnr]['jourMois'];?> <?php echo $arrayMois[$arrLieu[$cptEnr]['mois']-1];?></p>
+            </li>
+            <li class="heure">
+                <p><?php $arrLieu[$cptEnr]['heure']?>h<?php echo $arrLieu[$cptEnr]['minute']?></p>
+            </li>
+            <li class="salle">
+                <p><?php echo $arrLieu[$cptEnr]['nom_lieu'];}?></p>
+            </li>
+        </ul>
 </ul>
-<ul>
-    <?php
-    for($cptEnr=0;$cptEnr<count($arrLieu);$cptEnr++){?>
-    <li>
-        <?php
-        echo $arrArtistesStyle[$cptEnr]['style_artiste']; }?>
-    </li>
-    <li>
-        <h2><?php echo $arrLieu[$cptEnr]['nom_lieu'];?></h2>
-    </li>
-    <li>
-        <h2><?php echo $arrLieu[$cptEnr]['jourMois'];?> <?php echo $arrayMois[$arrLieu[$cptEnr]['mois']+1];?></h2>
-    </li>
-    <li>
-        <h2>
-            <?php echo $arrLieu[$cptEnr]['heure']; ?>
-        </h2>
-    </li>
-</ul>
-<li>
-    <p><?php echo $arrArtistes[$intCpt]['description']?></p>
-</li>
+    <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
 
-<ul>
+    <div class="mozaique-image">
+        <?php for($cpt=0; $cpt<$nbImages;$cpt++){?>
+        <img class="mozaique-image_item" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
+        <?php }?>
+    </div>
+<ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
-        <li>
-            <a href="p-fiche-eloise.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]["id_artiste"];?>"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></a>
+        <li class="suggestion_artiste">
+            <img class="img-suggestion-artiste" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
+            <div class="info-artiste-suggere">
+            <h3><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
+            <h3><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></h3>
+            </div>
         </li>
     <?php }?>
 </ul>
 
-<?php include($niveau . "inc/fragments/footer.inc.html")?>
+<?php include($niveau . "inc/fragments/footer.inc.php");?>
 </body>
 </html>
