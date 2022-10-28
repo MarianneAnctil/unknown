@@ -1,15 +1,51 @@
 <?php
-ini_set('display_errors',1);
 //Définition de la variable de niveau
 $niveau='../';
 
 //Inclusion du fichier de configuration
 include($niveau.'inc/scripts/config.inc.php');
 
-//On établi une nouvelle requête pour afficher les enregistrements figurant dans une page donnée
-$strRequete =  'SELECT id_artiste, nom_artiste
+//Récupérer le numéro de la page dans la querystring
+if (isset($_GET['id_page'])==true) {
+    $strIdPage = $_GET['id_page'];
+} else {
+    $strIdPage = 0;
+}
+
+//nombre de participant par page
+$nbArtisteParPage =3;
+//Calculer l'index du premier enregistrement à afficher
+$enregistrementDepart = $strIdPage * $nbArtisteParPage;
+
+if ($strIdStyle !=0) {
+    $strRequete = 'SELECT COUNT(*) AS nbEnregistrement
+    FROM t_artiste
+    INNER JOIN ti_style_artiste ON t_artiste.id_artiste = ti_style_artiste.id_artiste
+    WHERE ti_style_artiste.id_style = '. $strIdStyle'';
+} else {
+    $strRequete = 'SELECT COUNT(*) AS nbEnregistrement FROM t_artiste';
+}
+
+if($strIdStyle !=0) {
+    $strRequete = 'SELECT t_artiste.id_artiste, nom_artiste
+    FROM t_artiste
+    INNER JOIN ti_style_artiste ON t_artiste.id_artiste = ti_style_artiste.id_artiste
+    WHERE ti_style_artiste.id_style = '. $strIdStyle .'
+    ORDER BY nom_artiste
+    LIMIT '. $enregistrementDepart .', '. $nbArtisteParPage'';
+} else {
+    $strRequete =  'SELECT id_artiste, nom_artiste
 					FROM t_artiste 
-					ORDER BY nom_artiste';
+					ORDER BY nom_artiste
+                    LIMIT '. $enregistrementDepart .', '. $nbArtisteParPage'';
+}
+
+$pdosResultatCpt = $pdoConnexion->query($strRequete);
+$totalArtistes = $pdosResultatCpt-> fetch();
+$nbArtistes = $totalArtistes['nbEnregistrement'];
+$pdosResultatCpt->closeCursor();
+
+$nbPages = ceil($nbArtistes / $nbArtisteParPage);
 
 //Initialisation de l'objet PDOStatement et exécution de la requête
 $pdosResultat = $pdoConnexion->prepare($strRequete);
@@ -84,33 +120,42 @@ $pdosStyleResultat->closeCursor();
     <title>Liste des artistes</title>
 </head>
 <body>
-<h1>Page artiste</h1>
-<main>
-    <h2>Liste des styles</h2>
-    <ul>
-        <?php
-        for($intCptStyle=0;$intCptStyle<count($arrStyles);$intCptStyle++){?>
-            <li>
-                <a href=""><?php echo $arrStyles[$intCptStyle]['nom_style'];?></a>
-            </li>
-        <?php } ?>
-    </ul>
-    <h2>Liste des artistes</h2>
-    <ul>
-        <?php
-        for($intCpt=0;$intCpt<count($arrArtistes);$intCpt++){?>
-            <li>
-                <figure>
-                    <a href='/Proto_OFF/artistes/fiche/p-fiche-daren.php?id_artiste=<?php echo $arrArtistes[$intCpt]['id_artiste']?>'>
-                        <img src="https://via.placeholder.com/150" alt="">
-                        <figcaption><?php echo $arrArtistes[$intCpt]['nom_artiste'];?></figcaption>
-                    </a>
-                    <p> Style: <?php echo $arrArtistes[$intCpt]['nom_style_artiste'];?></p>
-                </figure>
-            </li>
-        <?php } ?>
-    </ul>
-
-</main>
+    <header>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="list__item"><a class="list__lien" href="../p-accueil-daren.php">Accueil</a></li>
+                <li class="list__item"><a class="list__lien" href="../programmation/p-programmation-daren.php">Programmation</a></li>
+                <li class="list__item"><a class="list__lien" href="#">Artistes</a></li>
+                <li class="list__item"><a class="list__lien" href="#">Partenaires</a></li>
+            </ul>
+            <a class="lien-passeport" href="#">Acheter mon passeport</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Liste des styles</h2>
+        <ul>
+            <?php
+            for($intCptStyle=0;$intCptStyle<count($arrStyles);$intCptStyle++){?>
+                <li>
+                    <a href=""><?php echo $arrStyles[$intCptStyle]['nom_style'];?></a>
+                </li>
+            <?php } ?>
+        </ul>
+        <h2>Liste des artistes</h2>
+        <ul>
+            <?php
+            for($intCpt=0;$intCpt<count($arrArtistes);$intCpt++){?>
+                <li>
+                    <figure>
+                        <a href='fiche/p-fiche-daren.php?id_artiste=<?php echo $arrArtistes[$intCpt]['id_artiste']?>'>
+                            <img src="https://via.placeholder.com/150" alt="">
+                            <figcaption><?php echo $arrArtistes[$intCpt]['nom_artiste'];?></figcaption>
+                        </a>
+                        <p> Style: <?php echo $arrArtistes[$intCpt]['nom_style_artiste'];?></p>
+                    </figure>
+                </li>
+            <?php } ?>
+        </ul>
+    </main>
 </body>
 </html>
