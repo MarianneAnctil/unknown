@@ -20,7 +20,6 @@ if ($blnLocal) {
     $strBD = '22_pwem2_OFF';
     $strUser = 'unknown';
     $strPassword = 'unknown_team2022';
-    error_reporting(E_ALL & ~E_NOTICE);
 }
 
 //Data Source Name pour l'objet PDO
