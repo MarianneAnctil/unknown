@@ -2,7 +2,6 @@
 $niveau="../../";
 include($niveau . "inc/scripts/config.inc.php");
 ini_set('display_errors',1);
-$arrayMois= array('janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre');
 //Détection de idSport dans la querystring?
 $strIdArtiste = $_GET['id_artiste'];
 var_dump( $strIdArtiste);
@@ -57,7 +56,7 @@ for ($intCpt = 0; $ligne = $pdosResultat->fetch(); $intCpt++) {
 //Libération de la requête
 $pdosResultat->closeCursor();
 
-$strRequete = 'SELECT ti_evenement.id_artiste, MONTH(date_et_heure) AS mois, YEAR(date_et_heure) AS annee, DAYOFMONTH(date_et_heure) AS jourMois, HOUR(date_et_heure) AS heure, MINUTE(date_et_heure) AS minutes, ti_evenement.id_lieu, nom_lieu 
+$strRequete = 'SELECT ti_evenement.id_artiste, DATE(date_et_heure) AS date_et_heure, HOUR(date_et_heure) AS heure, MINUTE(date_et_heure) AS minutes, ti_evenement.id_lieu, nom_lieu 
                 FROM ti_evenement INNER JOIN t_lieu
                 ON ti_evenement.id_lieu = t_lieu.id_lieu
                 WHERE ti_evenement.id_artiste=' . $strIdArtiste . '
@@ -74,10 +73,8 @@ var_dump($pdoConnexion->errorInfo());
 $arrLieu = array();
 for ($intCpt = 0; $ligne = $pdosResultat->fetch(); $intCpt++) {
     $arrLieu[$intCpt]['id_artiste'] = $ligne['id_artiste'];
-    $arrLieu[$intCpt]['mois'] = $ligne['mois'];
-    $arrLieu[$intCpt]['annee'] = $ligne['annee'];
-    $arrLieu[$intCpt]['jourMois'] = $ligne['jourMois'];
     $arrLieu[$intCpt]['heure'] = $ligne['heure'];
+    $arrLieu[$intCpt]['date_et_heure'] = $ligne['date_et_heure'];
     $arrLieu[$intCpt]['minute'] = $ligne['minutes'];
     $arrLieu[$intCpt]['id_lieu'] = $ligne['id_lieu'];
     $arrLieu[$intCpt]['nom_lieu'] = $ligne['nom_lieu'];
@@ -125,17 +122,17 @@ var_dump($nbImages);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
+    <link el="stylesheet" href="<?php $niveau ?>/css/style-eloise.css">
     <?php include($niveau . "inc/fragments/header.inc.html")?>
 </head>
 
 <body class="demo">
 <?php include($niveau . "inc/fragments/navigation.html")?>
-
-<h1>Fiche de l'artiste</h1>
+<img class="img-principale-artiste" src="https://fakeimg.pl/300/" alt="Image principale <?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
 <div class="artiste-info">
 <ul class="info-sup">
     <li class="nom-artiste">
-        <?php echo $arrArtistes[0]['nom_artiste'];?>
+        <h1><?php echo $arrArtistes[0]['nom_artiste'];?></h1>
     </li>
     <li class="provenance">
         <?php echo $arrArtistes[0]['provenance'];?>
@@ -146,11 +143,12 @@ var_dump($nbImages);
     <li class="site">
         <a><?php echo $arrArtistes[0]['site_web_artiste'];?></a>
     </li>
+</ul>
         <ul class="spectacle">
             <?php
             for($cptEnr=0;$cptEnr<count($arrLieu);$cptEnr++){?>
             <li class="date">
-                <p><?php echo $arrLieu[$cptEnr]['jourMois'];?> <?php echo $arrayMois[$arrLieu[$cptEnr]['mois']-1];?></p>
+                <p><?php echo $arrLieu[$cptEnr]['date_et_heure'];?></p>
             </li>
             <li class="heure">
                 <p><?php $arrLieu[$cptEnr]['heure']?>h<?php echo $arrLieu[$cptEnr]['minute']?></p>
@@ -159,7 +157,7 @@ var_dump($nbImages);
                 <p><?php echo $arrLieu[$cptEnr]['nom_lieu'];}?></p>
             </li>
         </ul>
-</ul>
+    <button>Acheter mon passeport</button>
     <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
 
     <div class="mozaique-image">
