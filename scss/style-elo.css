@@ -21,25 +21,115 @@
 /* Mise en page
    ========================================================================== */
 body {
-  background-color: black;
-  margin: auto;
+  background-color: #1E1E1E;
+}
+
+h1, h2, h3, p {
+  color: white;
 }
 
 .artiste-info .info-sup li {
   list-style: none;
 }
+.artiste-info .spectacle {
+  display: grid;
+  grid-template-areas: "date heure" "salle";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
 .artiste-info .spectacle li {
   list-style: none;
-  border-radius: 30%;
+  border-radius: 30px;
+  text-align: center;
+  color: black;
 }
-.artiste-info .spectacle li .date {
-  background-color: goldenrod;
+.artiste-info .spectacle li p {
+  color: black;
 }
-.artiste-info .spectacle li .heure {
-  background-color: coral;
+.artiste-info .spectacle li.date {
+  background-color: #CE9133;
+  grid-area: 1/1/2/2;
 }
-.artiste-info .spectacle li .salle {
-  background-color: deepskyblue;
+.artiste-info .spectacle li.heure {
+  background-color: #E06251;
+  grid-area: 1/2/2/3;
+}
+.artiste-info .spectacle li.salle {
+  background-color: #45a2a4;
+  grid-area: 2/1/3/3;
+}
+
+.passeport {
+  background-color: #45a2a4;
+  box-shadow: 0px 5px 0px #E06251;
+  border-radius: 5px;
+  border: none;
+  height: 45px;
+  width: 280px;
+  color: white;
+}
+
+.mozaique-image {
+  background-color: #E59D9B;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.mozaique-image_item {
+  display: inline-block;
+  margin: auto;
+  padding: 10px 0px;
+}
+
+.artiste-sug-title {
+  max-width: 180px;
+  margin: auto;
+}
+
+.suggestion {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+.suggestion .suggestion_artiste {
+  display: inline-block;
+  margin: auto;
+  padding: 10px 0px;
+  margin-bottom: 30px;
+  list-style: none;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  display: inline-block;
+  border: solid 2px;
+}
+.suggestion .suggestion_artiste .img-suggestion-artiste {
+  margin: 20px;
+  padding-bottom: 0px;
+}
+.suggestion .suggestion_artiste .info-artiste-suggere {
+  margin-left: 20px;
+}
+.suggestion .suggestion_artiste .info-artiste-suggere .provenance {
+  border-radius: 30px;
+}
+.suggestion .suggestion_artiste:nth-child(odd) {
+  border-color: #45a2a4;
+}
+.suggestion .suggestion_artiste:nth-child(odd) .provenance {
+  background-color: #E06251;
+  max-width: 200px;
+  text-align: center;
+}
+.suggestion .suggestion_artiste:nth-child(even) {
+  border-color: #E06251;
+}
+.suggestion .suggestion_artiste:nth-child(even) .provenance {
+  background-color: #45a2a4;
+  max-width: 200px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style-elo.css.map */

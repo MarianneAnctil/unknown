@@ -32,8 +32,11 @@
 /* Mise en page
    ========================================================================== */
 body{
-  background-color: black;
-  margin:auto;
+  background-color: #1E1E1E;
+}
+
+h1, h2, h3, p{
+  color:white;
 }
 .artiste-info{
   .info-sup{
@@ -42,18 +45,104 @@ body{
     }
   }
   .spectacle{
+    display: grid;
+    grid-template-areas:
+            "date heure"
+            "salle";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
     li{
       list-style: none;
-      border-radius: 30%;
-      .date {
-        background-color:goldenrod;
+      border-radius: 30px;
+      text-align: center;
+      color: black;
+      p{
+        color: black;
       }
-      .heure{
-        background-color:coral;
+      &.date {
+        background-color:#CE9133;
+        grid-area: 1/1/2/2;
       }
-      .salle{
-        background-color: deepskyblue;
+      &.heure{
+        background-color:#E06251;
+        grid-area: 1/2/2/3;
       }
+      &.salle{
+        background-color: #45a2a4;
+        grid-area: 2/1/3/3;
+      }
+    }
+  }
+}
+.passeport{
+  background-color: #45a2a4;
+  box-shadow: 0px 5px 0px #E06251;
+  border-radius: 5px;
+  border:none;
+  height: 45px;
+  width: 280px;
+  color: white;
+}
+.mozaique-image{
+  background-color: #E59D9B;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+&_item{
+  display: inline-block;
+  margin: auto;
+  padding: 10px 0px;
+}
+}
+.artiste-sug-title{
+  max-width: 180px;
+  margin: auto;
+}
+.suggestion {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+
+  .suggestion_artiste {
+    display: inline-block;
+    margin: auto;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    list-style: none;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-block;
+    border: solid 2px;
+
+    .img-suggestion-artiste {
+      margin: 20px;
+      padding-bottom: 0px;
+    }
+    .info-artiste-suggere {
+      margin-left: 20px;
+      .provenance{
+        border-radius: 30px;
+      }
+    }
+
+    &:nth-child(odd) {
+      border-color:#45a2a4;
+      .provenance {
+        background-color: #E06251;
+        max-width: 200px;
+        text-align: center;
+          }
+        }
+    &:nth-child(even) {
+      border-color:#E06251;
+        .provenance {
+          background-color: #45a2a4;
+          max-width: 200px;
+          text-align: center;
+        }
     }
   }
 }

@@ -135,13 +135,13 @@ var_dump($nbImages);
         <h1><?php echo $arrArtistes[0]['nom_artiste'];?></h1>
     </li>
     <li class="provenance">
-        <?php echo $arrArtistes[0]['provenance'];?>
+        <p><?php echo $arrArtistes[0]['provenance'];?></p>
     </li>
     <li class="style">
-        <?php echo $strStyles;?>
+        <p><?php echo $strStyles;?></p>
     </li>
     <li class="site">
-        <a><?php echo $arrArtistes[0]['site_web_artiste'];?></a>
+        <p><a><?php echo $arrArtistes[0]['site_web_artiste'];?></a></p>
     </li>
 </ul>
         <ul class="spectacle">
@@ -151,13 +151,13 @@ var_dump($nbImages);
                 <p><?php echo $arrLieu[$cptEnr]['date_et_heure'];?></p>
             </li>
             <li class="heure">
-                <p><?php $arrLieu[$cptEnr]['heure']?>h<?php echo $arrLieu[$cptEnr]['minute']?></p>
+                <p><?php echo $arrLieu[$cptEnr]['heure']?>h<?php echo $arrLieu[$cptEnr]['minute']?></p>
             </li>
             <li class="salle">
                 <p><?php echo $arrLieu[$cptEnr]['nom_lieu'];}?></p>
             </li>
         </ul>
-    <button>Acheter mon passeport</button>
+    <button class="passeport">Acheter mon passeport</button>
     <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
 
     <div class="mozaique-image">
@@ -165,13 +165,14 @@ var_dump($nbImages);
         <img class="mozaique-image_item" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
         <?php }?>
     </div>
+    <h2 class="artiste-sug-title">Artistes suggérés</h2>
 <ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
         <li class="suggestion_artiste">
             <img class="img-suggestion-artiste" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
             <div class="info-artiste-suggere">
-            <h3><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
-            <h3><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></h3>
+                <h3 class="nom-artiste"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
+                <h3 class="provenance"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></h3>
             </div>
         </li>
     <?php }?>
