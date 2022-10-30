@@ -20,21 +20,32 @@
    ========================================================================== */
 /* Mise en page
    ========================================================================== */
+body {
+  background-color: black;
+  margin: auto;
+}
+
 .artiste-info .info-sup li {
   list-style: none;
 }
+
 .artiste-info .spectacle li {
   list-style: none;
   border-radius: 30%;
 }
+
 .artiste-info .spectacle li .date {
   background-color: goldenrod;
 }
+
 .artiste-info .spectacle li .heure {
   background-color: coral;
 }
+
 .artiste-info .spectacle li .salle {
   background-color: deepskyblue;
 }
 
-/*# sourceMappingURL=style-eloise.css.map */
+/*# sourceMappingURL=style-elo.css.map */
+
+/*# sourceMappingURL=style-elo.css.map */

@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /**
  * @author COLLECTIF - @TIMCSF
  *
@@ -12,44 +10,36 @@
  * Mise en page
  *** Pied de page
  */
-
 /* Normalize
    ========================================================================== */
-//@import "normalize";
-
 /* Utilitaires
    ========================================================================== */
-//@import "utilitaires";
-
 /* Charte typographique
    ========================================================================== */
-//@import "typo";
-
 /* Grille
    ========================================================================== */
-//@import "grille";
-
 /* Mise en page
    ========================================================================== */
-.artiste-info{
-  .info-sup{
-    li{
-      list-style: none;
-    }
-  }
-  .spectacle{
-    li{
-      list-style: none;
-      border-radius: 30%;
-      .date {
-        background-color:goldenrod;
-      }
-      .heure{
-        background-color:coral;
-      }
-      .salle{
-        background-color: deepskyblue;
-      }
-    }
-  }
+body {
+  background-color: black;
+  margin: auto;
 }
+
+.artiste-info .info-sup li {
+  list-style: none;
+}
+.artiste-info .spectacle li {
+  list-style: none;
+  border-radius: 30%;
+}
+.artiste-info .spectacle li .date {
+  background-color: goldenrod;
+}
+.artiste-info .spectacle li .heure {
+  background-color: coral;
+}
+.artiste-info .spectacle li .salle {
+  background-color: deepskyblue;
+}
+
+/*# sourceMappingURL=style-elo.css.map */

@@ -122,11 +122,11 @@ var_dump($nbImages);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
-    <link el="stylesheet" href="<?php $niveau ?>/css/style-eloise.css">
+    <link rel="stylesheet" href="../../scss/style-elo.css">
     <?php include($niveau . "inc/fragments/header.inc.html")?>
 </head>
 
-<body class="demo">
+<body class="fiche">
 <?php include($niveau . "inc/fragments/navigation.html")?>
 <img class="img-principale-artiste" src="https://fakeimg.pl/300/" alt="Image principale <?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
 <div class="artiste-info">
