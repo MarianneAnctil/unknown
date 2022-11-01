@@ -163,7 +163,7 @@ $pdosResultat->closeCursor();
 </head>
 <body>
 <header>
-    <h1 class="h1">ARTISTES</h1>
+    <h1 class="h1-liste">ARTISTES</h1>
 </header>
 
 
@@ -219,9 +219,13 @@ $pdosResultat->closeCursor();
             $intCpt++){
             ?>
             <li class="list-item_artiste">
+                <h2 class="h2-liste">
                 <a class="list-link_artiste" href="fiche/index.php?idItem=<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>">
                     <?php
-                    echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?></a> <p class="styleArt"><?php echo $arrTableauxArtiste[$intCpt]['style_artiste']; ?></p>
+                    echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>
+                </a>
+                </h2>
+                <p class="styleArt"><?php echo $arrTableauxArtiste[$intCpt]['style_artiste']; ?></p>
                 <img class="img_art" alt="Photos de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>" src="<?php echo$niveau?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste']?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste']?>_p__w900.jpg">
                 <?php
                 }
@@ -263,7 +267,7 @@ $pdosResultat->closeCursor();
 
 
 
-        <h2 class="h2 h2_sug"> SUGGESTIONS </h2>
+        <h2 class="h2-liste"> SUGGESTIONS </h2>
     <div class="box_sug">
         <ul class="list_sug">
             <?php
@@ -273,12 +277,14 @@ $pdosResultat->closeCursor();
             $intCptSug++){
             ?>
             <li class="list-item_sug">
+                <h3 class="h3-liste">
                 <a class="list-link_sug" href="fiche/index.php?idItem=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>">
                     <?php
                     echo $arrArtisteChoisi[$intCptSug]['nom_artiste'];
                     ?>
 
                 </a>
+                </h3>
                 <?php echo $arrArtisteChoisi[$intCptSug]['style_artiste']; ?>
 
                 <img class="img_Sug" alt="Photos de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" src="<?php echo$niveau?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste']?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste']?>_p__w360.jpg">
