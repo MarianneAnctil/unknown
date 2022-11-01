@@ -1,0 +1,68 @@
+/* Variables et utilitaires
+   ========================================================================== */
+
+/****** Variables (peuvent être utilisées dans tous les fichiers) *******/
+$couleur-texte: white;
+$turquoise: #45A2A4;
+$jaune: #E9BA40;
+$dore:#CE9133;
+$rose: #E59D9B;
+$corail: #E06251;
+$bg-color: #1C1C1C;
+
+/*** Clearfix ***/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*** Harmoniser le modèle de boîte avec Box-Sizing ***/
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Images fluides */
+img{
+  max-width: 100%;
+}
+
+/*** Styles de base ***/
+abbr[title]{
+  text-decoration: none;
+  cursor:help;
+}
+abbr[title]:hover{
+  background-color: rgba(244, 161, 71, 0.25);
+}
+
+/** Accessibilité
+  * Pour cacher visuellement tout en gardant accessible un contenu:
+  * screen-reader-only ou visuallyhidden **/
+.screen-reader-only,
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.screen-reader-only.focusable:active,
+.screen-reader-only.focusable:focus,
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus{
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}

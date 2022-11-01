@@ -159,7 +159,7 @@ var_dump($nbImages);
         </ul>
     <button class="passeport">Acheter mon passeport</button>
     <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
-
+</div>
     <div class="mozaique-image">
         <?php for($cpt=0; $cpt<$nbImages;$cpt++){?>
         <img class="mozaique-image_item" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
