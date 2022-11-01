@@ -192,7 +192,7 @@ $pdosResultat->closeCursor();
                 <a class="list-link_artiste" href="fiche/index.php?idItem=<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>">
                     <?php
                     echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?></a> <p class="styleArt"><?php echo $arrTableauxArtiste[$intCpt]['style_artiste']; ?></p>
-                <img class="img_art" alt="Photos de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>" src="<?php echo$niveau?>images/photos_artistes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste']?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste']?>/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste']?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] . rand(1,5)?>">
+                <img class="img_art" alt="Photos de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>" src="<?php echo$niveau?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste']?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste']?>_p__w900.jpg">
                 <?php
                 }
                 ?>
@@ -277,7 +277,7 @@ $pdosResultat->closeCursor();
                 </a>
                 <?php echo $arrArtisteChoisi[$intCptSug]['style_artiste']; ?>
 
-                <img class="img_Sug" alt="Photos de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" src="<?php echo$niveau?>images/photos_artistes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste']?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste']?>/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste']?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] . rand(1,5)?>">
+                <img class="img_Sug" alt="Photos de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" src="<?php echo$niveau?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste']?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste']?>_p__w360.jpg">
 
                 <?php
                 } ?>
