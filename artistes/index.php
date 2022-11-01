@@ -171,6 +171,36 @@ $pdosResultat->closeCursor();
 
 <main class="main">
 
+
+<div class="select_style">
+    <select class="list_style" id="list_style">
+        <option value="style_label">STYLES</option>
+        <option value="tousStyles">Tous les styles</option>
+        <?php
+        //AFFICHER STYLES
+        for ($intCpt = 0;
+             $intCpt < count($arrStyle);
+             $intCpt++){
+            ?>
+
+            <option value="<?php echo $arrStyle[$intCpt]['id_style'] ?>"> <?php echo $arrStyle[$intCpt]['nom_style']?> </option>
+
+
+            <?php
+        }
+        ?>
+    </select>
+
+    <script type="text/javascript">
+
+        var urlmenu = document.getElementById( 'list_style' );
+        urlmenu.onchange = function() {
+            window.open( "index.php?idStyle="  + this.options[ this.selectedIndex ].value );
+        };
+    </script>
+</div>
+
+
     <?php
     if ($strIdStyle != 0) {
         ?>
@@ -229,32 +259,6 @@ $pdosResultat->closeCursor();
     </p>
     </div>
 
-
-
-
-
-
-
-
-
-        <h2>Styles</h2>
-    <form class="form_style" action="index.php">
-        <input class="input_style" type="radio" id="styleTous" name="idStyle" value="0">
-        <label class="label_style" for="styleTous">Tous les styles</label>
-           <?php
-        //AFFICHER STYLES
-        for ($intCpt = 0;
-        $intCpt < count($arrStyle);
-        $intCpt++){
-        ?>
-
-        <input class="input_style" type="radio" id="style<?php echo $arrStyle[$intCpt]['id_style']?>" name="idStyle" value="<?php echo $arrStyle[$intCpt]['id_style']?>">
-        <label class="label_style" for="style<?php echo $arrStyle[$intCpt]['id_style']?>"><?php echo $arrStyle[$intCpt]['nom_style']?></label>
-<?php
-}
-?>
-        <button class="button_style">AFFICHER</button>
-    </form>
 
 
 
