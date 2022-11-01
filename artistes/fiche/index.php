@@ -132,7 +132,7 @@ var_dump($nbImages);
 <div class="artiste-info">
 <ul class="info-sup">
     <li class="nom-artiste">
-        <h1><?php echo $arrArtistes[0]['nom_artiste'];?></h1>
+        <h1 class="h1-fiche"><?php echo $arrArtistes[0]['nom_artiste'];?></h1>
     </li>
     <li class="provenance">
         <p><?php echo $arrArtistes[0]['provenance'];?></p>
@@ -165,14 +165,14 @@ var_dump($nbImages);
         <img class="mozaique-image_item" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
         <?php }?>
     </div>
-    <h2 class="artiste-sug-title">Artistes suggérés</h2>
+    <h2 class="artiste-sug-title h2-fiche">Artistes suggérés</h2>
 <ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
         <li class="suggestion_artiste">
             <img class="img-suggestion-artiste" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
             <div class="info-artiste-suggere">
-                <h3 class="nom-artiste"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
-                <h3 class="provenance"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></h3>
+                <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
+                <h4 class="provenance h4-fiche"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></h4>
             </div>
         </li>
     <?php }?>

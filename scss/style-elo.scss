@@ -23,7 +23,7 @@
 
 /* Charte typographique
    ========================================================================== */
-//@import "typo";
+@import "base/typo";
 
 /* Grille
    ========================================================================== */
@@ -32,7 +32,7 @@
 /* Mise en page
    ========================================================================== */
 body{
-  background-color: #1E1E1E;
+  background-color: $bg-color;
 }
 
 h1, h2, h3, p{
@@ -95,10 +95,6 @@ h1, h2, h3, p{
   margin: auto;
   padding: 10px 0px;
 }
-}
-.artiste-sug-title{
-  max-width: 180px;
-  margin: auto;
 }
 .suggestion {
   display: flex;

@@ -387,12 +387,280 @@ abbr[title]:hover {
 
 /* Charte typographique
    ========================================================================== */
+/**
+ * Typographie responsive (Mobile First)
+   ========================================================================
+ * Les valeurs de taille de police suggérées ici sont à titre indicatif.
+ * À ajuster selon la direction visuelle et le choix de polices de caractères.
+ *
+ * @author Prénom Nom courriel
+ *
+ * TABLE DES MATIÈRES
+ * Polices
+ * Base décimale
+ * Hiérarchie responsive
+ *
+ *
+ * Doc des points de rupture :
+ * ==========================================================================
+ * Écran étroit : de 0 à 599px
+ * point de rupture: 600px
+ *
+ * Écran moyen : de 600 à 799px
+ * point de rupture: 800px
+ *
+ * Écran large : 800px et +
+ */
+/* Polices */
+/* Selon le projet, il est souvent préférable d'utiliser le lien @import des Google Fonts
+ * plutôt que de servir directement les polices de caractères à l'aide d'instructions @font-face
+ * et d'un dossier de polices dans la structure de répertoires.
+ * La méthode ci-dessous vise à offrir dans l'ordre de priorité les 3 formats possibles pour
+ * assurer la meilleure compatibilité.
+ */
+@font-face {
+  font-family: "Black Han Sans", sans-serif;
+  src: url(../polices/Black_Han_Sans/BlackHanSans-Regular.ttf) format("ttf");
+}
+@font-face {
+  font-family: "Karla", sans-serif;
+  src: url(../polices/Karla/Karla-VariableFont_wght.ttf) format("ttf");
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  font-family: "Black Han Sans", sans-serif;
+}
+
+body,
+h5-accueil {
+  font-family: "Karla", sans-serif;
+}
+
+/* Base décimale */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* 16px pour toutes les largeurs d'écran */
+  font-size: 1.6rem;
+  /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
+  line-height: 1.375;
+}
+
+@media (min-width: 600px) {
+  body {
+    line-height: 1.5;
+  }
+}
+@media (min-width: 800px) {
+  body {
+    line-height: 1.75;
+  }
+}
+/* Hiérarchie responsive : plus proche = plus petit  &  plus loin = plus grand */
+/* Typographie page ACCUEIL */
+h1,
+.h1-acceuil { /* = 30px */
+  font-size: 3rem;
+}
+
+@media (min-width: 600px) {
+  h1,
+.h1-acceuil { /* = 50px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+.h1-acceuil { /* = 80px */
+    font-size: 8rem;
+  }
+}
+h2,
+.h2-acceuil { /* = 25px */
+  font-size: 2.5rem;
+}
+
+@media (min-width: 600px) {
+  h2,
+.h2-acceuil { /* = 35px */
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 800px) {
+  h2,
+.h2-acceuil { /* = 50px */
+    font-size: 5rem;
+  }
+}
+h3,
+.h3-acceuil { /* = 32px */
+  font-size: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  h3,
+.h3-acceuil { /* = 48px */
+    font-size: 4.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h3,
+.h3-acceuil { /* = 70px */
+    font-size: 7rem;
+  }
+}
+h4,
+.h4-acceuil { /* = 16px */
+  font-size: 1.6rem;
+}
+
+@media (min-width: 600px) {
+  h4,
+.h4-acceuil { /* = 18px */
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h4,
+.h4-acceuil { /* = 22px */
+    font-size: 2.2rem;
+  }
+}
+/* Typographie ARTISTES*/
+h1,
+.h1-artistes { /* = 60px */
+  font-size: 6rem;
+}
+
+@media (min-width: 600px) {
+  h1,
+.h1-artistes { /* = 90px */
+    font-size: 9rem;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+.h1-artistes { /* = 150px */
+    font-size: 15rem;
+  }
+}
+h2,
+.h2-artistes { /* = 40px */
+  font-size: 4rem;
+}
+
+@media (min-width: 600px) {
+  h2,
+.h2-artistes { /* = 70px */
+    font-size: 7rem;
+  }
+}
+@media (min-width: 800px) {
+  h2,
+.h2-artistes { /* = 100px */
+    font-size: 10rem;
+  }
+}
+h3,
+.h3-artistes { /* = 32px */
+  font-size: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  h3,
+.h3-artistes { /* = 38px */
+    font-size: 3.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h3,
+.h3-artistes { /* = 42px */
+    font-size: 4.2rem;
+  }
+}
+/* Typographie FICHE D'ARTISTES */
+h1,
+.h1-fiche { /* = 60px */
+  font-size: 6rem;
+}
+
+@media (min-width: 600px) {
+  h1,
+.h1-fiche { /* = 75px */
+    font-size: 7.5rem;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+.h1-fiche { /* = 90px */
+    font-size: 9rem;
+  }
+}
+h2,
+.h2-fiche { /* = 30px */
+  font-size: 3rem;
+}
+
+@media (min-width: 600px) {
+  h2,
+.h2-fiche { /* = 50px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  h2,
+.h2-fiche { /* = 80px */
+    font-size: 8rem;
+  }
+}
+h3,
+.h3-fiche { /* = 32px */
+  font-size: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  h3,
+.h3-fiche { /* = 38px */
+    font-size: 3.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h3,
+.h3-fiche { /* = 42px */
+    font-size: 4.2rem;
+  }
+}
+h4,
+.h4-fiche { /* = 20px */
+  font-size: 2rem;
+}
+
+@media (min-width: 600px) {
+  h4,
+.h4-fiche { /* = 28px */
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h4,
+.h4-fiche { /* = 34px */
+    font-size: 3.4rem;
+  }
+}
 /* Grille
    ========================================================================== */
 /* Mise en page
    ========================================================================== */
 body {
-  background-color: #1E1E1E;
+  background-color: #1C1C1C;
 }
 
 h1, h2, h3, p {
@@ -459,11 +727,6 @@ h1, h2, h3, p {
   display: inline-block;
   margin: auto;
   padding: 10px 0px;
-}
-
-.artiste-sug-title {
-  max-width: 180px;
-  margin: auto;
 }
 
 .suggestion {
