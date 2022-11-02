@@ -27,19 +27,40 @@
 
 /* Grille
    ========================================================================== */
-//@import "grille";
+@import "base/grille";
 
 /* Mise en page
    ========================================================================== */
 body{
   background-color: $bg-color;
 }
-
 h1, h2, h3, p{
   color:$couleur-texte;
 }
+.fiche{
+  @media(min-width: 800px){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) .5fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+}
+.img-principale-artiste{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  @media(min-width:800px){
+    grid-area: 1 / 2 / 3 / 3;
+  }
+}
 .artiste-info{
+  @media(min-width:800px) {
+    grid-area: 1 / 1 / 3 / 2;
+  }
   .info-sup{
+    padding: 0px;
     li{
       list-style: none;
     }
@@ -53,6 +74,7 @@ h1, h2, h3, p{
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    padding: 0px;
     li{
       list-style: none;
       border-radius: 30px;
@@ -76,15 +98,20 @@ h1, h2, h3, p{
     }
   }
 }
-.passeport{
-  background-color: $turquoise;
-  box-shadow: 0px 5px 0px $corail;
-  border-radius: 5px;
-  border:none;
-  height: 45px;
-  width: 280px;
-  color: $couleur-texte;
+.description{
+  @media(min-width: 800px){
+    grid-area: 3 / 1 / 4 / 3;
+  }
 }
+//.passeport{
+//  background-color: $turquoise;
+//  box-shadow: 0px 5px 0px $corail;
+//  border-radius: 5px;
+//  border:none;
+//  height: 45px;
+//  width: 280px;
+//  color: $couleur-texte;
+//}
 .mozaique-image{
   background-color: $rose;
   display: flex;
@@ -96,12 +123,21 @@ h1, h2, h3, p{
   padding: 10px 0px;
 }
 }
+
+.artiste-sug-title{
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .suggestion {
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
 
   .suggestion_artiste {
+    width: 500px;
     display: inline-block;
     margin: auto;
     padding: 10px 0px;
@@ -112,10 +148,21 @@ h1, h2, h3, p{
     flex-wrap: wrap;
     display: inline-block;
     border: solid 2px;
+    @media(min-width: 800px){
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
 
     .img-suggestion-artiste {
-      margin: 20px;
       padding-bottom: 0px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
     }
     .info-artiste-suggere {
       margin-left: 20px;
@@ -126,9 +173,10 @@ h1, h2, h3, p{
 
     &:nth-child(odd) {
       border-color:$turquoise;
+
       .provenance {
         background-color: $corail;
-        max-width: 200px;
+        max-width: 300px;
         text-align: center;
           }
         }
@@ -136,9 +184,29 @@ h1, h2, h3, p{
       border-color:$corail;
         .provenance {
           background-color: $turquoise;
-          max-width: 200px;
+          max-width: 300px;
           text-align: center;
         }
+    }
+  }
+  .suggestion_artiste:nth-child(odd){
+    @media(min-width:800px){
+      .img-suggestion-artiste{
+        grid-area: 1 / 2 / 3 / 3;
+      }
+      .info-artiste-suggere{
+        grid-area: 1 / 1 / 3 / 2;
+      }
+    }
+  }
+  .suggestion_artiste:nth-child(even){
+    @media(min-width:800px){
+      .img-suggestion-artiste{
+        grid-area: 1 / 1 / 3 / 2;
+      }
+      .info-artiste-suggere{
+        grid-area: 1 / 2 / 3 / 3;
+      }
     }
   }
 }

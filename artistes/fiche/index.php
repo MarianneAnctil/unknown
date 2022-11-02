@@ -122,26 +122,31 @@ var_dump($nbImages);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
-    <link rel="stylesheet" href="../../scss/style-elo.css">
+    <link rel="stylesheet" href="../../css/style-elo.css">
     <?php include($niveau . "inc/fragments/header.inc.html")?>
 </head>
+<body class="body-fiche conteneur">
+<a href="#contenu" class="screen-reader-only focusable sauter">Allez au contenu</a>
 
-<body class="fiche">
 <?php include($niveau . "inc/fragments/navigation.html")?>
-<img class="img-principale-artiste" src="https://fakeimg.pl/300/" alt="Image principale <?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
+
+<main id="contenu">
+<div class="fiche">
+<!--src="--><?php //echo $niveau ?><!--images/photos_artistes/--><?php //echo $arrArtistesSug[$intCptArtisteSug]['id_artiste'].'_'.$arrArtistesSug[$intCptArtisteSug]['nom_artiste']?><!--"-->
+<img class="img-principale-artiste" src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesSug[$intCptArtisteSug]['id_artiste'].'_'. $arrArtistesSug[$intCptArtisteSug]['nom_artiste']?>_p__w360.jpg" alt="Image principale <?php echo $arrArtistes[0]['nom_artiste'];?>">
 <div class="artiste-info">
 <ul class="info-sup">
     <li class="nom-artiste">
         <h1 class="h1-fiche"><?php echo $arrArtistes[0]['nom_artiste'];?></h1>
     </li>
     <li class="provenance">
-        <p><?php echo $arrArtistes[0]['provenance'];?></p>
+        <p class="h3-fiche"><?php echo $arrArtistes[0]['provenance'];?></p>
     </li>
     <li class="style">
-        <p><?php echo $strStyles;?></p>
+        <h2 class="h3-fiche"><?php echo $strStyles;?></h2>
     </li>
     <li class="site">
-        <p><a><?php echo $arrArtistes[0]['site_web_artiste'];?></a></p>
+        <p class="h3-fiche"><a><?php echo $arrArtistes[0]['site_web_artiste'];?></a></p>
     </li>
 </ul>
         <ul class="spectacle">
@@ -157,7 +162,8 @@ var_dump($nbImages);
                 <p><?php echo $arrLieu[$cptEnr]['nom_lieu'];}?></p>
             </li>
         </ul>
-    <button class="passeport">Acheter mon passeport</button>
+</div>
+<!--    <button class="passeport">Acheter mon passeport</button>-->
     <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
 </div>
     <div class="mozaique-image">
@@ -172,12 +178,12 @@ var_dump($nbImages);
             <img class="img-suggestion-artiste" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
             <div class="info-artiste-suggere">
                 <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
-                <h4 class="provenance h4-fiche"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></h4>
+                <p class="provenance h4-fiche"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></p>
             </div>
         </li>
     <?php }?>
 </ul>
-
+</main>
 <?php include($niveau . "inc/fragments/footer.inc.php");?>
 </body>
 </html>
