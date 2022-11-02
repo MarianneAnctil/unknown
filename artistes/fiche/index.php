@@ -122,8 +122,12 @@ var_dump($nbImages);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../css/style-elo.css">
     <?php include($niveau . "inc/fragments/header.inc.html")?>
+=======
+    <?php include($niveau . "inc/fragments/header.inc.php") ?>
+>>>>>>> master
 </head>
 <body class="body-fiche conteneur">
 <a href="#contenu" class="screen-reader-only focusable sauter">Allez au contenu</a>
