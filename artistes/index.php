@@ -159,7 +159,7 @@ $pdosResultat->closeCursor();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Liste_Artistes</title>
-    <?php include($niveau . "inc/fragments/header.inc.html") ?>
+    <?php include($niveau . "inc/fragments/header.inc.php") ?>
 </head>
 <body>
 <header>
