@@ -80,6 +80,8 @@ h1, h2, h3, p{
       border-radius: 30px;
       text-align: center;
       color: black;
+      font-family: "Black Han Sans", sans-serif;
+      font-weight: bold;
       p{
         color: black;
       }
@@ -117,6 +119,18 @@ h1, h2, h3, p{
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  @media(min-width: 800px){
+    display: grid;
+    &.3-images{
+
+    }
+    &.4-images{
+
+    }
+    &.5-images{
+
+    }
+  }
 &_item{
   display: inline-block;
   margin: auto;

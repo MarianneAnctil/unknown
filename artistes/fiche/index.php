@@ -112,6 +112,16 @@ for ($cpt=0;$cpt<=2;$cpt++){
 }
 $nbImages = rand(3,5);
 var_dump($nbImages);
+
+$classeConteneurMozaique = '';
+
+if($nbImages == 3){
+    $classeConteneurMozaique='3-images';
+}else if($nbImages == 4){
+    $classeConteneurMozaique='4-images';
+}else if($nbImages == 5){
+    $classeConteneurMozaique='5-images';
+}
 ?>
 
 <!DOCTYPE html>
@@ -122,12 +132,8 @@ var_dump($nbImages);
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
-<<<<<<< HEAD
     <link rel="stylesheet" href="../../css/style-elo.css">
-    <?php include($niveau . "inc/fragments/header.inc.html")?>
-=======
     <?php include($niveau . "inc/fragments/header.inc.php") ?>
->>>>>>> master
 </head>
 <body class="body-fiche conteneur">
 <a href="#contenu" class="screen-reader-only focusable sauter">Allez au contenu</a>
@@ -136,8 +142,21 @@ var_dump($nbImages);
 
 <main id="contenu">
 <div class="fiche">
-<!--src="--><?php //echo $niveau ?><!--images/photos_artistes/--><?php //echo $arrArtistesSug[$intCptArtisteSug]['id_artiste'].'_'.$arrArtistesSug[$intCptArtisteSug]['nom_artiste']?><!--"-->
-<img class="img-principale-artiste" src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesSug[$intCptArtisteSug]['id_artiste'].'_'. $arrArtistesSug[$intCptArtisteSug]['nom_artiste']?>_p__w360.jpg" alt="Image principale <?php echo $arrArtistes[0]['nom_artiste'];?>">
+    <picture>
+        <source media="(max-width: 800px)"
+               srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w360.jpg">
+
+        <source media="(min-width: 801px)"
+                srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg">
+
+       <img class="img-principale-artiste"
+        src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'];
+        if($arrArtistes[0][id_artiste] == 5){
+            ?>_p__w360.webp"<?php }else{
+            ?>_p__w360.jpg"<?php
+       }?>
+        alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
+    </picture>
 <div class="artiste-info">
 <ul class="info-sup">
     <li class="nom-artiste">
@@ -170,7 +189,7 @@ var_dump($nbImages);
 <!--    <button class="passeport">Acheter mon passeport</button>-->
     <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
 </div>
-    <div class="mozaique-image">
+    <div class="mozaique-image <?php echo $classeConteneurMozaique?>">
         <?php for($cpt=0; $cpt<$nbImages;$cpt++){?>
         <img class="mozaique-image_item" src="https://fakeimg.pl/300/" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
         <?php }?>
