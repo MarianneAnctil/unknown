@@ -570,8 +570,8 @@ h3,
 }
 /* Typographie FICHE D'ARTISTES */
 h1,
-.h1-fiche { /* = 60px */
-  font-size: 6rem;
+.h1-fiche { /* = 70px */
+  font-size: 7rem;
 }
 
 @media (min-width: 600px) {
@@ -587,8 +587,8 @@ h1,
   }
 }
 h2,
-.h2-fiche { /* = 30px */
-  font-size: 3rem;
+.h2-fiche { /* = 50px */
+  font-size: 5rem;
 }
 
 @media (min-width: 600px) {
@@ -637,8 +637,158 @@ h4,
     font-size: 3.4rem;
   }
 }
+/**GENERAL**/
 body {
   background-color: #1C1C1C;
+  color: white;
+}
+
+.conteneur {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0;
+}
+
+/** HEADER **/
+@media (min-width: 800px) {
+  .entete {
+    margin-bottom: 50px;
+  }
+}
+.h1-liste {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .h1-liste {
+    position: relative;
+    top: 20px;
+    margin: 0 20px;
+  }
+}
+
+.select_style {
+  align-self: center;
+  margin: 0 20px 25px 20px;
+  font-size: 13px;
+  padding: 10px 8px 10px 14px;
+  background: #45A2A4;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  width: 150px;
+}
+@media (min-width: 800px) {
+  .select_style {
+    float: right;
+    top: -90px;
+  }
+}
+
+.select_style .select_sc {
+  width: 100%;
+  background: url("../images/logos/logos_MediaSociaux/arrow.png") no-repeat;
+  background-size: 30px;
+  background-position: 100%;
+  z-index: 10;
+}
+.select_style .select_sc select {
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 140%;
+  position: relative;
+  font-size: 1em;
+  height: 25px;
+}
+.select_style .select_sc select option:first-child {
+  color: white;
+  font-size: 2em;
+}
+
+.typeStyle {
+  margin: 0 20px;
+}
+
+/** AFFICHAGE ARTISTES **/
+.box_artiste {
+  margin: 20px;
+  padding: 10px;
+  border: 4px solid #E06251;
+  border-radius: 10px;
+}
+
+.list-link_artiste {
+  text-decoration: none;
+  color: #45A2A4;
+  text-transform: uppercase;
+}
+
+.styleArt:nth-of-type(odd) {
+  padding: 10px;
+  color: #1C1C1C;
+  background-color: #E9BA40;
+  width: 185px;
+  text-align: center;
+  border-radius: 18px;
+  text-transform: uppercase;
+}
+
+/** NAV SEQUENTIELLE **/
+.link_precedent, .link_suivant {
+  text-decoration: none;
+  color: white;
+}
+
+.link_precedent, .link_suivant {
+  background-color: #CE9133;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.nav-seq {
+  align-content: center;
+  margin-top: 60px;
+}
+
+/** SUGGESTIONS **/
+.h2_sug {
+  color: #E59D9B;
+  text-align: center;
+}
+
+.list-link_sug {
+  text-decoration: none;
+  color: #45A2A4;
+  text-transform: uppercase;
+}
+
+.styleArt_sug:nth-of-type(odd) {
+  padding: 6px;
+  color: #1C1C1C;
+  background-color: #E9BA40;
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.box_sug {
+  margin: 20px;
+  padding: 10px;
+  border: 4px solid #E06251;
+  border-radius: 10px;
+}
+
+@media (min-width: 800px) {
+  .suggestions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 /*# sourceMappingURL=style-marianne.css.map */

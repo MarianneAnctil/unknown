@@ -1,6 +1,6 @@
-<?php $niveau = '../';
+<?php $niveauLISTE = '../';
 
-include($niveau . "inc/scripts/config.inc.php");
+include($niveauLISTE . "inc/scripts/config.inc.php");
 
 
 error_reporting(E_ALL);
@@ -156,19 +156,18 @@ $pdosResultat->closeCursor();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Liste_Artistes</title>
-    <link rel="stylesheet" href="<?php echo $niveau ?>css/style-marianne.css">
-    <?php include($niveau . "inc/fragments/header.inc.html") ?>
+    <link rel="stylesheet" href="<?php echo $niveauLISTE ?>css/style-marianne.css">
+    <?php include($niveauLISTE . "inc/fragments/header.inc.php") ?>
 </head>
-<body>
-<header>
-    <h1 class="h1-liste">ARTISTES</h1>
-</header>
+<body >
 
 
-<main class="main">
 
-
+<main class="main conteneur">
+<div class="entete">
+    <h1 class="h1-liste ">ARTISTES</h1>
     <div class="select_style">
+        <div class="select_sc">
         <select class="list_style" id="list_style">
             <option value="style_label">STYLES</option>
             <option value="tousStyles">Tous les styles</option>
@@ -194,6 +193,7 @@ $pdosResultat->closeCursor();
                 window.open("index.php?idStyle=" + this.options[this.selectedIndex].value);
             };
         </script>
+        </div>
     </div>
 
 
@@ -205,42 +205,45 @@ $pdosResultat->closeCursor();
         <?php
     }
     ?>
-    <div class="box_artiste">
-        <ul class="list_artiste">
+</div>
+
+
 
             <?php
             //AFFICHER ARTISTES
             for ($intCpt = 0;
             $intCpt < count($arrTableauxArtiste);
             $intCpt++){
-            ?>
-            <li class="list-item_artiste">
+            ?><div class="box_artiste">
+            <picture class="picture_art">
+                <source media="(min-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.jpg">
+                <source media="(max-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w540.jpg">
+                <img src="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.jpg" alt="Photo de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>" style="width:auto;">
+            </picture>
+
                 <h2 class="h2-liste">
                     <a class="list-link_artiste"
                        href="fiche/index.php?idItem=<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>">
-                        <?php
-                        echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>
+                        <b><?php
+                            echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?></b>
                     </a>
                 </h2>
-                <p class="styleArt"><?php echo $arrTableauxArtiste[$intCpt]['style_artiste']; ?></p>
-                <img class="img_art" alt="Photos de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>"
-                     src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.jpg">
+                <p class="styleArt"><b><?php echo $arrTableauxArtiste[$intCpt]['style_artiste']; ?></b></p>
+                </div>
                 <?php
                 }
                 ?>
-            </li>
-
-        </ul>
-    </div>
 
 
+
+    <div class="nav-seq">
     <?php if ($id_page > 0) {
         //Si la page courante n'est pas la première, afficher bouton précédent?>
         <a class="link_precedent"
            href='index.php?id_page=<?php echo($id_page - 1); ?>&idStyle=<?php echo $strIdStyle; ?>'>Précédent</a>
     <?php } ?>
 
-    <div class="nav-seq">
+
         <?php
 
         if ($nbPages > 1) {
@@ -265,16 +268,21 @@ $pdosResultat->closeCursor();
     </div>
 
 
-    <h2 class="h2-liste"> SUGGESTIONS </h2>
-    <div class="box_sug">
-        <ul class="list_sug">
+    <h2 class="h2-liste h2_sug"> SUGGESTIONS </h2>
+    <div class="suggestions">
+
             <?php
             //AFFICHER SUGGESTIONS
             for ($intCptSug = 0;
             $intCptSug < count($arrArtisteChoisi);
             $intCptSug++){
             ?>
-            <li class="list-item_sug">
+            <div class="box_sug">
+                <picture class="picture_art">
+                    <source media="(min-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg">
+                    <source media="(max-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg">
+                    <img src="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg" alt="Photo de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" style="width:auto;">
+                </picture>
                 <h3 class="h3-liste">
                     <a class="list-link_sug"
                        href="fiche/index.php?idItem=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>">
@@ -284,15 +292,11 @@ $pdosResultat->closeCursor();
 
                     </a>
                 </h3>
-                <?php echo $arrArtisteChoisi[$intCptSug]['style_artiste']; ?>
+                <p class="styleArt_sug"> <?php echo $arrArtisteChoisi[$intCptSug]['style_artiste']; ?></p>
 
-                <img class="img_Sug" alt="Photos de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>"
-                     src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg">
-
+            </div>
                 <?php
                 } ?>
-            </li>
-        </ul>
     </div>
 
 
@@ -302,7 +306,7 @@ $pdosResultat->closeCursor();
 <footer>
 
 
-    <?php include($niveau . "inc/fragments/footer.inc.php") ?>
+    <?php include("../inc/fragments/footer.inc.php") ?>
 </footer>
 </body>
 </html>
