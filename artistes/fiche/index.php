@@ -122,7 +122,7 @@ for ($cpt=0;$cpt<=2;$cpt++){
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Fiche de l'artiste</title>
-    <?php include($niveau . "inc/fragments/header.inc.html")?>
+    <?php include($niveau . "inc/fragments/header.inc.php") ?>
 </head>
 
 <body class="demo">
