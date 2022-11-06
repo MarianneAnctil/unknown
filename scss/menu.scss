@@ -1,0 +1,140 @@
+/**
+ * @author Prénom Nom courriel
+**/
+
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Styles conditionnels au JavaScript
+ */
+
+/* Utilitaires
+   ========================================================================== */
+@import "base/utilitaires";
+
+/****** Base commune *******/
+
+/* Bouton du menu */
+.nav__control {
+  background-color: rgba(145, 0, 145, 0.2);
+  border: none;
+  padding: 10px;
+  min-width: 40px;
+}
+@media (min-width: 600px) {
+  .nav__control {
+    display: none;
+  }
+}
+.nav__control:hover,
+.nav__control:active {
+  color:#fff;
+  background-color: $dore;
+}
+
+.nav__control:focus {
+  /* En mettant la règle outline: none;, les styles du navigateur
+   * pour les éléments en cours de focus sont effacés. Il faut alors
+   * les remplacer par d'autres styles qui peuvent être plus
+   * en accord avec la direction visuelle du projet.
+   */
+  outline: none;
+  /* AUTRES STYLES EN REMPLACEMENT DU OUTLINE */
+  /*
+   * Les règles outline-offset et outline permettent
+   * de modifier l'apparence du outline par défaut des navigateurs.
+   */
+  outline-offset: -5px;
+  outline: $dore auto 5px;
+}
+
+.nav>.nav__control:before {
+  display: inline-block;
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-image: url(../images/ico-fermer.svg);
+  margin-right: 0.25em;
+}
+
+.nav--closed>.nav__control:before {
+  background-image: url(../images/ico-menu.svg);
+}
+
+/* Liste du menu */
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: none;
+}
+@media (min-width: 600px) {
+  .nav__list-item {
+    display: inline-block;
+  }
+}
+
+/* Liens du menu */
+.nav__list-lien {
+  background-color: $dore;
+  display: block;
+  padding: 5px 10px;
+  width: 100%;
+}
+.nav__list-lien{
+  &:hover{
+    color:#fff;
+    background-color: $dore;
+  }
+  &:visited, :link{
+    text-decoration: none;
+    color: inherit;
+  }
+  &:active{
+    color:#fff;
+    background-color: $dore;
+  }
+  &:focus{
+    @media (min-width: 600px) {
+      outline-offset: 0;
+    }
+  }
+}
+
+/** Une classe nav__link--active
+    sert à définir un état différent
+    pour l'item de menu actif
+    **/
+.nav__link--active {
+  border-left: 5px solid rgba(101, 68, 180, 1);
+
+  @media (min-width: 600px) {
+    border-left:none;
+    border-bottom:5px solid rgba(101, 68, 180, 1);
+  }
+}
+
+
+/**
+ * Styles conditionnels au JavaScript
+ * L'ajout par JavaScript de la classe .js
+ * permet de rédiger des sélecteurs conditionnels à ce que Javascript est actif
+ * De cette façon,
+ *** en l'absence de JavaScript le menu restera visible et accessible
+ *** en présence de JavaScript le menu est caché
+ */
+@media (max-width: 599px) {
+  .js .nav__list {
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 2s;
+  }
+  .js .nav--closed .nav__list {
+    max-height: 0;
+    transition: max-height 0.5s;
+  }
+}
