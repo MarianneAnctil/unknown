@@ -139,8 +139,6 @@ if($nbImages == 3){
 <body class="body-fiche conteneur">
 <a href="#contenu" class="screen-reader-only focusable sauter">Allez au contenu</a>
 
-<?php include($niveau . "inc/fragments/navigation.html")?>
-
 <main id="contenu">
 <div class="fiche">
 <!--    <picture class="picture_art">-->
