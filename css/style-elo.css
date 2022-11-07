@@ -355,7 +355,7 @@ abbr[title] {
 }
 
 abbr[title]:hover {
-  background-color: rgba(244, 161, 71, 0.25);
+  background-color: #1C1C1C;
 }
 
 /** Accessibilité
@@ -596,8 +596,8 @@ h3,
 }
 /* Typographie FICHE D'ARTISTES */
 h1,
-.h1-fiche { /* = 60px */
-  font-size: 6rem;
+.h1-fiche { /* = 70px */
+  font-size: 7rem;
 }
 
 @media (min-width: 600px) {
@@ -613,8 +613,8 @@ h1,
   }
 }
 h2,
-.h2-fiche { /* = 30px */
-  font-size: 3rem;
+.h2-fiche { /* = 50px */
+  font-size: 5rem;
 }
 
 @media (min-width: 600px) {
