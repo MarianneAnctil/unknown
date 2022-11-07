@@ -1,91 +1,15 @@
-<?php
-//Définition de la variable de niveau
-$niveau='';
-
-//Inclusion du fichier de configuration
-include($niveau.'inc/scripts/config.inc.php');
-
-//On établi une nouvelle requête pour afficher les enregistrements figurant dans une page donnée
-$strRequete =
-    'SELECT id_actualite, titre, date_actualite, article, 
-    DAYOFMONTH(date_actualite) AS Jour,
-    MONTH(date_actualite) AS Mois,
-    YEAR(date_actualite) AS Annee
-    FROM t_actualite 
-    ORDER BY date_actualite DESC';
-
-//Initialisation de l'objet PDOStatement et exécution de la requête
-$pdosResultatActualite = $pdoConnexion->prepare($strRequete);
-$pdosResultatActualite->execute();
-
-$arrActualite=array();
-$ligne=$pdosResultatActualite->fetch();
-
-//Extraction des enregistrements à afficher de la BD
-for($intCptEnr=0;$intCptEnr<$pdosResultatActualite->rowCount();$intCptEnr++){
-    $arrActualite[$intCptEnr]['id_actualite'] = $ligne['id_actualite'];
-    $arrActualite[$intCptEnr]['titre'] = $ligne['titre'];
-    $arrActualite[$intCptEnr]['date_actualite'] = $ligne['date_actualite'];
-    $arrActualite[$intCptEnr]['article'] = $ligne['article'];
-    $arrActualite[$intCptEnr]['Jour'] = $ligne['Jour'];
-    $arrActualite[$intCptEnr]['Mois'] = $ligne['Mois'];
-    $arrActualite[$intCptEnr]['Annee'] = $ligne['Annee'];
-
-    //Recupere le chiffre du mois et renvoie le mois en texte
-    $arrMoisTexte = array( "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" );
-    $Mois_texte = $arrMoisTexte[$ligne['Mois'] - 1];
-    $arrArticle = explode(" ", $ligne['article']);
-
-    //Raccourcie le texte de l'actualite a 45 mots
-    if (count($arrArticle)>45) {
-        array_splice($arrArticle, 45, count($arrArticle));
-    }
-    $arrActualite[$intCptEnr]['article']=implode(" ", $arrArticle);
-
-    $arrActualite[$intCptEnr]['date'] = $ligne['Jour'] . ' ' . $Mois_texte . ' ' . $ligne['Annee'];
-
-    //Repeter un fetch pour recuperer les lignes de chaque article
-    $ligne=$pdosResultatActualite->fetch();
-
-    $nombreArticleAfficher = rand(3,5);
-
-}
-//On libère la requête principale
-$pdosResultatActualite->closeCursor();
-
-//Récupère les artistes à afficher de façon aléatoire
-$strRequete =  'SELECT id_artiste, nom_artiste
-	FROM t_artiste';
-
-//Initialisation de l'objet PDOStatement et exécution de la requête
-$pdosArtisteResultat = $pdoConnexion->prepare($strRequete);
-$pdosArtisteResultat->execute();
-
-$arrArtiste=array();
-$ligne=$pdosArtisteResultat->fetch();
-
-for($intCptEnr2=0;$intCptEnr2<$pdosArtisteResultat->rowCount();$intCptEnr2++){
-    $arrArtiste[$intCptEnr2]['id_artiste'] = $ligne['id_artiste'];
-    $arrArtiste[$intCptEnr2]['nom_artiste'] = $ligne['nom_artiste'];
-    $ligne=$pdosArtisteResultat->fetch();
-}
-
-$nombreArtisteAfficher = rand(3,5);
-
-//On libère la requête des styles
-$pdosArtisteResultat->closeCursor();
-
-$arrArtisteAleatoire = shuffle($arrArtiste);
-
-?>
-
 <!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
+<head class="entete">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>Festival OFF de Québec - Accueil</title>
+    <link rel="stylesheet" href="css/style-daren.css">
 </head>
+<?php include($niveauLISTE . "inc/fragments/header.inc.php") ?>
 <body>
+
 <main>
     <div class="banniere-conteneur">
         <h1>Festival OFF de Québec</h1>
