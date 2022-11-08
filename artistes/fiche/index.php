@@ -156,11 +156,11 @@ if($nbImages == 3){
                 srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
 
        <img class="img-principale-artiste"
-        src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']
-//        if($arrArtistes[0]['id_artiste'] == 5){
-//            ?><?php //}else{
-//            ?>_p__w540.jpg"<?php
-//       }?>
+        src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'];
+        if($arrArtistes[0]['id_artiste'] == 5){
+            ?>_p__w540.webp"<?php }else{
+            ?>_p__w540.jpg"<?php
+       }?>
         alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
     </picture>
 <div class="artiste-info">
@@ -205,12 +205,14 @@ if($nbImages == 3){
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
 <!--    <a class="list-link_artiste" href="--><?php //echo $niveau ?><!--fiche/index.php?id_artiste=--><?php //echo $arrArtistes[$cpt]['id_artiste'] ?><!--">-->
         <li class="suggestion_artiste">
+            <?php $filename = $niveau . 'images/photos_artistes/photosFormes/'. $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'];
+            if(file_exists($filename)){?>
             <img class="img-suggestion-artiste" src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste']
             //        if($arrArtistes[0]['id_artiste'] == 5){
             //            ?><?php //}else{
-            //            ?>_p__w360.jpg"<?php
-            //       }?>
+            //            ?>_p__w360.jpg"<?php echo 'test2'; var_dump(file_exists('../../images/photos_artistes/photosSecondaires/30_Koriass_0_w300.jpg'));?>
                  alt="Image de <?php echo $arrArtistesChoisis[$cpt]['nom_artiste'] ?>">
+            <?php } ?>
             <div class="info-artiste-suggere">
                 <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
                 <p class="provenance h4-fiche"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></p>
