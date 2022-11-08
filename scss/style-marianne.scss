@@ -26,12 +26,14 @@ body{
     margin-bottom: 50px;
   }
 }
-.h1-liste{
+.h1-artistes{
   text-align: center;
   @media(min-width: 800px) {
     position: relative;
-    top: 20px;
-    margin: 0 20px
+    top: -10px;
+    margin: 80px 20px 0 0;
+    text-align: left;
+
   }
 }
 .select_style{
@@ -84,45 +86,189 @@ body{
 
 /** AFFICHAGE ARTISTES **/
 
-.box_artiste{
-  margin: 20px;
-  padding:10px;
-  border: 4px solid $corail;
-  border-radius: 10px;
+.liste_artistes {
+  flex-wrap: wrap;
+  padding: 0px;
 
-}
+  @media (max-width: 799px) {
+    display: flex;
+  }
 
-.list-link_artiste{
-  @include nom_artistes;
-}
+  .liste-item_artistes {
+    width: 500px;
+    display: inline-block;
+    margin: auto;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    list-style: none;
+    border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-block;
+    border: solid 2px;
+    @media(min-width: 800px) {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
 
-.styleArt:nth-of-type(odd){
-  padding: 10px;
-  color: $bg-color;
-  background-color: $jaune;
-  width: 185px;
-  text-align: center;
-  border-radius: 18px;
-  text-transform: uppercase;
+    .picture_art {
+      padding-bottom: 0px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
+    }
+
+    .liste-info_artistes {
+      margin-left: 100px;
+
+      .styleArt {
+        border-radius: 30px;
+        font-size: 4rem;
+      }
+
+      .h2-artistes .list-link_artiste{
+        text-decoration: none;
+      }
+    }
+
+    &:nth-child(odd) {
+      border-color: $turquoise;
+      border-width: 6px;
+
+      .styleArt {
+        background-color: $corail;
+        max-width: 300px;
+        text-align: center;
+      }
+      .h2-artistes .list-link_artiste{
+        color: $rose;
+        transition: 0.5s;
+        &:hover{
+          color:$dore;
+          font-size: 4.4rem;
+        }
+        &:active{
+          color: $rose;
+        }
+      }
+
+      @media(max-width: 799px){
+        .h2-artistes{
+          max-width: 300px;
+          text-align: center;
+        }
+      }
+
+      @media(min-width: 800px){
+        .h2-artistes .list-link_artiste{
+          transition: 0.5s;
+          &:hover{
+            font-size: 7.3rem;
+
+          }
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      border-color: $corail;
+      border-width: 6px;
+
+      .styleArt {
+        background-color: $turquoise;
+        max-width: 300px;
+        text-align: center;
+      }
+      .h2-artistes .list-link_artiste{
+        color: $dore;
+        transition: 1s;
+        &:hover{
+          color:$rose;
+          font-size: 4.4rem;
+        }
+        &:active{
+          color: $dore;
+        }
+      }
+
+      @media(max-width: 799px){
+        .h2-artistes{
+          max-width: 300px;
+          text-align: center;
+        }
+      }
+      @media(min-width: 800px){
+        .h2-artistes .list-link_artiste{
+          transition: 1s;
+          &:hover{
+            font-size: 7.3rem;
+
+          }
+        }
+      }
+    }
+  }
+
+  .liste-item_artistes:nth-child(odd) {
+    @media(min-width: 800px) {
+      .picture_art {
+        grid-area: 1 / 2 / 3 / 3;
+      }
+      .liste-info_artistes {
+        grid-area: 1 / 1 / 3 / 2;
+      }
+    }
+  }
+
+  .liste-item_artistes:nth-child(even) {
+    @media(min-width: 800px) {
+      .picture_art {
+        grid-area: 1 / 1 / 3 / 2;
+      }
+      .liste-info_artistes {
+        grid-area: 1 / 2 / 3 / 3;
+      }
+    }
+  }
 }
 
 /** NAV SEQUENTIELLE **/
 
-.link_precedent, .link_suivant {
-   text-decoration: none;
-  color: white;
-}
 .link_precedent, .link_suivant{
-
+  max-height: 50px;
+  text-decoration: none;
+  color: white;
   background-color: $dore;
   width: auto;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
+  margin: 0 10px;
+}
+.link_number{
+  margin: 6px 4px 0 4px;
+  color: white;
+  &:hover{
+    color:$dore;
+  }
+  &:active{
+    color:white;
+  }
+  &:visited{
+    color:$jaune;
+  }
 }
 .nav-seq{
-  align-content: center;
+  display: flex;
+  justify-content: center;
   margin-top:60px ;
+}
+.numeroDePage{
+  float:right;
 }
 
 
@@ -146,13 +292,18 @@ body{
 }
 
 .box_sug{
-  margin: 20px;
+  margin: 0;
+  max-width: 300px;
   padding:10px;
   border: 4px solid $corail;
   border-radius: 10px;
 }
 
 @media (min-width:800px) {
+  .box_sug{
+    max-width: 500px;
+    margin: 20px;
+  }
 .suggestions{
   display: flex;
   flex-direction: row;
