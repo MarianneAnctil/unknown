@@ -37,7 +37,7 @@ abbr[title]{
   cursor:help;
 }
 abbr[title]:hover{
-  background-color: rgba(244, 161, 71, 0.25);
+  background-color: $bg-color;
 }
 
 /** Accessibilité
