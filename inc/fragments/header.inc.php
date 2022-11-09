@@ -1,6 +1,3 @@
-<?php
-$niveau="../../";
-?>
 <header>
     <a href="#contenu" class="visuallyhidden focusable">Allez au contenu</a>
     <nav class="nav" aria-label="Menu principal">

@@ -31,7 +31,7 @@
 
 /* Interactivite
    ========================================================================== */
-a {
+a{
   color: $turquoise;
   &:hover,
   &:active {
@@ -56,7 +56,7 @@ h1, h2, h3, p{
   @media(min-width: 800px){
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr) .5fr;
+    grid-template-rows: 1fr .7fr .5fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
   }
@@ -208,96 +208,104 @@ h1, h2, h3, p{
 }
 
 .suggestion {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0px;
-
-    .suggestion_artiste {
+    .list-link_artiste {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0px;
       width: 500px;
-      display: inline-block;
       margin: auto;
       padding: 10px 0px;
       margin-bottom: 30px;
       list-style: none;
       border-radius: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      display: inline-block;
       border: solid 2px;
-      @media(min-width: 800px) {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-      }
-
-      .img-suggestion-artiste {
-        padding-bottom: 0px;
+      @media(min-width: 800px){
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
+        width: 100%;
       }
-
-      .info-artiste-suggere {
-        margin-left: 100px;
-
-        .provenance {
-          border-radius: 30px;
+      .suggestion_artiste {
+        @media(min-width: 800px) {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(1, 1fr);
+          grid-column-gap: 0px;
+          grid-row-gap: 0px;
         }
 
-        .nom-artiste {
-          font-size: 5.5rem;
-          @media(min-width: 800px) {
-            font-size: 7.5rem;
+        .img-suggestion-artiste {
+          padding-bottom: 0px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 90%;
+        }
+
+        .info-artiste-suggere {
+          margin-left: 60px;
+          padding: 0px 10px;
+
+          .provenance {
+            border-radius: 30px;
+          }
+
+          .nom-artiste {
+            font-size: 5.5rem;
+            @media(min-width: 800px) {
+              font-size: 7.5rem;
+            }
+          }
+        }
+
+
+    &:nth-child(odd) {
+          border-color: $turquoise;
+          border-width: 6px;
+
+          .provenance {
+            background-color: $corail;
+            max-width: 300px;
+            text-align: center;
+          }
+        }
+
+    &:nth-child(even) {
+      border-color: $corail;
+      border-width: 6px;
+
+      .provenance {
+        background-color: $turquoise;
+        max-width: 300px;
+        text-align: center;
           }
         }
       }
-
-      &:nth-child(odd) {
-        border-color: $turquoise;
-        border-width: 6px;
-
-        .provenance {
-          background-color: $corail;
-          max-width: 300px;
-          text-align: center;
-        }
-      }
-
-      &:nth-child(even) {
-        border-color: $corail;
-        border-width: 6px;
-
-        .provenance {
-          background-color: $turquoise;
-          max-width: 300px;
-          text-align: center;
-        }
-      }
     }
 
-    .suggestion_artiste:nth-child(odd) {
-      @media(min-width: 800px) {
-        .img-suggestion-artiste {
-          grid-area: 1 / 2 / 3 / 3;
-        }
-        .info-artiste-suggere {
-          grid-area: 1 / 1 / 3 / 2;
-        }
-      }
-    }
 
-    .suggestion_artiste:nth-child(even) {
-      @media(min-width: 800px) {
-        .img-suggestion-artiste {
-          grid-area: 1 / 1 / 3 / 2;
+      .list-link_artiste:nth-child(odd) {
+        @media(min-width: 800px) {
+            .img-suggestion-artiste {
+              grid-area: 1 / 2 / 3 / 3;
+            }
+
+            .info-artiste-suggere {
+              grid-area: 1 / 1 / 3 / 2;
+            }
+          }
         }
-        .info-artiste-suggere {
-          grid-area: 1 / 2 / 3 / 3;
+
+      .list-link_artiste:nth-child(even) {
+        @media(min-width: 800px) {
+          .list-link_artiste {
+            .img-suggestion-artiste {
+              grid-area: 1 / 1 / 3 / 2;
+            }
+
+            .info-artiste-suggere {
+              grid-area: 1 / 2 / 3 / 3;
+            }
+          }
         }
       }
-    }
   }
