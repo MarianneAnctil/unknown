@@ -151,7 +151,7 @@ if($nbImages == 3){
                 srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
 
        <img src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'];
-        if($arrArtistes[0]['id_artiste'] == 5){
+        if($arrArtistes[0]['id_artiste'] == 3){
             ?>_p__w540.webp"<?php }else{
             ?>_p__w540.jpg"<?php
        }?>
