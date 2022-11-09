@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/**
+ * @author COLLECTIF - @TIMCSF
+ *
+ * TABLE DES MATIERES
+ * Normalize
+ * Utilitaires
+ * Typo
+ * Grille
+ * Menu
+ * Mise en page
+ *** Pied de page
+ */
+
+/* Normalize
+   ========================================================================== */
+@import "base/normalize";
+
+/* Utilitaires
+   ========================================================================== */
+@import "base/utilitaires";
+
+/* Charte typographique
+   ========================================================================== */
+@import "base/typo";
+
+/* Grille
+   ========================================================================== */
+@import "base/grille";
+   
+* {
+    color: white;
+}
+
+.page {
+    margin: auto;
+    width: 80%;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+.banniere-conteneur {
+    position: relative;
+    text-align: center;
+    border-radius: 20px;
+    border: 4px solid $corail;
+    padding: 1%;
+
+    h1 {
+        width: 60%;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1;
+    }
+
+    h2 {
+        width: 70%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.banniere {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+}
+
+section {
+    h3 {
+        text-align: center;
+    }
+}
+
+.liste-lieu {
+    list-style: none;
+}
+
+.lieu {
+    width: max-content;
+    margin: auto;
+    border: 4px solid $corail;
+    border-radius: 20px;
+}
+
+.lieu__lien {
+
+    &:hover, &:visited {
+        border-color: $rose;
+    }
+
+    &:focus {
+        outline: 4px solid white;
+    }
+
+    img {
+        padding: 2%;
+        display: block;
+        border-radius: 20px;
+    }
+}
+
+.article__lien {
+    padding: 10px 25px 10px 25px;
+    border-radius: 5px;
+    border-bottom: 3px solid $corail;
+    background-color: $turquoise;
+    text-decoration: none;
+
+    &:hover {
+        border-color: $turquoise;
+        background-color: $corail;
+    }
+}
+
+.article img {
+    border-radius: 20px;
+}

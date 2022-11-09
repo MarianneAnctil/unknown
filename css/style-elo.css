@@ -355,7 +355,7 @@ abbr[title] {
 }
 
 abbr[title]:hover {
-  background-color: #1C1C1C;
+  background-color: rgba(244, 161, 71, 0.25);
 }
 
 /** Accessibilité
@@ -427,21 +427,13 @@ abbr[title]:hover {
   src: url(../polices/Karla/Karla-VariableFont_wght.ttf) format("ttf");
 }
 h1,
-.h1-acceuil,
-.h1-artistes,
-.h1-fiche,
+.h1,
 h2,
-.h2-acceuil,
-.h2-artistes,
-.h2-fiche,
+.h2,
 h3,
-.h3-acceuil,
-.h3-artistes,
-.h3-fiche,
+.h3,
 h4,
-.h4-acceuil,
-.h4-artistes,
-.h4-fiche {
+.h4 {
   font-family: "Black Han Sans", sans-serif;
 }
 
@@ -568,13 +560,13 @@ h2,
 @media (min-width: 600px) {
   h2,
 .h2-artistes { /* = 70px */
-    font-size: 5rem;
+    font-size: 7rem;
   }
 }
 @media (min-width: 800px) {
   h2,
 .h2-artistes { /* = 100px */
-    font-size: 7rem;
+    font-size: 10rem;
   }
 }
 h3,
@@ -596,8 +588,8 @@ h3,
 }
 /* Typographie FICHE D'ARTISTES */
 h1,
-.h1-fiche { /* = 70px */
-  font-size: 7rem;
+.h1-fiche { /* = 60px */
+  font-size: 6rem;
 }
 
 @media (min-width: 600px) {
@@ -613,8 +605,8 @@ h1,
   }
 }
 h2,
-.h2-fiche { /* = 50px */
-  font-size: 5rem;
+.h2-fiche { /* = 30px */
+  font-size: 3rem;
 }
 
 @media (min-width: 600px) {
@@ -665,80 +657,6 @@ h4,
 }
 /* Grille
    ========================================================================== */
-/*** Classe conteneur pour le centrage et l'affichage de la grille en arrière-plan ***/
-@media (min-width: 800px) {
-  .conteneur {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 0;
-    /* Grille 12 colonnes en arrière-plan - Mettre en commentaires après usage */
-    /*background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(0, 0, 255, 0.2);" /%3E%3Cstop offset="100%" style="stop-color:rgba(0, 0, 255, 0.1);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="6.7796610169%" height="100%"/%3E%3Crect x="8.4745762712%" width="6.7796610169%" height="100%"/%3E%3Crect x="16.9491525424%" width="6.7796610169%" height="100%"/%3E%3Crect x="25.4237288136%" width="6.7796610169%" height="100%"/%3E%3Crect x="33.8983050847%" width="6.7796610169%" height="100%"/%3E%3Crect x="42.3728813559%" width="6.7796610169%" height="100%"/%3E%3Crect x="50.8474576271%" width="6.7796610169%" height="100%"/%3E%3Crect x="59.3220338983%" width="6.7796610169%" height="100%"/%3E%3Crect x="67.7966101695%" width="6.7796610169%" height="100%"/%3E%3Crect x="76.2711864407%" width="6.7796610169%" height="100%"/%3E%3Crect x="84.7457627119%" width="6.7796610169%" height="100%"/%3E%3Crect x="93.2203389831%" width="6.7796610169%" height="100%"/%3E%3C/svg%3E') no-repeat scroll;*/
-  }
-}
-/*** Conteneur flex utile autant pour l'écran étroit que l'écran large ***/
-.flxRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* valeur par défaut */
-}
-
-/*** Classes pour dimensionner les blocs sur l'écran large ***/
-@media (min-width: 800px) {
-  /*** Classe de base pour l'intégration en flexbox ***/
-  .rangee {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* valeur par défaut */
-  }
-  .cols_1_de_12 {
-    flex-basis: 6.5%;
-  }
-  .cols_2_de_12 {
-    flex-basis: 15%;
-  }
-  .cols_3_de_12 {
-    flex-basis: 23.5%;
-  }
-  .cols_4_de_12 {
-    flex-basis: 32%;
-  }
-  .cols_5_de_12 {
-    flex-basis: 40.5%;
-  }
-  .cols_6_de_12 {
-    flex-basis: 49%;
-  }
-  .cols_7_de_12 {
-    flex-basis: 57.5%;
-  }
-  .cols_8_de_12 {
-    flex-basis: 66%;
-  }
-  .cols_9_de_12 {
-    flex-basis: 74.5%;
-  }
-  .cols_10_de_12 {
-    flex-basis: 83%;
-  }
-  .cols_11_de_12 {
-    flex-basis: 91.5%;
-  }
-  .cols_12_de_12 {
-    flex-basis: 100%;
-  }
-}
-/* Interactivite
-   ========================================================================== */
-a {
-  color: #45A2A4;
-}
-a:hover, a:active {
-  color: #E9BA40;
-}
-a:focus, a:visited {
-  border: #E9BA40;
-}
-
 /* Mise en page
    ========================================================================== */
 body {
@@ -749,39 +667,10 @@ h1, h2, h3, p {
   color: white;
 }
 
-@media (min-width: 800px) {
-  .fiche {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr) 0.5fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-}
-
-.img-principale-artiste {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-}
-@media (min-width: 800px) {
-  .img-principale-artiste {
-    grid-area: 1/2/3/3;
-  }
-}
-
-@media (min-width: 800px) {
-  .artiste-info {
-    grid-area: 1/1/3/2;
-  }
-}
-.artiste-info .info-sup {
-  padding: 0px;
-}
 .artiste-info .info-sup li {
   list-style: none;
 }
+
 .artiste-info .spectacle {
   display: grid;
   grid-template-areas: "date heure" "salle";
@@ -789,36 +678,42 @@ h1, h2, h3, p {
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  padding: 0px;
 }
+
 .artiste-info .spectacle li {
   list-style: none;
   border-radius: 30px;
   text-align: center;
   color: black;
-  font-family: "Black Han Sans", sans-serif;
-  font-weight: bold;
 }
+
 .artiste-info .spectacle li p {
   color: black;
 }
+
 .artiste-info .spectacle li.date {
   background-color: #CE9133;
   grid-area: 1/1/2/2;
 }
+
 .artiste-info .spectacle li.heure {
   background-color: #E06251;
   grid-area: 1/2/2/3;
 }
+
 .artiste-info .spectacle li.salle {
   background-color: #45A2A4;
   grid-area: 2/1/3/3;
 }
 
-@media (min-width: 800px) {
-  .description {
-    grid-area: 3/1/4/3;
-  }
+.passeport {
+  background-color: #45A2A4;
+  box-shadow: 0px 5px 0px #E06251;
+  border-radius: 5px;
+  border: none;
+  height: 45px;
+  width: 280px;
+  color: white;
 }
 
 .mozaique-image {
@@ -827,61 +722,11 @@ h1, h2, h3, p {
   flex-wrap: wrap;
   margin-bottom: 40px;
 }
-@media (min-width: 800px) {
-  .mozaique-image {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-  .mozaique-image.trois-images {
-    display: flex;
-  }
-  .mozaique-image.trois-images .mozaique-image_item {
-    display: inline-block;
-    margin: auto;
-    padding: 10px 0px;
-  }
-  .mozaique-image.quatre-images .mozaique-image_item:first-child {
-    grid-area: 1/1/4/4;
-  }
-  .mozaique-image.quatre-images .mozaique-image_item:nth-child(2) {
-    grid-area: 1/4/4/7;
-  }
-  .mozaique-image.quatre-images .mozaique-image_item:nth-child(3) {
-    grid-area: 4/1/7/4;
-  }
-  .mozaique-image.quatre-images .mozaique-image_item:last-child {
-    grid-area: 4/4/7/7;
-  }
-  .mozaique-image.cinq-images .mozaique-image_item:first-child {
-    grid-area: 1/1/4/3;
-  }
-  .mozaique-image.cinq-images .mozaique-image_item:nth-child(2) {
-    grid-area: 1/3/4/5;
-  }
-  .mozaique-image.cinq-images .mozaique-image_item:nth-child(3) {
-    grid-area: 1/5/4/7;
-  }
-  .mozaique-image.cinq-images .mozaique-image_item:nth-child(4) {
-    grid-area: 4/2/7/4;
-  }
-  .mozaique-image.cinq-images .mozaique-image_item:last-child {
-    grid-area: 4/4/7/6;
-  }
-}
+
 .mozaique-image_item {
   display: inline-block;
   margin: auto;
   padding: 10px 0px;
-}
-
-.artiste-sug-title {
-  display: block;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .suggestion {
@@ -889,8 +734,8 @@ h1, h2, h3, p {
   flex-wrap: wrap;
   padding: 0px;
 }
+
 .suggestion .suggestion_artiste {
-  width: 500px;
   display: inline-block;
   margin: auto;
   padding: 10px 0px;
@@ -902,70 +747,40 @@ h1, h2, h3, p {
   display: inline-block;
   border: solid 2px;
 }
-@media (min-width: 800px) {
-  .suggestion .suggestion_artiste {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-}
+
 .suggestion .suggestion_artiste .img-suggestion-artiste {
+  margin: 20px;
   padding-bottom: 0px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
 }
+
 .suggestion .suggestion_artiste .info-artiste-suggere {
-  margin-left: 100px;
+  margin-left: 20px;
 }
+
 .suggestion .suggestion_artiste .info-artiste-suggere .provenance {
   border-radius: 30px;
 }
-.suggestion .suggestion_artiste .info-artiste-suggere .nom-artiste {
-  font-size: 5.5rem;
-}
-@media (min-width: 800px) {
-  .suggestion .suggestion_artiste .info-artiste-suggere .nom-artiste {
-    font-size: 7.5rem;
-  }
-}
+
 .suggestion .suggestion_artiste:nth-child(odd) {
   border-color: #45A2A4;
-  border-width: 6px;
 }
+
 .suggestion .suggestion_artiste:nth-child(odd) .provenance {
   background-color: #E06251;
-  max-width: 300px;
+  max-width: 200px;
   text-align: center;
 }
+
 .suggestion .suggestion_artiste:nth-child(even) {
   border-color: #E06251;
-  border-width: 6px;
 }
+
 .suggestion .suggestion_artiste:nth-child(even) .provenance {
   background-color: #45A2A4;
-  max-width: 300px;
+  max-width: 200px;
   text-align: center;
 }
-@media (min-width: 800px) {
-  .suggestion .suggestion_artiste:nth-child(odd) .img-suggestion-artiste {
-    grid-area: 1/2/3/3;
-  }
-  .suggestion .suggestion_artiste:nth-child(odd) .info-artiste-suggere {
-    grid-area: 1/1/3/2;
-  }
-}
-@media (min-width: 800px) {
-  .suggestion .suggestion_artiste:nth-child(even) .img-suggestion-artiste {
-    grid-area: 1/1/3/2;
-  }
-  .suggestion .suggestion_artiste:nth-child(even) .info-artiste-suggere {
-    grid-area: 1/2/3/3;
-  }
-}
+
+/*# sourceMappingURL=style-elo.css.map */
 
 /*# sourceMappingURL=style-elo.css.map */
