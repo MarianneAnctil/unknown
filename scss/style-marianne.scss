@@ -98,7 +98,7 @@ body{
     width: 500px;
     display: inline-block;
     margin: auto;
-    padding: 10px 0px;
+    padding: 10px 0;
     margin-bottom: 30px;
     list-style: none;
     border-radius: 30px;
@@ -110,12 +110,12 @@ body{
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
+      grid-column-gap: 0;
+      grid-row-gap: 0;
     }
 
     .picture_art {
-      padding-bottom: 0px;
+      padding-bottom: 0;
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -185,7 +185,7 @@ body{
       }
       .h2-artistes .list-link_artiste{
         color: $dore;
-        transition: 1s;
+        transition: 0.5s;
         &:hover{
           color:$rose;
           font-size: 4.4rem;
@@ -203,7 +203,7 @@ body{
       }
       @media(min-width: 800px){
         .h2-artistes .list-link_artiste{
-          transition: 1s;
+          transition: 0.5s;
           &:hover{
             font-size: 7.3rem;
 
@@ -271,7 +271,6 @@ body{
   float:right;
 }
 
-
 /** SUGGESTIONS **/
 .h2_sug{
   color: $rose;
@@ -280,7 +279,27 @@ body{
 
 .list-link_sug{
   @include nom_artistes;
+  transition: 0.5s;
+  &:hover{
+    color:$rose;
+    font-size: 3.8rem;
+  }
+  &:active{
+    color: $dore;
+  }
 }
+
+@media(min-width: 800px){
+  .list-link_sug{
+    transition: 0.5s;
+    &:hover{
+      color:$rose;
+      font-size: 4.8rem;
+    }
+  }
+
+}
+
 .styleArt_sug:nth-of-type(odd){
   padding: 6px;
   color: $bg-color;

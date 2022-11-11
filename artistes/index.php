@@ -303,13 +303,33 @@ $pdosResultat->closeCursor();
             for ($intCptSug = 0;
             $intCptSug < count($arrArtisteChoisi);
             $intCptSug++){
+                if($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3) {
+                    $strNomFichier = $niveauLISTE . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.webp';
+                }else{
+                    $strNomFichier = $niveauLISTE . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.jpg';
+                }
+
             ?>
             <div class="box_sug">
-                <picture class="picture_art">
-                    <source media="(min-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg">
-                    <source media="(max-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg">
-                    <img src="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.jpg" alt="Photo de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" style="width:auto;">
-                </picture>
+                <?php  if(file_exists($strNomFichier)){ ?>
+                    <a href="fiche/index.php?id_artiste=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>"> <picture class="picture_art">
+
+
+                            <source media="(min-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
+                            <source media="(max-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
+                            <img src="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>" alt="Photo de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" style="width:auto;">
+                        </picture>
+                    </a>
+                <?php }else{ ?>
+                <a href="fiche/index.php?id_artiste=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>"> <picture class="picture_art">
+
+
+                        <source media="(min-width:800px)" src="https://via.placeholder.com/360x360/ff0000">
+                        <source media="(max-width:800px)" src="https://via.placeholder.com/360x360/ff0000">
+                        <img src="https://via.placeholder.com/360x360/ff0000" alt="Photo de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" style="width:auto;">
+                    </picture>
+                </a>
+                <?php  }  ?>
                 <h3 class="h3-artistes">
                     <a class="list-link_sug"
                        href="fiche/index.php?id_artiste=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>">
