@@ -214,8 +214,8 @@ if($nbImages == 3){
     <h2 class="artiste-sug-title h2-fiche">Artistes suggérés</h2>
 <ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
-        <a class="list-link_artiste" href="<?php echo $niveau ?>artistes/fiche/index.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]['id_artiste'] ?>">
             <li class="suggestion_artiste">
+                <a class="list-link_artiste" href="<?php echo $niveau ?>artistes/fiche/index.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]['id_artiste'] ?>">
                     <?php $filename = $niveau . 'images/photos_artistes/photosFormes/'. $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';
                     if(file_exists($filename)){?>
                     <picture class="img-suggestion-artiste">
@@ -234,8 +234,8 @@ if($nbImages == 3){
                 <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
                 <p class="provenance h4-fiche"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></p>
             </div>
+                </a>
             </li>
-        </a>
     <?php }?>
 </ul>
 </main>
