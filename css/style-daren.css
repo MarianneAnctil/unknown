@@ -801,7 +801,7 @@ section h3 {
 }
 
 .lieu__lien:hover, .lieu__lien:visited {
-  border-color: #E59D9B;
+  border-color: #e59d9b;
 }
 .lieu__lien:focus {
   outline: 4px solid white;

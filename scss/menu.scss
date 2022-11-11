@@ -1,5 +1,5 @@
 /**
- * @author Prénom Nom courriel
+ * @author Daren Garneau-Dionne
 **/
 
 /**
@@ -216,13 +216,13 @@
   margin: 20px 10% 0 0;
 
   &:hover {
-      border-color: $turquoise;
-      background-color: $corail;
+    border-color: $turquoise;
+    background-color: $corail;
   }
 }
 
- /* MENU HAMBURGER */
- .menu-btn {
+/* MENU HAMBURGER */
+.menu-btn {
   position: relative;
   display: flex;
   justify-content: right;
