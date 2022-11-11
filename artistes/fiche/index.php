@@ -137,7 +137,6 @@ if($nbImages == 3){
 </head>
 <?php include($niveauFiche . "inc/fragments/header.inc.php") ?>
 <body class="body-fiche">
-<a href="#contenu" class="screen-reader-only focusable sauter">Allez au contenu</a>
 
 <main id="contenu" class="conteneur">
 <div class="fiche">
@@ -152,9 +151,9 @@ if($nbImages == 3){
 
        <img src="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'];
         if($arrArtistes[0]['id_artiste'] == 3){
-            ?>_p__w540.webp"<?php }else{
-            ?>_p__w540.jpg"<?php
-       }?>
+            "_p__w540.webp"; }else{
+            "_p__w540.jpg";
+       }?>"
         alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
     </picture>
     <?php }else{ ?>
@@ -184,21 +183,23 @@ if($nbImages == 3){
         <a class="h3-fiche lien-artiste" href="<?php echo $arrArtistes[0]['site_web_artiste'];?>">Site web de l'artiste</a>
     </li>
 </ul>
-        <ul class="spectacle">
-            <?php
+    <?php if(count($arrLieu)>1){?>
+        <ul class="spectacle spectacle1">
+            <?php }else{?>
+            <ul class="spectacle spectacle0">
+            <?php }
             for($cptEnr=0;$cptEnr<count($arrLieu);$cptEnr++){?>
-            <li class="date">
+            <li class="date<?php echo $cptEnr?>">
                 <p><?php echo $arrLieu[$cptEnr]['date_et_heure'];?></p>
             </li>
-            <li class="heure">
+            <li class="heure<?php echo $cptEnr?>">
                 <p><?php echo $arrLieu[$cptEnr]['heure']?>h<?php echo $arrLieu[$cptEnr]['minute']?></p>
             </li>
-            <li class="salle">
+            <li class="salle<?php echo $cptEnr?>">
                 <p><?php echo $arrLieu[$cptEnr]['nom_lieu'];}?></p>
             </li>
         </ul>
 </div>
-<!--    <button class="passeport">Acheter mon passeport</button>-->
     <p class="description"><?php echo $arrArtistes[0]['description'];?></p>
 </div>
     <div class="mozaique-image <?php echo $classeConteneurMozaique?>">
@@ -228,7 +229,7 @@ if($nbImages == 3){
                 <img class="img-suggestion-artiste" src="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?> " alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
              </picture>
                     <?php }else{?>
-                    <img class="img-suggestion-artiste" src="https://via.placeholder.com/360x240/" alt=" ">-->
+                    <img class="img-suggestion-artiste" src="https://via.placeholder.com/360x240/" alt=" ">
                     <?php } ?>
                     <div class="info-artiste-suggere">
                 <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
@@ -242,6 +243,6 @@ if($nbImages == 3){
 <footer>
     <?php include($niveauFiche . "inc/fragments/footer.inc.php") ?>
 </footer>
-<script src="../../js/menu.js"></script>
+<script src="<?php echo $niveauFiche ?>js/menu.js"></script>
 </body>
 </html>
