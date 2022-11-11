@@ -55,7 +55,7 @@ h3,
 h4,
 .h4-acceuil,
 .h4-artistes,
-.h4-fiche, {
+.h4-fiche {
   font-family: 'Black Han Sans', sans-serif;
 }
 body,
@@ -280,5 +280,17 @@ h4,
   h4,
   .h4-fiche { /* = 34px */
     font-size: 3.4rem;
+  }
+}
+
+.nav__list-lien { /* = 34px */
+  font-size: 2rem;
+
+  @media (min-width: 600px) {
+      font-size: 2.4rem;
+  }
+  
+  @media (min-width: 800px) {/* = 34px */
+    font-size: 2.4rem;
   }
 }
