@@ -31,18 +31,35 @@
 
 /* Interactivite
    ========================================================================== */
-a{
+a:not(.list-link_artiste .lien-passeport){
   color: $turquoise;
   &:hover,
   &:active {
     color: $jaune;
   }
 
-  &:focus,
+  &:link,
   &:visited {
     border: $jaune;
   }
 }
+a .list-link_artiste {
+    transition: 0.5s;
+
+    &:hover {
+      color: $dore;
+      font-size: 4.4rem;
+    }
+
+    &:active {
+      color: $rose;
+    }
+
+    &:link,
+    &:visited {
+      border: $jaune;
+    }
+  }
 
 /* Mise en page
    ========================================================================== */
@@ -208,30 +225,46 @@ h1, h2, h3, p{
 }
 
 .suggestion {
+  .suggestion_artiste {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    width: 500px;
+    margin: auto;
+    padding: 10px 0px;
+    margin-bottom: 30px;
+    list-style: none;
+    border-radius: 30px;
+    border: solid 2px;
+    @media(min-width: 800px) {
+      display: block;
+      width: 100%;
+    }
+
     .list-link_artiste {
       display: flex;
       flex-wrap: wrap;
       padding: 0px;
-      width: 500px;
-      margin: auto;
       padding: 10px 0px;
       margin-bottom: 30px;
-      list-style: none;
-      border-radius: 30px;
-      border: solid 2px;
-      @media(min-width: 800px){
-        display: block;
+      .img-suggestion-artiste {
         width: 100%;
+        margin: auto;
       }
-      .suggestion_artiste {
-        @media(min-width: 800px) {
-          width: 100%;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          grid-template-rows: repeat(1, 1fr);
-          grid-column-gap: 0px;
-          grid-row-gap: 0px;
-        }
+      .provenance {
+        border-radius: 30px;
+      }
+      .info-artiste-suggere {
+        margin-left: 60px;
+        padding: 0px 10px;
+      }
+      @media(min-width: 800px) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
 
         .img-suggestion-artiste {
           padding-bottom: 0px;
@@ -239,15 +272,13 @@ h1, h2, h3, p{
           margin-left: auto;
           margin-right: auto;
           width: 90%;
+          border-radius: 10px;
         }
 
         .info-artiste-suggere {
           margin-left: 60px;
           padding: 0px 10px;
-
-          .provenance {
-            border-radius: 30px;
-          }
+        }
 
           .nom-artiste {
             font-size: 5.5rem;
@@ -256,18 +287,19 @@ h1, h2, h3, p{
             }
           }
         }
+      }
 
 
     &:nth-child(odd) {
-          border-color: $turquoise;
-          border-width: 6px;
+      border-color: $turquoise;
+      border-width: 6px;
 
-          .provenance {
-            background-color: $corail;
-            max-width: 300px;
-            text-align: center;
-          }
-        }
+      .provenance {
+        background-color: $corail;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
 
     &:nth-child(even) {
       border-color: $corail;
@@ -277,10 +309,10 @@ h1, h2, h3, p{
         background-color: $turquoise;
         max-width: 300px;
         text-align: center;
-          }
-        }
       }
     }
+  }
+}
 
 
       .list-link_artiste:nth-child(odd) {
@@ -308,4 +340,111 @@ h1, h2, h3, p{
           }
         }
       }
-  }
+
+
+
+
+
+
+//.suggestion {
+//    .list-link_artiste {
+//      display: flex;
+//      flex-wrap: wrap;
+//      padding: 0px;
+//      width: 500px;
+//      margin: auto;
+//      padding: 10px 0px;
+//      margin-bottom: 30px;
+//      list-style: none;
+//      border-radius: 30px;
+//      border: solid 2px;
+//      @media(min-width: 800px){
+//        display: block;
+//        width: 100%;
+//      }
+//      .suggestion_artiste {
+//        @media(min-width: 800px) {
+//          width: 100%;
+//          display: grid;
+//          grid-template-columns: repeat(2, 1fr);
+//          grid-template-rows: repeat(1, 1fr);
+//          grid-column-gap: 0px;
+//          grid-row-gap: 0px;
+//        }
+//
+//        .img-suggestion-artiste {
+//          padding-bottom: 0px;
+//          display: block;
+//          margin-left: auto;
+//          margin-right: auto;
+//          width: 90%;
+//        }
+//
+//        .info-artiste-suggere {
+//          margin-left: 60px;
+//          padding: 0px 10px;
+//
+//          .provenance {
+//            border-radius: 30px;
+//          }
+//
+//          .nom-artiste {
+//            font-size: 5.5rem;
+//            @media(min-width: 800px) {
+//              font-size: 7.5rem;
+//            }
+//          }
+//        }
+//
+//
+//    &:nth-child(odd) {
+//          border-color: $turquoise;
+//          border-width: 6px;
+//
+//          .provenance {
+//            background-color: $corail;
+//            max-width: 300px;
+//            text-align: center;
+//          }
+//        }
+//
+//    &:nth-child(even) {
+//      border-color: $corail;
+//      border-width: 6px;
+//
+//      .provenance {
+//        background-color: $turquoise;
+//        max-width: 300px;
+//        text-align: center;
+//          }
+//        }
+//      }
+//    }
+//
+//
+//      .list-link_artiste:nth-child(odd) {
+//        @media(min-width: 800px) {
+//            .img-suggestion-artiste {
+//              grid-area: 1 / 2 / 3 / 3;
+//            }
+//
+//            .info-artiste-suggere {
+//              grid-area: 1 / 1 / 3 / 2;
+//            }
+//          }
+//        }
+//
+//      .list-link_artiste:nth-child(even) {
+//        @media(min-width: 800px) {
+//          .list-link_artiste {
+//            .img-suggestion-artiste {
+//              grid-area: 1 / 1 / 3 / 2;
+//            }
+//
+//            .info-artiste-suggere {
+//              grid-area: 1 / 2 / 3 / 3;
+//            }
+//          }
+//        }
+//      }
+//  }

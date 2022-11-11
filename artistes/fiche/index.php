@@ -214,8 +214,8 @@ if($nbImages == 3){
     <h2 class="artiste-sug-title h2-fiche">Artistes suggérés</h2>
 <ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
-        <a class="list-link_artiste" href="<?php echo $niveau ?>artistes/fiche/index.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]['id_artiste'] ?>">
             <li class="suggestion_artiste">
+                <a class="list-link_artiste" href="<?php echo $niveau ?>artistes/fiche/index.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]['id_artiste'] ?>">
                     <?php $filename = $niveau . 'images/photos_artistes/photosFormes/'. $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';
                     if(file_exists($filename)){?>
                     <picture class="img-suggestion-artiste">
@@ -226,7 +226,7 @@ if($nbImages == 3){
                         srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w540.jpg';?> ">
 
                 <img class="img-suggestion-artiste" src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?> " alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
-            </picture>
+             </picture>
                     <?php }else{?>
                     <img class="img-suggestion-artiste" src="https://via.placeholder.com/360x240/" alt=" ">
                     <?php } ?>
@@ -234,11 +234,14 @@ if($nbImages == 3){
                 <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
                 <p class="provenance h4-fiche"><?php echo $arrArtistesChoisis[$cpt]['provenance'];?></p>
             </div>
+                </a>
             </li>
-        </a>
     <?php }?>
 </ul>
 </main>
-<?php include($niveau . "inc/fragments/footer.inc.php");?>
+<footer>
+    <?php include($niveau . "inc/fragments/footer.inc.php");?>
+</footer>
+<script src="<?php echo ($niveau ."js/menu.js")?> "></script>
 </body>
 </html>
