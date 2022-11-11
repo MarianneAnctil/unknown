@@ -1,3 +1,4 @@
+<?php $niveau = './';?>
 <!doctype html>
 <html lang="fr">
 <head class="entete">
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="css/style-daren.css">
 </head>
 <body>
-    <?php include($niveauLISTE . "inc/fragments/header.inc.php") ?>        
+    <?php include($niveau . "inc/fragments/header.inc.php") ?>
     <div class="page">
         <main id="contenu">
             <div class="banniere-conteneur">
