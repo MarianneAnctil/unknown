@@ -31,30 +31,36 @@
 
 /* Interactivite
    ========================================================================== */
-//a{
-//  color: $turquoise;
-//  &:hover,
-//  &:active {
-//    color: $jaune;
-//  }
-//
-//  &:focus,
-//  &:visited {
-//    border: $jaune;
-//  }
-//}
-//a.list-link_artiste {
-//  //color: transparent;
-//  &:hover,
-//  &:active {
-//    color: $jaune;
-//  }
-//
-//  &:focus,
-//  &:visited {
-//    border: $jaune;
-//  }
-//}
+a:not(.list-link_artiste){
+  color: $turquoise;
+  &:hover,
+  &:active {
+    color: $jaune;
+  }
+
+  &:link,
+  &:visited {
+    border: $jaune;
+  }
+}
+a .list-link_artiste {
+    color: transparent;
+    transition: 0.5s;
+
+    &:hover {
+      color: $dore;
+      font-size: 4.4rem;
+    }
+
+    &:active {
+      color: $rose;
+    }
+
+    &:link,
+    &:visited {
+      border: $jaune;
+    }
+  }
 
 /* Mise en page
    ========================================================================== */
@@ -246,6 +252,13 @@ h1, h2, h3, p{
         width: 100%;
         margin: auto;
       }
+      .provenance {
+        border-radius: 30px;
+      }
+      .info-artiste-suggere {
+        margin-left: 60px;
+        padding: 0px 10px;
+      }
       @media(min-width: 800px) {
         width: 100%;
         display: grid;
@@ -266,10 +279,7 @@ h1, h2, h3, p{
         .info-artiste-suggere {
           margin-left: 60px;
           padding: 0px 10px;
-
-          .provenance {
-            border-radius: 30px;
-          }
+        }
 
           .nom-artiste {
             font-size: 5.5rem;
@@ -279,62 +289,58 @@ h1, h2, h3, p{
           }
         }
       }
+
+
+    &:nth-child(odd) {
+      border-color: $turquoise;
+      border-width: 6px;
+
+      .provenance {
+        background-color: $corail;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+
+    &:nth-child(even) {
+      border-color: $corail;
+      border-width: 6px;
+
+      .provenance {
+        background-color: $turquoise;
+        max-width: 300px;
+        text-align: center;
+      }
     }
   }
 }
-//
-//
-//    &:nth-child(odd) {
-//          border-color: $turquoise;
-//          border-width: 6px;
-//
-//          .provenance {
-//            background-color: $corail;
-//            max-width: 300px;
-//            text-align: center;
-//          }
-//        }
-//
-//    &:nth-child(even) {
-//      border-color: $corail;
-//      border-width: 6px;
-//
-//      .provenance {
-//        background-color: $turquoise;
-//        max-width: 300px;
-//        text-align: center;
-//          }
-//        }
-//      }
-//    }
-//
-//
-//      .list-link_artiste:nth-child(odd) {
-//        @media(min-width: 800px) {
-//            .img-suggestion-artiste {
-//              grid-area: 1 / 2 / 3 / 3;
-//            }
-//
-//            .info-artiste-suggere {
-//              grid-area: 1 / 1 / 3 / 2;
-//            }
-//          }
-//        }
-//
-//      .list-link_artiste:nth-child(even) {
-//        @media(min-width: 800px) {
-//          .list-link_artiste {
-//            .img-suggestion-artiste {
-//              grid-area: 1 / 1 / 3 / 2;
-//            }
-//
-//            .info-artiste-suggere {
-//              grid-area: 1 / 2 / 3 / 3;
-//            }
-//          }
-//        }
-//      }
-//  }
+
+
+      .list-link_artiste:nth-child(odd) {
+        @media(min-width: 800px) {
+            .img-suggestion-artiste {
+              grid-area: 1 / 2 / 3 / 3;
+            }
+
+            .info-artiste-suggere {
+              grid-area: 1 / 1 / 3 / 2;
+            }
+          }
+        }
+
+      .list-link_artiste:nth-child(even) {
+        @media(min-width: 800px) {
+          .list-link_artiste {
+            .img-suggestion-artiste {
+              grid-area: 1 / 1 / 3 / 2;
+            }
+
+            .info-artiste-suggere {
+              grid-area: 1 / 2 / 3 / 3;
+            }
+          }
+        }
+      }
 
 
 

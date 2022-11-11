@@ -226,7 +226,7 @@ if($nbImages == 3){
                         srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w540.jpg';?> ">
 
                 <img class="img-suggestion-artiste" src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?> " alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
-            </picture>
+             </picture>
                     <?php }else{?>
                     <img class="img-suggestion-artiste" src="https://via.placeholder.com/360x240/" alt=" ">
                     <?php } ?>
