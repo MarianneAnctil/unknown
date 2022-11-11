@@ -1,5 +1,5 @@
 <?php
-$niveau="../../";
+$niveau="./";
 ?>
 <header class="entete">
     <a href="#contenu" class="visuallyhidden focusable">Allez au contenu</a>

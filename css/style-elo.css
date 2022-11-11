@@ -663,6 +663,20 @@ h4,
     font-size: 3.4rem;
   }
 }
+.nav__list-lien { /* = 34px */
+  font-size: 2rem;
+}
+@media (min-width: 600px) {
+  .nav__list-lien {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 800px) {
+  .nav__list-lien { /* = 34px */
+    font-size: 2.4rem;
+  }
+}
+
 /* Grille
    ========================================================================== */
 /*** Classe conteneur pour le centrage et l'affichage de la grille en arrière-plan ***/
@@ -837,7 +851,7 @@ h1, h2, h3, p {
 }
 
 .mozaique-image {
-  background-color: #E59D9B;
+  background-color: #e59d9b;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 40px;
