@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+/**
+ * @author COLLECTIF - @TIMCSF
+ *
+ * TABLE DES MATIERES
+ * Normalize
+ * Utilitaires
+ * Typo
+ * Grille
+ * Menu
+ * Mise en page
+ *** Pied de page
+ */
+
+/* Normalize
+   ========================================================================== */
+@import "base/normalize";
+
+/* Utilitaires
+   ========================================================================== */
+@import "base/utilitaires";
+
+/* Charte typographique
+   ========================================================================== */
+@import "base/typo";
+
+/* Grille
+   ========================================================================== */
+@import "base/grille";
+
+h1, h2,h3,h4, p, .lieu__list li, .prix__list li, .texte__lien  {
+    color: white;
+}
+
+.page {
+    margin: auto;
+    width: 80%;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+.banniere-conteneur {
+    position: relative;
+    text-align: center;
+    border-radius: 20px;
+    border: 4px solid $corail;
+    padding: 1%;
+
+    h1 {
+        width: 60%;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1;
+    }
+
+    h2 {
+        width: 70%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.banniere {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+}
+
+section {
+    h3 {
+        text-align: center;
+    }
+}
+
+/* LIEUX DE SPECTACLE */
+
+.liste-lieu {
+    padding: 0;
+    list-style: none;
+}
+
+.lieu {
+    width: max-content;
+    margin: auto;
+    border: 4px solid $corail;
+    border-radius: 20px;
+}
+
+.lieu__lien {
+
+    &:hover, &:visited {
+        border-color: $rose;
+    }
+
+    &:focus {
+        outline: 4px solid white;
+    }
+
+    img {
+        padding: 2%;
+        display: block;
+        border-radius: 20px;
+    }
+}
+
+/* ACTUALITÉS */
+
+.article {
+    border: 4px solid $dore;
+    padding-inline: 2%;
+    border-radius: 20px;
+
+    footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.article__titre {
+    text-align: center;
+
+    @media(min-width: 1200px){ 
+        text-align: left;
+    }
+}
+
+.article__lien {
+    padding: 10px 8% 10px 8%;
+    border-radius: 5px;
+    border-bottom: 3px solid $corail;
+    background-color: $turquoise;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        border-color: $turquoise;
+        background-color: $corail;
+    }
+}
+
+.article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* GRILLE */
+.article__titre { grid-area: titre; }
+.article__image { grid-area: image; }
+.article__description { grid-area: description; }
+.article__date { grid-area: date; }
+.article__lien { grid-area: lien; }
+
+.article {
+  display: grid;
+  grid-template-areas:
+    'image'
+    'titre'
+    'description'
+    'date'
+    'lien';
+  gap: 20px;
+  padding: 2%;
+
+  @media(min-width: 1200px){ 
+
+    width: 49%;
+    grid-template-areas:
+    'titre titre titre titre titre titre titre'
+    'image image image image image image image'
+    'description description description description description description description'
+    'date date date lien lien lien lien';
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* ARTISTES À DÉCOUVRIR */
+
+.artiste__lien {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+
+    figure {
+        width: fit-content;
+    }
+
+    picture {
+        width: 50%;
+    }
+}
+
+.artiste__lien:hover .artiste__nom {
+    color: $corail;
+}
+
+.artiste__nom{ /* = 40px */
+  font-size: 4rem;
+  color: $turquoise;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .artiste__nom { /* = 70px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  .artiste__nom{ /* = 100px */
+    font-size: 7rem;
+  }
+}
+
+p, li {
+    font-size: 19px;
+}
+
+/* TARIF ET LIEUX DE VENTE */
+
+.section-tarif {
+    display: flex;
+    border-radius: 20px;
+    padding: 3%;
+    justify-content: space-between;
+    justify-items: center;
+    background-color: $turquoise;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .p {
+        margin: 0 0 30px 0;
+    }
+
+    h4 { 
+        margin: 0 0 20px 0;
+    }
+}
+
+.section-lieu-de-vente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 4px solid $dore;
+
+    .conteneur {
+        margin: 2%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.section-tarif-et-lieu {
+    div {
+        margin-top: 50px;
+    }
+}
