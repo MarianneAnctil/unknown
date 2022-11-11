@@ -194,8 +194,9 @@ $pdosResultat->closeCursor();
         <script type="text/javascript">
 
             var urlmenu = document.getElementById('list_style');
+            window.name = Math.random().toString(36);
             urlmenu.onchange = function () {
-                window.open("index.php?idStyle=" + this.options[this.selectedIndex].value);
+                window.open("index.php?idStyle=" + this.options[this.selectedIndex].value, window.name);
             };
         </script>
         </div>
