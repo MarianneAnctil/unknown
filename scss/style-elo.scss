@@ -7,10 +7,12 @@
  * Normalize
  * Utilitaires
  * Charte typographique
- * Menu
  * Grille
+ * Interactivite
  * Mise en page
- *** Pied de page
+ * Infos artistes
+ * Mozaique
+ * Artistes suggérés
  */
 
 /* Normalize
@@ -40,14 +42,14 @@ a:not(.list-link_artiste):not(.lien-passeport):not(.nav__list-lien){
 
   &:link,
   &:visited {
-    border: $jaune;
+    border: $rose;
   }
 }
-a .list-link_artiste {
+.suggestion_artiste a.list-link_artiste {
     transition: 0.5s;
-
+    border-radius:20px;
     &:hover {
-      color: $dore;
+      background-color: #232323;
       font-size: 4.4rem;
     }
 
@@ -57,7 +59,7 @@ a .list-link_artiste {
 
     &:link,
     &:visited {
-      border: $jaune;
+      border: $rose;
     }
   }
 
@@ -69,6 +71,9 @@ body{
 h1, h2, h3, p{
   color:$couleur-texte;
 }
+
+/* Infos artistes
+   ========================================================================== */
 .fiche{
   @media(min-width: 800px){
     display: grid;
@@ -99,35 +104,87 @@ h1, h2, h3, p{
   }
   .spectacle{
     display: grid;
-    grid-template-areas:
-            "date heure"
-            "salle";
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    padding: 0px;
-    li{
+    &.spectacle1 {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      padding: 0px;
+    li {
       list-style: none;
       border-radius: 30px;
       text-align: center;
       color: black;
       font-family: "Black Han Sans", sans-serif;
       font-weight: bold;
-      p{
+
+      p {
         color: black;
       }
-      &.date {
-        background-color:$dore;
-        grid-area: 1/1/2/2;
+
+        &.date0 {
+          background-color: $dore;
+          grid-area: 1 / 1 / 2 / 2;
+        }
+
+        &.heure0 {
+          background-color: $corail;
+          grid-area: 1 / 2 / 2 / 3;
+        }
+
+        &.salle0 {
+          background-color: $turquoise;
+          grid-area: 2 / 1 / 3 / 3;
+        }
+
+        &.date1 {
+          background-color: $dore;
+          grid-area: 1 / 3 / 2 / 4;
+        }
+
+        &.heure1 {
+          background-color: $corail;
+          grid-area: 1 / 4 / 2 / 5;
+        }
+
+        &.salle1 {
+          background-color: $turquoise;
+          grid-area: 2 / 3 / 3 / 5;
+        }
       }
-      &.heure{
-        background-color:$corail;
-        grid-area: 1/2/2/3;
-      }
-      &.salle{
-        background-color: $turquoise;
-        grid-area: 2/1/3/3;
+    }
+    &.spectacle0{
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      padding: 0px;
+      li {
+        list-style: none;
+        border-radius: 30px;
+        text-align: center;
+        color: black;
+        font-family: "Black Han Sans", sans-serif;
+        font-weight: bold;
+
+        p {
+          color: black;
+        }
+
+        &.date0 {
+          background-color: $dore;
+          grid-area: 1 / 1 / 2 / 2;
+        }
+
+        &.heure0 {
+          background-color: $corail;
+          grid-area: 1 / 2 / 2 / 3;
+        }
+
+        &.salle0 {
+          background-color: $turquoise;
+          grid-area: 2 / 1 / 3 / 3;
+        }
       }
     }
   }
@@ -137,6 +194,10 @@ h1, h2, h3, p{
     grid-area: 3 / 1 / 4 / 3;
   }
 }
+
+/* Mozaique
+   ========================================================================== */
+
 .mozaique-image{
   background-color: $rose;
   display: flex;
@@ -208,6 +269,9 @@ h1, h2, h3, p{
   }
 }
 
+/* Artistes suggérés
+   ========================================================================== */
+
 .artiste-sug-title{
   display: block;
   text-align: center;
@@ -216,13 +280,12 @@ h1, h2, h3, p{
 }
 
 .suggestion {
+  padding: 0px;
   .suggestion_artiste {
     display: flex;
     flex-wrap: wrap;
     padding: 0px;
-    width: 500px;
     margin: auto;
-    padding: 10px 0px;
     margin-bottom: 30px;
     list-style: none;
     border-radius: 30px;
@@ -233,17 +296,18 @@ h1, h2, h3, p{
     }
 
     .list-link_artiste {
+      text-decoration: none;
       display: flex;
       flex-wrap: wrap;
       padding: 0px;
       padding: 10px 0px;
-      margin-bottom: 30px;
       .img-suggestion-artiste {
         width: 100%;
         margin: auto;
       }
       .provenance {
         border-radius: 30px;
+        padding: 10px;
       }
       .info-artiste-suggere {
         margin-left: 60px;
@@ -335,111 +399,3 @@ h1, h2, h3, p{
           }
         }
       }
-
-
-
-
-
-
-//.suggestion {
-//    .list-link_artiste {
-//      display: flex;
-//      flex-wrap: wrap;
-//      padding: 0px;
-//      width: 500px;
-//      margin: auto;
-//      padding: 10px 0px;
-//      margin-bottom: 30px;
-//      list-style: none;
-//      border-radius: 30px;
-//      border: solid 2px;
-//      @media(min-width: 800px){
-//        display: block;
-//        width: 100%;
-//      }
-//      .suggestion_artiste {
-//        @media(min-width: 800px) {
-//          width: 100%;
-//          display: grid;
-//          grid-template-columns: repeat(2, 1fr);
-//          grid-template-rows: repeat(1, 1fr);
-//          grid-column-gap: 0px;
-//          grid-row-gap: 0px;
-//        }
-//
-//        .img-suggestion-artiste {
-//          padding-bottom: 0px;
-//          display: block;
-//          margin-left: auto;
-//          margin-right: auto;
-//          width: 90%;
-//        }
-//
-//        .info-artiste-suggere {
-//          margin-left: 60px;
-//          padding: 0px 10px;
-//
-//          .provenance {
-//            border-radius: 30px;
-//          }
-//
-//          .nom-artiste {
-//            font-size: 5.5rem;
-//            @media(min-width: 800px) {
-//              font-size: 7.5rem;
-//            }
-//          }
-//        }
-//
-//
-//    &:nth-child(odd) {
-//          border-color: $turquoise;
-//          border-width: 6px;
-//
-//          .provenance {
-//            background-color: $corail;
-//            max-width: 300px;
-//            text-align: center;
-//          }
-//        }
-//
-//    &:nth-child(even) {
-//      border-color: $corail;
-//      border-width: 6px;
-//
-//      .provenance {
-//        background-color: $turquoise;
-//        max-width: 300px;
-//        text-align: center;
-//          }
-//        }
-//      }
-//    }
-//
-//
-//      .list-link_artiste:nth-child(odd) {
-//        @media(min-width: 800px) {
-//            .img-suggestion-artiste {
-//              grid-area: 1 / 2 / 3 / 3;
-//            }
-//
-//            .info-artiste-suggere {
-//              grid-area: 1 / 1 / 3 / 2;
-//            }
-//          }
-//        }
-//
-//      .list-link_artiste:nth-child(even) {
-//        @media(min-width: 800px) {
-//          .list-link_artiste {
-//            .img-suggestion-artiste {
-//              grid-area: 1 / 1 / 3 / 2;
-//            }
-//
-//            .info-artiste-suggere {
-//              grid-area: 1 / 2 / 3 / 3;
-//            }
-//          }
-//        }
-//      }
-//  }
