@@ -743,18 +743,17 @@ h4,
 }
 /* Interactivite
    ========================================================================== */
-a:not(.list-link_artiste) {
+a:not(.list-link_artiste .lien-passeport) {
   color: #45A2A4;
 }
-a:not(.list-link_artiste):hover, a:not(.list-link_artiste):active {
+a:not(.list-link_artiste .lien-passeport):hover, a:not(.list-link_artiste .lien-passeport):active {
   color: #E9BA40;
 }
-a:not(.list-link_artiste):link, a:not(.list-link_artiste):visited {
+a:not(.list-link_artiste .lien-passeport):link, a:not(.list-link_artiste .lien-passeport):visited {
   border: #E9BA40;
 }
 
 a .list-link_artiste {
-  color: transparent;
   transition: 0.5s;
 }
 a .list-link_artiste:hover {
@@ -762,7 +761,7 @@ a .list-link_artiste:hover {
   font-size: 4.4rem;
 }
 a .list-link_artiste:active {
-  color: #E59D9B;
+  color: #e59d9b;
 }
 a .list-link_artiste:link, a .list-link_artiste:visited {
   border: #E9BA40;

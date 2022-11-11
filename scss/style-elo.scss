@@ -31,7 +31,7 @@
 
 /* Interactivite
    ========================================================================== */
-a:not(.list-link_artiste){
+a:not(.list-link_artiste .lien-passeport){
   color: $turquoise;
   &:hover,
   &:active {
@@ -44,7 +44,6 @@ a:not(.list-link_artiste){
   }
 }
 a .list-link_artiste {
-    color: transparent;
     transition: 0.5s;
 
     &:hover {
