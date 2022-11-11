@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Festival OFF de Québec - Accueil</title>
     <link rel="stylesheet" href="css/style-daren.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     <?php include($niveauLISTE . "inc/fragments/header.inc.php") ?>        
@@ -86,8 +87,8 @@
         </main>
         <footer>
             <?php include($niveauLISTE . "inc/fragments/footer.inc.php") ?>           
-        </footer>        
+        </footer>    
     </div>
-    <script src="../../js/menu.js"></script>
+    <script src="<?php echo ($niveauLISTE . "js/menu.js") ?>"></script>   
 </body>
 </html>
