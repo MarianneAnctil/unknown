@@ -1,6 +1,6 @@
 <?php
-$niveau="../../";
-include($niveau . "inc/scripts/config.inc.php");
+$niveauFiche="../../";
+include($niveauFiche . "inc/scripts/config.inc.php");
 ini_set('display_errors',1);
 //Détection de idSport dans la querystring?
 $strIdArtiste = $_GET['id_artiste'];
@@ -134,23 +134,23 @@ if($nbImages == 3){
     <title>Fiche de l'artiste</title>
     <link rel="stylesheet" href="../../css/style-elo.css">
     <link rel="stylesheet" href="../../css/menu.css">
-    <?php include($niveau . "inc/fragments/header.inc.php") ?>
 </head>
-<body class="body-fiche conteneur">
+<?php include($niveauFiche . "inc/fragments/header.inc.php") ?>
+<body class="body-fiche">
 <a href="#contenu" class="screen-reader-only focusable sauter">Allez au contenu</a>
 
-<main id="contenu">
+<main id="contenu" class="conteneur">
 <div class="fiche">
-    <?php $strFilename = $niveau . 'images/photos_artistes/photosFormes/' . $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']. '_p__w540.jpg';
+    <?php $strFilename = $niveauFiche . 'images/photos_artistes/photosFormes/' . $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']. '_p__w540.jpg';
     if(file_exists($strFilename)){?>
     <picture class="img-principale-artiste">
         <source media="(max-width: 800px)"
-               srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.jpg 1x, <?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w900.jpg 2x">
+               srcset="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.jpg 1x, <?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w900.jpg 2x">
 
         <source media="(min-width: 801px)"
-                srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
+                srcset="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
 
-       <img src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'];
+       <img src="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'];
         if($arrArtistes[0]['id_artiste'] == 3){
             ?>_p__w540.webp"<?php }else{
             ?>_p__w540.jpg"<?php
@@ -203,9 +203,9 @@ if($nbImages == 3){
 </div>
     <div class="mozaique-image <?php echo $classeConteneurMozaique?>">
         <?php for($cpt=0; $cpt<$nbImages;$cpt++){
-            $strFilename = $niveau . 'images/photos_artistes/photosSecondaires/'. $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'].'_'. $cpt . '_' . 'w300.jpg';
+            $strFilename = $niveauFiche . 'images/photos_artistes/photosSecondaires/'. $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'].'_'. $cpt . '_' . 'w300.jpg';
             if(file_exists($strFilename)){?>
-            <img class="mozaique-image_item" src="<?php echo $niveau ?>images/photos_artistes/photosSecondaires/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'].'_'. $cpt . '_' . 'w300.jpg'?>" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
+            <img class="mozaique-image_item" src="<?php echo $niveauFiche ?>images/photos_artistes/photosSecondaires/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste'].'_'. $cpt . '_' . 'w300.jpg'?>" alt="Image<?php echo $cpt . $arrArtistes[0]['nom_artiste'];?>">
         <?php }else{?>
         <img class="mozaique-image_item" src="https://via.placeholder.com/300x240/" alt=" ">
         <?php }
@@ -215,20 +215,20 @@ if($nbImages == 3){
 <ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
             <li class="suggestion_artiste">
-                <a class="list-link_artiste" href="<?php echo $niveau ?>artistes/fiche/index.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]['id_artiste'] ?>">
-                    <?php $filename = $niveau . 'images/photos_artistes/photosFormes/'. $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';
+                <a class="list-link_artiste" href="<?php echo $niveauFiche ?>artistes/fiche/index.php?id_artiste=<?php echo $arrArtistesChoisis[$cpt]['id_artiste'] ?>">
+                    <?php $filename = $niveauFiche . 'images/photos_artistes/photosFormes/'. $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';
                     if(file_exists($filename)){?>
                     <picture class="img-suggestion-artiste">
                 <source media="(max-width: 800px)"
-                        srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?>">
+                        srcset="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?>">
 
                 <source media="(min-width: 801px)"
-                        srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w540.jpg';?> ">
+                        srcset="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w540.jpg';?> ">
 
-                <img class="img-suggestion-artiste" src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?> " alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
+                <img class="img-suggestion-artiste" src="<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistesChoisis[$cpt]['id_artiste'].'_'. $arrArtistesChoisis[$cpt]['nom_artiste'] . '_p__w360.jpg';?> " alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
              </picture>
                     <?php }else{?>
-                    <img class="img-suggestion-artiste" src="https://via.placeholder.com/360x240/" alt=" ">
+                    <img class="img-suggestion-artiste" src="https://via.placeholder.com/360x240/" alt=" ">-->
                     <?php } ?>
                     <div class="info-artiste-suggere">
                 <h3 class="nom-artiste h3-fiche"><?php echo $arrArtistesChoisis[$cpt]['nom_artiste'];?></h3>
@@ -240,8 +240,8 @@ if($nbImages == 3){
 </ul>
 </main>
 <footer>
-    <?php include($niveau . "inc/fragments/footer.inc.php");?>
+    <?php include($niveauFiche . "inc/fragments/footer.inc.php") ?>
 </footer>
-<script src="<?php echo ($niveau ."js/menu.js")?> "></script>
+<script src="../../js/menu.js"></script>
 </body>
 </html>
