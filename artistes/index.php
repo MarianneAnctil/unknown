@@ -353,9 +353,8 @@ $pdosResultat->closeCursor();
 
 
 <footer>
-
-
-    <?php include("../inc/fragments/footer.inc.php") ?>
+    <?php include($niveauLISTE . "inc/fragments/footer.inc.php") ?>
 </footer>
+<script src=" <?php echo $niveauLISTE ?>js/menu.js"></script>
 </body>
 </html>
