@@ -11,7 +11,7 @@
 /**GENERAL**/
 body{
   background-color: $bg-color;
-  color:green;
+  color:white;
 }
 
 .conteneur{
@@ -47,6 +47,7 @@ body{
   position: relative;
   width: 150px;
   @media(min-width: 800px) {
+    align-self: flex-end;
     float: right;
     top: -90px;
   }

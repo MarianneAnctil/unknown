@@ -1,6 +1,6 @@
-<?php $niveauLISTE = '../';
+<?php $niveau = '../';
 
-include($niveauLISTE . "inc/scripts/config.inc.php");
+include($niveau . "inc/scripts/config.inc.php");
 
 
 error_reporting(E_ALL);
@@ -160,8 +160,9 @@ $pdosResultat->closeCursor();
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <title>Liste_Artistes</title>
-    <link rel="stylesheet" href="<?php echo $niveauLISTE ?>css/style-marianne.css">
-    <?php include($niveauLISTE . "inc/fragments/header.inc.php") ?>
+    <link rel="stylesheet" href="<?php echo $niveau ?>css/style-marianne.css">
+    <link rel="stylesheet" href="<?php echo $niveau ?>css/menu.css">
+    <?php include($niveau . "inc/fragments/header.inc.php") ?>
 </head>
 <body >
 
@@ -169,7 +170,7 @@ $pdosResultat->closeCursor();
 
 <main class="main conteneur">
 <div class="entete">
-    <?php include($niveauLISTE . "inc/fragments/svg.inc.php") ?>
+    <?php include($niveau . "inc/fragments/svg.inc.php") ?>
     <h1 class="h1-artistes ">ARTISTES</h1>
     <div class="select_style">
         <div class="select_sc">
@@ -221,9 +222,9 @@ $pdosResultat->closeCursor();
             $intCpt < count($arrTableauxArtiste);
             $intCpt++){
                 if($arrTableauxArtiste[$intCpt]['id_artiste'] == 3) {
-                    $strNomFichier = $niveauLISTE . 'images/photos_artistes/photosFormes/' . $arrTableauxArtiste[$intCpt]['id_artiste'] . '_' . $arrTableauxArtiste[$intCpt]['nom_artiste'] . '_p__w540.webp';
+                    $strNomFichier = $niveau . 'images/photos_artistes/photosFormes/' . $arrTableauxArtiste[$intCpt]['id_artiste'] . '_' . $arrTableauxArtiste[$intCpt]['nom_artiste'] . '_p__w540.webp';
                 }else{
-                    $strNomFichier = $niveauLISTE . 'images/photos_artistes/photosFormes/' . $arrTableauxArtiste[$intCpt]['id_artiste'] . '_' . $arrTableauxArtiste[$intCpt]['nom_artiste'] . '_p__w540.jpg';
+                    $strNomFichier = $niveau . 'images/photos_artistes/photosFormes/' . $arrTableauxArtiste[$intCpt]['id_artiste'] . '_' . $arrTableauxArtiste[$intCpt]['nom_artiste'] . '_p__w540.jpg';
                 }
             ?>
                 <li class="liste-item_artistes">
@@ -231,9 +232,9 @@ $pdosResultat->closeCursor();
                    <a href="fiche/index.php?id_artiste=<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>"> <picture class="picture_art">
 
 
-                        <source media="(min-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.<?php if ($arrTableauxArtiste[$intCpt]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
-                        <source media="(max-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w540.<?php if ($arrTableauxArtiste[$intCpt]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
-                        <img src="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.<?php if ($arrTableauxArtiste[$intCpt]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>" alt="Photo de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>" style="width:auto;">
+                        <source media="(min-width:800px)" srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.<?php if ($arrTableauxArtiste[$intCpt]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
+                        <source media="(max-width:800px)" srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w540.<?php if ($arrTableauxArtiste[$intCpt]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
+                        <img src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrTableauxArtiste[$intCpt]['id_artiste'] ?>_<?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>_p__w900.<?php if ($arrTableauxArtiste[$intCpt]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>" alt="Photo de <?php echo $arrTableauxArtiste[$intCpt]['nom_artiste'] ?>" style="width:auto;">
                     </picture>
                    </a>
                     <?php }else{ ?>
@@ -306,9 +307,9 @@ $pdosResultat->closeCursor();
             $intCptSug < count($arrArtisteChoisi);
             $intCptSug++){
                 if($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3) {
-                    $strNomFichier = $niveauLISTE . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.webp';
+                    $strNomFichier = $niveau . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.webp';
                 }else{
-                    $strNomFichier = $niveauLISTE . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.jpg';
+                    $strNomFichier = $niveau . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.jpg';
                 }
 
             ?>
@@ -317,9 +318,9 @@ $pdosResultat->closeCursor();
                     <a href="fiche/index.php?id_artiste=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>"> <picture class="picture_art">
 
 
-                            <source media="(min-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
-                            <source media="(max-width:800px)" srcset="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
-                            <img src="<?php echo $niveauLISTE ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>" alt="Photo de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" style="width:auto;">
+                            <source media="(min-width:800px)" srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
+                            <source media="(max-width:800px)" srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>">
+                            <img src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>_<?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>_p__w360.<?php if ($arrArtisteChoisi[$intCptSug]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>" alt="Photo de <?php echo $arrArtisteChoisi[$intCptSug]['nom_artiste'] ?>" style="width:auto;">
                         </picture>
                     </a>
                 <?php }else{ ?>
@@ -353,8 +354,8 @@ $pdosResultat->closeCursor();
 
 
 <footer>
-    <?php include($niveauLISTE . "inc/fragments/footer.inc.php") ?>
+    <?php include($niveau . "inc/fragments/footer.inc.php") ?>
 </footer>
-<script src=" <?php echo $niveauLISTE ?>js/menu.js"></script>
+<script src=" <?php echo $niveau ?>js/menu.js"></script>
 </body>
 </html>
