@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Festival OFF de Québec - Accueil</title>
     <link rel="stylesheet" href="css/style-daren.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 </head>
 <body>
     <?php include($niveau . "inc/fragments/header.inc.php") ?>

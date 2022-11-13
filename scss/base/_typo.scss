@@ -32,14 +32,8 @@
  * assurer la meilleure compatibilité.
  */
 
-@font-face {
-  font-family: 'Black Han Sans', sans-serif;
-  src:url(../polices/Black_Han_Sans/BlackHanSans-Regular.ttf)format('ttf')
-}
-@font-face {
-  font-family: 'Karla', sans-serif;
-  src:url(../polices/Karla/Karla-VariableFont_wght.ttf)format('ttf')
-}
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@200&display=swap');
+
 h1,
 .h1-acceuil,
 .h1-artistes,
@@ -56,7 +50,7 @@ h4,
 .h4-acceuil,
 .h4-artistes,
 .h4-fiche {
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: 'Archivo Black', sans-serif;
 }
 body,
 h5-accueil{
