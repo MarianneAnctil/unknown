@@ -20,6 +20,7 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@200&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -418,14 +419,6 @@ abbr[title]:hover {
  * La méthode ci-dessous vise à offrir dans l'ordre de priorité les 3 formats possibles pour
  * assurer la meilleure compatibilité.
  */
-@font-face {
-  font-family: "Black Han Sans", sans-serif;
-  src: url(../polices/Black_Han_Sans/BlackHanSans-Regular.ttf) format("ttf");
-}
-@font-face {
-  font-family: "Karla", sans-serif;
-  src: url(../polices/Karla/Karla-VariableFont_wght.ttf) format("ttf");
-}
 h1,
 .h1-acceuil,
 .h1-artistes,
@@ -442,7 +435,7 @@ h4,
 .h4-acceuil,
 .h4-artistes,
 .h4-fiche {
-  font-family: "Black Han Sans", sans-serif;
+  font-family: "Archivo Black", sans-serif;
 }
 
 body,
