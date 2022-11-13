@@ -17,19 +17,19 @@
 
 /* Normalize
    ========================================================================== */
-@import "base/normalize";
+@import "./base/normalize";
 
 /* Utilitaires
    ========================================================================== */
-@import "base/utilitaires";
+@import "./base/utilitaires";
 
 /* Charte typographique
    ========================================================================== */
-@import "base/typo";
+@import "./base/typo";
 
 /* Grille
    ========================================================================== */
-@import "base/grille";
+@import "./base/grille";
 
 /* Interactivite
    ========================================================================== */
@@ -115,7 +115,7 @@ h1, h2, h3, p{
       border-radius: 30px;
       text-align: center;
       color: black;
-      font-family: "Black Han Sans", sans-serif;
+      font-family: 'Archivo Black', sans-serif;
       font-weight: bold;
 
       p {
@@ -164,7 +164,7 @@ h1, h2, h3, p{
         border-radius: 30px;
         text-align: center;
         color: black;
-        font-family: "Black Han Sans", sans-serif;
+        font-family: 'Archivo Black', sans-serif;
         font-weight: bold;
 
         p {
