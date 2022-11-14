@@ -97,7 +97,6 @@ body{
 
   .liste-item_artistes {
     width: 500px;
-    display: inline-block;
     margin: auto;
     padding: 10px 0;
     margin-bottom: 30px;
@@ -311,8 +310,8 @@ body{
 }
 
 .box_sug{
-  margin: 0;
-  max-width: 300px;
+  margin: 50px 0 50px 0;
+  max-width: 400px;
   padding:10px;
   border: 4px solid $corail;
   border-radius: 10px;

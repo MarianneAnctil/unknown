@@ -300,7 +300,7 @@ $pdosResultat->closeCursor();
 
     <h2 class="h2-artistes h2_sug"> SUGGESTIONS </h2>
     <div class="suggestions">
-
+<ul class="list_sug">
             <?php
             //AFFICHER SUGGESTIONS
             for ($intCptSug = 0;
@@ -312,7 +312,7 @@ $pdosResultat->closeCursor();
                     $strNomFichier = $niveau . 'images/photos_artistes/photosFormes/' . $arrArtisteChoisi[$intCptSug]['id_artiste'] . '_' . $arrArtisteChoisi[$intCptSug]['nom_artiste'] . '_p__w540.jpg';
                 }
 
-            ?>
+            ?><li class="list-item_sug">
             <div class="box_sug">
                 <?php  if(file_exists($strNomFichier)){ ?>
                     <a href="fiche/index.php?id_artiste=<?php echo $arrArtisteChoisi[$intCptSug]['id_artiste'] ?>"> <picture class="picture_art">
@@ -345,8 +345,10 @@ $pdosResultat->closeCursor();
                 <p class="styleArt_sug"> <?php echo $arrArtisteChoisi[$intCptSug]['style_artiste']; ?></p>
 
             </div>
+                </li>
                 <?php
                 } ?>
+</ul>
     </div>
 
 
