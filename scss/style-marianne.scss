@@ -26,12 +26,31 @@ body{
     margin-bottom: 50px;
   }
 }
+
+.forme_svg{
+  position: relative;
+  top:80px;
+  z-index: 1;
+
+  @media (max-width: 600px) {
+    width: 550px;
+    top:35px;
+  }
+
+  @media (min-width: 800px) {
+    width: 990px;
+    height: 280px;
+    top: 90px;
+  }
+}
 .h1-artistes{
   text-align: center;
+  z-index: 10;
+  margin-top: -80px;
   @media(min-width: 800px) {
     position: relative;
     top: -10px;
-    margin: 80px 20px 0 0;
+    margin: -197px 20px 0 0;
     text-align: left;
 
   }
@@ -39,7 +58,7 @@ body{
 .select_style{
   align-self: center;
   margin:0 20px 25px 20px ;
-  font-size: 13px;
+  font-size: 2rem;
   font-weight: bolder;
   padding: 10px 8px 10px 14px;
   background: $turquoise;
@@ -47,10 +66,10 @@ body{
   overflow: hidden;
   position: relative;
   width: 150px;
+  z-index: 20;
   @media(min-width: 800px) {
-    align-self: flex-end;
-    float: right;
-    top: -90px;
+    align-self: flex-start;
+    top: -50px;
     font-weight: bolder;
   }
 }
@@ -279,6 +298,7 @@ body{
 .list-link_sug{
   @include nom_artistes;
   transition: 0.5s;
+  text-align: center;
   &:hover{
     color:$rose;
     font-size: 3.8rem;
@@ -299,6 +319,7 @@ body{
 }
 
 .styleArt_sug{
+  align-self: center;
   font-weight: bold;
   padding: 6px;
   color: $bg-color;
@@ -310,6 +331,7 @@ body{
 }
 
 .box_sug{
+  text-align: center;
   margin: 50px 0 50px 0;
   max-width: 400px;
   padding:10px;
@@ -317,11 +339,20 @@ body{
   border-radius: 10px;
 }
 
+.suggestions{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+}
+
 @media (min-width:800px) {
   .box_sug{
     max-width: 500px;
     margin: 20px;
   }
+
 .suggestions{
   display: flex;
   flex-direction: row;
