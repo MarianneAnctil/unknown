@@ -768,12 +768,12 @@ abbr[title]:hover {
   content: "";
   width: 1em;
   height: 1em;
-  background-image: url(../images/ico-fermer.svg);
+  /**background-image: url(../images/ico-fermer.svg);**/
   margin-right: 0.25em;
 }
 
 .nav--closed > .nav__control:before {
-  background-image: url(../images/ico-menu.svg);
+ /** background-image: url(../images/ico-menu.svg);**/
 }
 
 /* Liste du menu */

@@ -4,7 +4,6 @@ include($niveau . "inc/scripts/config.inc.php");
 ini_set('display_errors',1);
 //Détection de idSport dans la querystring?
 $strIdArtiste = $_GET['id_artiste'];
-var_dump( $strIdArtiste);
 
 $strRequeteArtiste = 'SELECT provenance, site_web_artiste, nom_artiste, id_artiste, description FROM t_artiste WHERE id_artiste='.$strIdArtiste;
 
@@ -111,7 +110,6 @@ for ($cpt=0;$cpt<=2;$cpt++){
     }
 }
 $nbImages = rand(3,5);
-var_dump($nbImages);
 
 $classeConteneurMozaique = '';
 
@@ -144,10 +142,10 @@ if($nbImages == 3){
     if(file_exists($strFilename)){?>
     <picture class="img-principale-artiste">
         <source media="(max-width: 800px)"
-               srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.jpg 1x, <?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w900.jpg 2x">
+               srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.jpg 1x, <?php echo $niveau;?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w900.jpg 2x">
 
         <source media="(min-width: 801px)"
-                srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
+                srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveau;?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
 
        <img src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.<?php if ($arrArtistes[0]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>"
         alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
