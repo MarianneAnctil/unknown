@@ -90,11 +90,7 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
     <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
-<<<<<<< HEAD
-    <?php include($niveau . "inc/fragments/header.inc.php") ?>        
-=======
     <?php include($niveau . "inc/fragments/header.inc.php") ?>
->>>>>>> master
     <div class="page">
         <main id="contenu">
             <div class="banniere-conteneur">
