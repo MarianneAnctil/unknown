@@ -29,27 +29,28 @@ body{
 
 .forme_svg{
   position: relative;
-  top:200px;
+  top:80px;
   z-index: 1;
 
   @media (max-width: 600px) {
     width: 550px;
-    top:150px;
+    top:35px;
   }
 
   @media (min-width: 800px) {
     width: 990px;
     height: 280px;
-    top: 350px;
+    top: 90px;
   }
 }
 .h1-artistes{
   text-align: center;
   z-index: 10;
+  margin-top: -80px;
   @media(min-width: 800px) {
     position: relative;
     top: -10px;
-    margin: 80px 20px 0 0;
+    margin: -197px 20px 0 0;
     text-align: left;
 
   }
@@ -67,9 +68,8 @@ body{
   width: 150px;
   z-index: 20;
   @media(min-width: 800px) {
-    align-self: flex-end;
-    float: right;
-    top: -90px;
+    align-self: flex-start;
+    top: -50px;
     font-weight: bolder;
   }
 }
