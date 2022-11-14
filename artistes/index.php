@@ -168,7 +168,7 @@ $pdosResultat->closeCursor();
 
 <main class="main conteneur">
 <div class="entete">
-    <?php include($niveau . "inc/fragments/svg.inc.php") ?>
+    <svg class="forme_svg"> <?php include($niveau . "inc/fragments/svg.inc.php") ?></svg>
     <h1 class="h1-artistes ">ARTISTES</h1>
     <div class="select_style">
         <div class="select_sc">
