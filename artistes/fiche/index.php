@@ -206,6 +206,7 @@ if($nbImages == 3){
         <?php }
         }?>
     </div>
+    <?php if(count($arrArtistesSug)>0){?>
     <h2 class="artiste-sug-title h2-fiche">Artistes suggérés</h2>
 <ul class="suggestion">
     <?php for($cpt=0;$cpt<count($arrArtistesChoisis); $cpt++){?>
@@ -233,6 +234,7 @@ if($nbImages == 3){
             </li>
     <?php }?>
 </ul>
+    <?php }?>
 </main>
 <footer>
     <?php include($niveau . "inc/fragments/footer.inc.php") ?>
