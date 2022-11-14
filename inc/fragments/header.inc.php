@@ -11,7 +11,7 @@
                 </div>
             </div>
             <ul class="nav__list" id="navList">
-                <li class="nav__list-item"><a class="nav__list-lien" href="<?php echo $niveau ?>programmation/index.php">Programmation</a></li>
+                <li class="nav__list-item"><a class="nav__list-lien" href="#">Programmation</a></li>
                 <li class="nav__list-item"><a class="nav__list-lien" href="<?php echo $niveau ?>artistes/index.php">Artistes</a></li>
                 <li class="nav__list-item"><a class="nav__list-lien" href="#">Partenaires</a></li>
             </ul>
