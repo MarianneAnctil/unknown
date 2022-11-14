@@ -187,6 +187,6 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
         </main>
         <?php include ($niveau . "inc/fragments/footer.inc.php") ?>           
     </div>
-    <script src="<?php echo ($niveau . "js/menu.js") ?>"></script>   
+    <script src="js/menu.js"></script>
 </body>
 </html>
