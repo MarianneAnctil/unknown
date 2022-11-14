@@ -33,6 +33,15 @@ h1, h2,h3,h4, p, .lieu__list li, .prix__list li, .texte__lien  {
     color: white;
 }
 
+.texte__lien {
+
+    font-weight: 700;
+
+    &:hover {
+        color: rgb(29, 29, 29);
+    }
+}
+
 .page {
     margin: auto;
     width: 80%;
@@ -50,12 +59,21 @@ body {
     padding: 1%;
 
     h1 {
-        width: 60%;
+        width: 70%;
         position: absolute;
         top: 25%;
         left: 50%;
         transform: translate(-50%, -50%);
         line-height: 1;
+        z-index: 5;
+
+        @media (max-width: 1200px) {
+            font-size: 6.4vw;
+        }
+
+        @media (min-width: 800px) {
+            width: 100%;
+        }
     }
 
     h2 {
@@ -64,6 +82,15 @@ body {
         top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 5;
+
+        @media (max-width: 1200px) {
+            font-size: 5.4vw;
+        }
+
+        @media (min-width: 800px) {
+            width: 100%;
+        }
     }
 }
 
@@ -71,6 +98,8 @@ body {
     display: block;
     width: 100%;
     border-radius: 20px;
+    filter: brightness(50%);
+    z-index: -4;
 }
 
 section {
@@ -112,10 +141,17 @@ section {
 
 /* ACTUALITÉS */
 
+.actualites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
 .article {
     border: 4px solid $dore;
     padding-inline: 2%;
     border-radius: 20px;
+    margin-top: 30px;
 
     footer {
         display: flex;
@@ -138,6 +174,9 @@ section {
     background-color: $turquoise;
     text-decoration: none;
     text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
 
     &:hover {
         border-color: $turquoise;
@@ -147,9 +186,15 @@ section {
 
 .article img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 20px;
+}
+
+.article__date {
+    margin: auto 0;
+    color: white;
+    font-size: 1.9rem;
 }
 
 /* GRILLE */
@@ -180,27 +225,36 @@ section {
     'date date date lien lien lien lien';
 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr auto 0.6fr 0.1fr;
   }
 }
 
 /* ARTISTES À DÉCOUVRIR */
-
-.artiste__lien {
-    display: block;
-    width: fit-content;
-    text-decoration: none;
-
-    figure {
-        width: fit-content;
-    }
-
-    picture {
-        width: 50%;
-    }
+.artistes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.artiste__lien:hover .artiste__nom {
-    color: $corail;
+.artiste__lien {
+    width: 60%;
+    display: block;
+    text-decoration: none;
+    align-self: flex-start;
+
+    &:nth-of-type(2n){
+        align-self: flex-end;
+    }
+
+    &:hover .artiste__nom {
+        color: $corail;
+    }
+
+    &:focus {
+        border: 4px solid $corail;
+        border-radius: 20px;
+    }
 }
 
 .artiste__nom{ /* = 40px */
@@ -223,6 +277,10 @@ section {
 
 p, li {
     font-size: 19px;
+}
+
+.artiste-image__img {
+    width: 75%;
 }
 
 /* TARIF ET LIEUX DE VENTE */

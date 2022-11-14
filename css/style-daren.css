@@ -738,6 +738,13 @@ h1, h2, h3, h4, p, .lieu__list li, .prix__list li, .texte__lien {
   color: white;
 }
 
+.texte__lien {
+  font-weight: 700;
+}
+.texte__lien:hover {
+  color: rgb(29, 29, 29);
+}
+
 .page {
   margin: auto;
   width: 80%;
@@ -755,12 +762,23 @@ body {
   padding: 1%;
 }
 .banniere-conteneur h1 {
-  width: 60%;
+  width: 70%;
   position: absolute;
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1;
+  z-index: 5;
+}
+@media (max-width: 1200px) {
+  .banniere-conteneur h1 {
+    font-size: 6.4vw;
+  }
+}
+@media (min-width: 800px) {
+  .banniere-conteneur h1 {
+    width: 100%;
+  }
 }
 .banniere-conteneur h2 {
   width: 70%;
@@ -768,12 +786,25 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 5;
+}
+@media (max-width: 1200px) {
+  .banniere-conteneur h2 {
+    font-size: 5.4vw;
+  }
+}
+@media (min-width: 800px) {
+  .banniere-conteneur h2 {
+    width: 100%;
+  }
 }
 
 .banniere {
   display: block;
   width: 100%;
   border-radius: 20px;
+  filter: brightness(50%);
+  z-index: -4;
 }
 
 section h3 {
@@ -806,10 +837,17 @@ section h3 {
 }
 
 /* ACTUALITÉS */
+.actualites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
 .article {
   border: 4px solid #CE9133;
   padding-inline: 2%;
   border-radius: 20px;
+  margin-top: 30px;
 }
 .article footer {
   display: flex;
@@ -832,6 +870,9 @@ section h3 {
   background-color: #45A2A4;
   text-decoration: none;
   text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 .article__lien:hover {
   border-color: #45A2A4;
@@ -840,9 +881,15 @@ section h3 {
 
 .article img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 20px;
+}
+
+.article__date {
+  margin: auto 0;
+  color: white;
+  font-size: 1.9rem;
 }
 
 /* GRILLE */
@@ -877,24 +924,33 @@ section h3 {
     width: 49%;
     grid-template-areas: "titre titre titre titre titre titre titre" "image image image image image image image" "description description description description description description description" "date date date lien lien lien lien";
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr auto 0.6fr 0.1fr;
   }
 }
 
 /* ARTISTES À DÉCOUVRIR */
-.artiste__lien {
-  display: block;
-  width: fit-content;
-  text-decoration: none;
-}
-.artiste__lien figure {
-  width: fit-content;
-}
-.artiste__lien picture {
-  width: 50%;
+.artistes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.artiste__lien {
+  width: 60%;
+  display: block;
+  text-decoration: none;
+  align-self: flex-start;
+}
+.artiste__lien:nth-of-type(2n) {
+  align-self: flex-end;
+}
 .artiste__lien:hover .artiste__nom {
   color: #E06251;
+}
+.artiste__lien:focus {
+  border: 4px solid #E06251;
+  border-radius: 20px;
 }
 
 .artiste__nom { /* = 40px */
@@ -917,6 +973,10 @@ section h3 {
 }
 p, li {
   font-size: 19px;
+}
+
+.artiste-image__img {
+  width: 75%;
 }
 
 /* TARIF ET LIEUX DE VENTE */
