@@ -40,6 +40,7 @@ body{
   align-self: center;
   margin:0 20px 25px 20px ;
   font-size: 13px;
+  font-weight: bold;
   padding: 10px 8px 10px 14px;
   background: $turquoise;
   border-radius: 6px;
@@ -267,9 +268,6 @@ body{
   justify-content: center;
   margin-top:60px ;
 }
-.numeroDePage{
-  float:right;
-}
 
 /** SUGGESTIONS **/
 .h2_sug{
@@ -299,7 +297,8 @@ body{
   }
 }
 
-.styleArt_sug:nth-of-type(odd){
+.styleArt_sug{
+  font-weight: bold;
   padding: 6px;
   color: $bg-color;
   background-color: $jaune;
