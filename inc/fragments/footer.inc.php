@@ -1,6 +1,4 @@
-<?php
-$niveau="../../";
-?>
+
 <footer class="pied-de-page">
     <hr>
     <nav class="nav-secondaire">

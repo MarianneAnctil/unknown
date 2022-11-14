@@ -1,12 +1,12 @@
 @import "base/normalize";
 @import "base/utilitaires";
 @import "base/typo";
+@import "modules/menu";
 @mixin nom_artistes{
   text-decoration: none;
   color: $turquoise;
   text-transform: uppercase;
 }
-
 
 /**GENERAL**/
 body{
