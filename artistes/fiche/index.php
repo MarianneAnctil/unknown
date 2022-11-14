@@ -142,10 +142,10 @@ if($nbImages == 3){
     if(file_exists($strFilename)){?>
     <picture class="img-principale-artiste">
         <source media="(max-width: 800px)"
-               srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.jpg 1x, <?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w900.jpg 2x">
+               srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.jpg 1x, <?php echo $niveau;?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w900.jpg 2x">
 
         <source media="(min-width: 801px)"
-                srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveauFiche ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
+                srcset="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w600.jpg 1x,<?php echo $niveau;?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w1260.jpg 2x">
 
        <img src="<?php echo $niveau ?>images/photos_artistes/photosFormes/<?php echo $arrArtistes[0]['id_artiste'].'_'. $arrArtistes[0]['nom_artiste']?>_p__w540.<?php if ($arrArtistes[0]['id_artiste'] == 3){  ?>webp<?php }else{ ?>jpg<?php } ?>"
         alt="Image de <?php echo $arrArtistes[0]['nom_artiste'] ?>">
