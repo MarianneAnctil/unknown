@@ -97,9 +97,9 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
                 <h1>Festival OFF de Québec</h1>
                 <h2>Le 22 Novembre 2023</h2>
                 <picture class="banniere">
-                    <source media="(min-width:800px)" srcset="https://via.placeholder.com/1920x900">
-                    <source media="(max-width:799px)" srcset="https://via.placeholder.com/640x1128">
-                    <img class="banniere" src="https://via.placeholder.com/1920x900" alt="banniere">
+                    <source media="(max-width:500px)" srcset="images/accueil/banniere_w600.jpg">
+                    <source media="(min-width:1000px)" srcset="images/accueil/banniere_w2692.jpg">
+                    <img class="banniere" src="images/accueil/banniere_w2692.jpg" alt="banniere">
                 </picture>
             </div>
             <section>
