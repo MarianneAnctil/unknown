@@ -33,6 +33,15 @@ h1, h2,h3,h4, p, .lieu__list li, .prix__list li, .texte__lien  {
     color: white;
 }
 
+.texte__lien {
+
+    font-weight: 700;
+
+    &:hover {
+        color: rgb(29, 29, 29);
+    }
+}
+
 .page {
     margin: auto;
     width: 80%;
@@ -112,10 +121,17 @@ section {
 
 /* ACTUALITÉS */
 
+.actualites {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
 .article {
     border: 4px solid $dore;
     padding-inline: 2%;
     border-radius: 20px;
+    margin-top: 30px;
 
     footer {
         display: flex;
@@ -138,6 +154,9 @@ section {
     background-color: $turquoise;
     text-decoration: none;
     text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
 
     &:hover {
         border-color: $turquoise;
@@ -147,9 +166,15 @@ section {
 
 .article img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 20px;
+}
+
+.article__date {
+    margin: auto 0;
+    color: white;
+    font-size: 1.6rem;
 }
 
 /* GRILLE */
@@ -180,22 +205,33 @@ section {
     'date date date lien lien lien lien';
 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr auto 0.6fr 0.1fr;
   }
 }
 
 /* ARTISTES À DÉCOUVRIR */
+.artistes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .artiste__lien {
     display: block;
     width: fit-content;
     text-decoration: none;
+    align-self: flex-start;
 
     figure {
-        width: fit-content;
+        width: 60%;
     }
 
     picture {
-        width: 50%;
+        width: fit-content;
+    }
+
+    :nth-of-type(2n){
+        align-self: flex-end;
     }
 }
 
@@ -223,6 +259,10 @@ section {
 
 p, li {
     font-size: 19px;
+}
+
+.artiste-image__img {
+    width: 75%;
 }
 
 /* TARIF ET LIEUX DE VENTE */
