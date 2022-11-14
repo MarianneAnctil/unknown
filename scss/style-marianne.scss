@@ -40,7 +40,7 @@ body{
   align-self: center;
   margin:0 20px 25px 20px ;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: bolder;
   padding: 10px 8px 10px 14px;
   background: $turquoise;
   border-radius: 6px;
@@ -51,6 +51,7 @@ body{
     align-self: flex-end;
     float: right;
     top: -90px;
+    font-weight: bolder;
   }
 }
 
