@@ -90,6 +90,6 @@
             <?php include($niveau . "inc/fragments/footer.inc.php") ?>
         </footer>        
     </div>
-    <script src="../../js/menu.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 </html>
