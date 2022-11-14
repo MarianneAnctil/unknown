@@ -68,9 +68,8 @@ body{
   width: 150px;
   z-index: 20;
   @media(min-width: 800px) {
-    align-self: flex-end;
-    float: right;
-    top: -90px;
+    align-self: flex-start;
+    top: -50px;
     font-weight: bolder;
   }
 }
