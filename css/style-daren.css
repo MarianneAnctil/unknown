@@ -1,1 +1,1534 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */@import"https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@200&display=swap";html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:rgba(0,0,0,0)}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}.clearfix::after{content:"";display:table;clear:both}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img{max-width:100%}abbr[title]{text-decoration:none;cursor:help}abbr[title]:hover{background-color:#1c1c1c}.screen-reader-only,.visuallyhidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-only.focusable:active,.screen-reader-only.focusable:focus,.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}h1,.h1-acceuil,.h1-artistes,.h1-fiche,h2,.h2-acceuil,.h2-artistes,.h2-fiche,h3,.h3-acceuil,.h3-artistes,.h3-fiche,h4,.h4-acceuil,.h4-artistes,.h4-fiche{font-family:"Archivo Black",sans-serif}body,h5-accueil{font-family:"Karla",sans-serif}html{font-size:62.5%}body{font-size:1.6rem;line-height:1.375}@media(min-width: 600px){body{line-height:1.5}}@media(min-width: 800px){body{line-height:1.75}}h1,.h1-acceuil{font-size:3rem}@media(min-width: 600px){h1,.h1-acceuil{font-size:5rem}}@media(min-width: 800px){h1,.h1-acceuil{font-size:8rem}}h2,.h2-acceuil{font-size:2.5rem}@media(min-width: 600px){h2,.h2-acceuil{font-size:3.5rem}}@media(min-width: 800px){h2,.h2-acceuil{font-size:5rem}}h3,.h3-acceuil{font-size:3.2rem}@media(min-width: 600px){h3,.h3-acceuil{font-size:4.8rem}}@media(min-width: 800px){h3,.h3-acceuil{font-size:7rem}}h4,.h4-acceuil{font-size:1.6rem}@media(min-width: 600px){h4,.h4-acceuil{font-size:1.8rem}}@media(min-width: 800px){h4,.h4-acceuil{font-size:2.2rem}}h1,.h1-artistes{font-size:6rem}@media(min-width: 600px){h1,.h1-artistes{font-size:9rem}}@media(min-width: 800px){h1,.h1-artistes{font-size:15rem}}h2,.h2-artistes{font-size:4rem}@media(min-width: 600px){h2,.h2-artistes{font-size:5rem}}@media(min-width: 800px){h2,.h2-artistes{font-size:7rem}}h3,.h3-artistes{font-size:3.2rem}@media(min-width: 600px){h3,.h3-artistes{font-size:3.8rem}}@media(min-width: 800px){h3,.h3-artistes{font-size:4.2rem}}h1,.h1-fiche{font-size:7rem}@media(min-width: 600px){h1,.h1-fiche{font-size:7.5rem}}@media(min-width: 800px){h1,.h1-fiche{font-size:9rem}}h2,.h2-fiche{font-size:5rem}@media(min-width: 600px){h2,.h2-fiche{font-size:5rem}}@media(min-width: 800px){h2,.h2-fiche{font-size:8rem}}h3,.h3-fiche{font-size:3.2rem}@media(min-width: 600px){h3,.h3-fiche{font-size:3.8rem}}@media(min-width: 800px){h3,.h3-fiche{font-size:4.2rem}}h4,.h4-fiche{font-size:2rem}@media(min-width: 600px){h4,.h4-fiche{font-size:2.8rem}}@media(min-width: 800px){h4,.h4-fiche{font-size:3.4rem}}.nav__list-lien{font-size:2rem}@media(min-width: 600px){.nav__list-lien{font-size:2.4rem}}@media(min-width: 800px){.nav__list-lien{font-size:2.4rem}}@media(min-width: 800px){.conteneur{margin:0 auto;max-width:1000px;padding:0}}.flxRow{display:flex;justify-content:space-between;align-items:stretch}@media(min-width: 800px){.rangee{display:flex;justify-content:space-between;align-items:stretch}.cols_1_de_12{flex-basis:6.5%}.cols_2_de_12{flex-basis:15%}.cols_3_de_12{flex-basis:23.5%}.cols_4_de_12{flex-basis:32%}.cols_5_de_12{flex-basis:40.5%}.cols_6_de_12{flex-basis:49%}.cols_7_de_12{flex-basis:57.5%}.cols_8_de_12{flex-basis:66%}.cols_9_de_12{flex-basis:74.5%}.cols_10_de_12{flex-basis:83%}.cols_11_de_12{flex-basis:91.5%}.cols_12_de_12{flex-basis:100%}}h1,h2,h3,h4,p,.lieu__list li,.prix__list li,.texte__lien{color:#fff}.texte__lien{font-weight:700}.texte__lien:hover{color:#1d1d1d}.page{margin:auto;width:80%}body{background-color:#1c1c1c}.banniere-conteneur{position:relative;text-align:center;border-radius:20px;border:4px solid #e06251;padding:1%}.banniere-conteneur h1{width:70%;position:absolute;top:25%;left:50%;transform:translate(-50%, -50%);line-height:1;z-index:5}@media(max-width: 1200px){.banniere-conteneur h1{font-size:6.4vw}}@media(min-width: 800px){.banniere-conteneur h1{width:100%}}.banniere-conteneur h2{width:70%;position:absolute;top:55%;left:50%;transform:translate(-50%, -50%);z-index:5}@media(max-width: 1200px){.banniere-conteneur h2{font-size:5.4vw}}@media(min-width: 800px){.banniere-conteneur h2{width:100%}}.banniere{display:block;width:100%;border-radius:20px;filter:brightness(50%);z-index:-4}section h3{text-align:center}.liste-lieu{padding:0;list-style:none}.lieu{width:max-content;margin:auto;border:4px solid #e06251;border-radius:20px}.lieu__lien:hover,.lieu__lien:visited{border-color:#e59d9b}.lieu__lien:focus{outline:4px solid #fff}.lieu__lien img{padding:2%;display:block;border-radius:20px}.actualites{display:flex;flex-wrap:wrap;gap:2%}.article{border:4px solid #ce9133;padding-inline:2%;border-radius:20px;margin-top:30px}.article footer{display:flex;justify-content:flex-end}.article__titre{text-align:center}@media(min-width: 1200px){.article__titre{text-align:left}}.article__lien{padding:10px 8% 10px 8%;border-radius:5px;border-bottom:3px solid #e06251;background-color:#45a2a4;text-decoration:none;text-align:center;color:#fff;font-weight:bold;font-size:1.6rem}.article__lien:hover{border-color:#45a2a4;background-color:#e06251}.article img{width:100%;height:auto;object-fit:cover;border-radius:20px}.article__date{margin:auto 0;color:#fff;font-size:1.9rem}.article__titre{grid-area:titre}.article__image{grid-area:image}.article__description{grid-area:description}.article__date{grid-area:date}.article__lien{grid-area:lien}.article{display:grid;grid-template-areas:"image" "titre" "description" "date" "lien";gap:20px;padding:2%}@media(min-width: 1200px){.article{width:49%;grid-template-areas:"titre titre titre titre titre titre titre" "image image image image image image image" "description description description description description description description" "date date date lien lien lien lien";grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;grid-template-rows:.4fr auto .6fr .1fr}}.artistes{width:100%;display:flex;flex-direction:column;align-items:center}.artiste__lien{width:60%;display:block;text-decoration:none;align-self:flex-start}.artiste__lien:nth-of-type(2n){align-self:flex-end}.artiste__lien:hover .artiste__nom{color:#e06251}.artiste__lien:focus{border:4px solid #e06251;border-radius:20px}.artiste__nom{font-size:4rem;color:#45a2a4;text-transform:uppercase;font-weight:bold;text-align:center}@media(min-width: 600px){.artiste__nom{font-size:5rem}}@media(min-width: 800px){.artiste__nom{font-size:7rem}}p,li{font-size:19px}.artiste-image__img{width:75%}.section-tarif{display:flex;border-radius:20px;padding:3%;justify-content:space-between;justify-items:center;background-color:#45a2a4}.section-tarif div{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%}.section-tarif .p{margin:0 0 30px 0}.section-tarif h4{margin:0 0 20px 0}.section-lieu-de-vente{display:flex;justify-content:center;align-items:center;border-radius:20px;border:4px solid #ce9133}.section-lieu-de-vente .conteneur{margin:2%;display:flex;justify-content:center;flex-direction:column;align-items:center}.section-tarif-et-lieu div{margin-top:50px}/*# sourceMappingURL=style-daren.css.map */
+@charset "UTF-8";
+/**
+ * @author COLLECTIF - @TIMCSF
+ *
+ * TABLE DES MATIERES
+ * Normalize
+ * Utilitaires
+ * Typo
+ * Grille
+ * Menu
+ * Mise en page
+ *** Pied de page
+ */
+/* Normalize
+   ========================================================================== */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/* Utilitaires
+   ========================================================================== */
+/* Variables et utilitaires
+   ========================================================================== */
+/****** Variables (peuvent être utilisées dans tous les fichiers) *******/
+/*** Clearfix ***/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*** Harmoniser le modèle de boîte avec Box-Sizing ***/
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Images fluides */
+img {
+  max-width: 100%;
+}
+
+/*** Styles de base ***/
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+}
+
+abbr[title]:hover {
+  background-color: #1C1C1C;
+}
+
+/** Accessibilité
+  * Pour cacher visuellement tout en gardant accessible un contenu:
+  * screen-reader-only ou visuallyhidden **/
+.screen-reader-only,
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.screen-reader-only.focusable:active,
+.screen-reader-only.focusable:focus,
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Charte typographique
+   ========================================================================== */
+/**
+ * Typographie responsive (Mobile First)
+   ========================================================================
+ * Les valeurs de taille de police suggérées ici sont à titre indicatif.
+ * À ajuster selon la direction visuelle et le choix de polices de caractères.
+ *
+ * @author Prénom Nom courriel
+ *
+ * TABLE DES MATIÈRES
+ * Polices
+ * Base décimale
+ * Hiérarchie responsive
+ *
+ *
+ * Doc des points de rupture :
+ * ==========================================================================
+ * Écran étroit : de 0 à 599px
+ * point de rupture: 600px
+ *
+ * Écran moyen : de 600 à 799px
+ * point de rupture: 800px
+ *
+ * Écran large : 800px et +
+ */
+/* Polices */
+/* Selon le projet, il est souvent préférable d'utiliser le lien @import des Google Fonts
+ * plutôt que de servir directement les polices de caractères à l'aide d'instructions @font-face
+ * et d'un dossier de polices dans la structure de répertoires.
+ * La méthode ci-dessous vise à offrir dans l'ordre de priorité les 3 formats possibles pour
+ * assurer la meilleure compatibilité.
+ */
+h1,
+.h1-acceuil,
+.h1-artistes,
+.h1-fiche,
+h2,
+.h2-acceuil,
+.h2-artistes,
+.h2-fiche,
+h3,
+.h3-acceuil,
+.h3-artistes,
+.h3-fiche,
+h4,
+.h4-acceuil,
+.h4-artistes,
+.h4-fiche {
+  font-family: "Archivo Black", sans-serif;
+}
+
+body,
+h5-accueil {
+  font-family: "Karla", sans-serif;
+}
+
+/* Base décimale */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* 16px pour toutes les largeurs d'écran */
+  font-size: 1.6rem;
+  /* facteur multiplicateur de la taille de la police 1.375x16 = 22 */
+  line-height: 1.375;
+}
+
+@media (min-width: 600px) {
+  body {
+    line-height: 1.5;
+  }
+}
+@media (min-width: 800px) {
+  body {
+    line-height: 1.75;
+  }
+}
+/* Hiérarchie responsive : plus proche = plus petit  &  plus loin = plus grand */
+/* Typographie page ACCUEIL */
+h1,
+.h1-acceuil { /* = 30px */
+  font-size: 3rem;
+}
+
+@media (min-width: 600px) {
+  h1,
+.h1-acceuil { /* = 50px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+.h1-acceuil { /* = 80px */
+    font-size: 8rem;
+  }
+}
+h2,
+.h2-acceuil { /* = 25px */
+  font-size: 2.5rem;
+}
+
+@media (min-width: 600px) {
+  h2,
+.h2-acceuil { /* = 35px */
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 800px) {
+  h2,
+.h2-acceuil { /* = 50px */
+    font-size: 5rem;
+  }
+}
+h3,
+.h3-acceuil { /* = 32px */
+  font-size: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  h3,
+.h3-acceuil { /* = 48px */
+    font-size: 4.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h3,
+.h3-acceuil { /* = 70px */
+    font-size: 7rem;
+  }
+}
+h4,
+.h4-acceuil { /* = 16px */
+  font-size: 1.6rem;
+}
+
+@media (min-width: 600px) {
+  h4,
+.h4-acceuil { /* = 18px */
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h4,
+.h4-acceuil { /* = 22px */
+    font-size: 2.2rem;
+  }
+}
+.pied {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Typographie ARTISTES*/
+h1,
+.h1-artistes { /* = 60px */
+  font-size: 6rem;
+}
+
+@media (min-width: 600px) {
+  h1,
+.h1-artistes { /* = 90px */
+    font-size: 9rem;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+.h1-artistes { /* = 150px */
+    font-size: 15rem;
+  }
+}
+h2,
+.h2-artistes { /* = 40px */
+  font-size: 4rem;
+}
+
+@media (min-width: 600px) {
+  h2,
+.h2-artistes { /* = 70px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  h2,
+.h2-artistes { /* = 100px */
+    font-size: 7rem;
+  }
+}
+h3,
+.h3-artistes { /* = 32px */
+  font-size: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  h3,
+.h3-artistes { /* = 38px */
+    font-size: 3.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h3,
+.h3-artistes { /* = 42px */
+    font-size: 4.2rem;
+  }
+}
+/* Typographie FICHE D'ARTISTES */
+h1,
+.h1-fiche { /* = 70px */
+  font-size: 7rem;
+}
+
+@media (min-width: 600px) {
+  h1,
+.h1-fiche { /* = 75px */
+    font-size: 7.5rem;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+.h1-fiche { /* = 90px */
+    font-size: 9rem;
+  }
+}
+h2,
+.h2-fiche { /* = 50px */
+  font-size: 5rem;
+}
+
+@media (min-width: 600px) {
+  h2,
+.h2-fiche { /* = 50px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  h2,
+.h2-fiche { /* = 80px */
+    font-size: 8rem;
+  }
+}
+h3,
+.h3-fiche { /* = 32px */
+  font-size: 3.2rem;
+}
+
+@media (min-width: 600px) {
+  h3,
+.h3-fiche { /* = 38px */
+    font-size: 3.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h3,
+.h3-fiche { /* = 42px */
+    font-size: 4.2rem;
+  }
+}
+h4,
+.h4-fiche { /* = 20px */
+  font-size: 2rem;
+}
+
+@media (min-width: 600px) {
+  h4,
+.h4-fiche { /* = 28px */
+    font-size: 2.8rem;
+  }
+}
+@media (min-width: 800px) {
+  h4,
+.h4-fiche { /* = 34px */
+    font-size: 3.4rem;
+  }
+}
+.nav__list-lien { /* = 34px */
+  font-size: 2rem;
+}
+@media (min-width: 600px) {
+  .nav__list-lien {
+    font-size: 2.4rem;
+  }
+}
+@media (min-width: 800px) {
+  .nav__list-lien { /* = 34px */
+    font-size: 2.4rem;
+  }
+}
+
+/* Grille
+   ========================================================================== */
+/*** Classe conteneur pour le centrage et l'affichage de la grille en arrière-plan ***/
+@media (min-width: 800px) {
+  .conteneur {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0;
+    /* Grille 12 colonnes en arrière-plan - Mettre en commentaires après usage */
+    /*background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url(%23susy-svg-gradient)" width="100%" %3E%3Cdefs%3E%3ClinearGradient spreadMethod="pad" id="susy-svg-gradient" x1="0%" y1="0%" x2="100%" y2="0%"%3E%3Cstop offset="0%" style="stop-color:rgba(0, 0, 255, 0.2);" /%3E%3Cstop offset="100%" style="stop-color:rgba(0, 0, 255, 0.1);" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x="0" width="6.7796610169%" height="100%"/%3E%3Crect x="8.4745762712%" width="6.7796610169%" height="100%"/%3E%3Crect x="16.9491525424%" width="6.7796610169%" height="100%"/%3E%3Crect x="25.4237288136%" width="6.7796610169%" height="100%"/%3E%3Crect x="33.8983050847%" width="6.7796610169%" height="100%"/%3E%3Crect x="42.3728813559%" width="6.7796610169%" height="100%"/%3E%3Crect x="50.8474576271%" width="6.7796610169%" height="100%"/%3E%3Crect x="59.3220338983%" width="6.7796610169%" height="100%"/%3E%3Crect x="67.7966101695%" width="6.7796610169%" height="100%"/%3E%3Crect x="76.2711864407%" width="6.7796610169%" height="100%"/%3E%3Crect x="84.7457627119%" width="6.7796610169%" height="100%"/%3E%3Crect x="93.2203389831%" width="6.7796610169%" height="100%"/%3E%3C/svg%3E') no-repeat scroll;*/
+  }
+}
+/*** Conteneur flex utile autant pour l'écran étroit que l'écran large ***/
+.flxRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* valeur par défaut */
+}
+
+/*** Classes pour dimensionner les blocs sur l'écran large ***/
+@media (min-width: 800px) {
+  /*** Classe de base pour l'intégration en flexbox ***/
+  .rangee {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* valeur par défaut */
+  }
+  .cols_1_de_12 {
+    flex-basis: 6.5%;
+  }
+  .cols_2_de_12 {
+    flex-basis: 15%;
+  }
+  .cols_3_de_12 {
+    flex-basis: 23.5%;
+  }
+  .cols_4_de_12 {
+    flex-basis: 32%;
+  }
+  .cols_5_de_12 {
+    flex-basis: 40.5%;
+  }
+  .cols_6_de_12 {
+    flex-basis: 49%;
+  }
+  .cols_7_de_12 {
+    flex-basis: 57.5%;
+  }
+  .cols_8_de_12 {
+    flex-basis: 66%;
+  }
+  .cols_9_de_12 {
+    flex-basis: 74.5%;
+  }
+  .cols_10_de_12 {
+    flex-basis: 83%;
+  }
+  .cols_11_de_12 {
+    flex-basis: 91.5%;
+  }
+  .cols_12_de_12 {
+    flex-basis: 100%;
+  }
+}
+/* Grille
+   ========================================================================== */
+/**
+ * @author Daren Garneau-Dionne
+**/
+/**
+ * TABLE DES MATIÈRES
+ * Palette de couleurs
+ * Base commune
+ * - Bouton du menu
+ * - Liste du menu
+ * - Liens du menu
+ * Styles conditionnels au JavaScript
+ * Header
+ * Menu Hamburgerv
+ * Footer
+ */
+/* Utilitaires
+   ========================================================================== */
+/* Variables et utilitaires
+   ========================================================================== */
+/****** Variables (peuvent être utilisées dans tous les fichiers) *******/
+/*** Clearfix ***/
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*** Harmoniser le modèle de boîte avec Box-Sizing ***/
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Images fluides */
+img {
+  max-width: 100%;
+}
+
+/*** Styles de base ***/
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+}
+
+abbr[title]:hover {
+  background-color: #1C1C1C;
+}
+
+/** Accessibilité
+  * Pour cacher visuellement tout en gardant accessible un contenu:
+  * screen-reader-only ou visuallyhidden **/
+.screen-reader-only,
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.screen-reader-only.focusable:active,
+.screen-reader-only.focusable:focus,
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/****** Base commune *******/
+/* Bouton du menu */
+.nav__control {
+  background-color: rgba(145, 0, 145, 0.2);
+  border: none;
+  padding: 10px;
+  min-width: 40px;
+}
+
+@media (min-width: 600px) {
+  .nav__control {
+    display: none;
+  }
+}
+.nav__control:hover,
+.nav__control:active {
+  color: #fff;
+  background-color: #CE9133;
+}
+
+.nav__control:focus {
+  /* En mettant la règle outline: none;, les styles du navigateur
+   * pour les éléments en cours de focus sont effacés. Il faut alors
+   * les remplacer par d'autres styles qui peuvent être plus
+   * en accord avec la direction visuelle du projet.
+   */
+  outline: none;
+  /* AUTRES STYLES EN REMPLACEMENT DU OUTLINE */
+  /*
+   * Les règles outline-offset et outline permettent
+   * de modifier l'apparence du outline par défaut des navigateurs.
+   */
+  outline-offset: -5px;
+  outline: #CE9133 auto 5px;
+}
+
+.nav > .nav__control:before {
+  display: inline-block;
+  content: "";
+  width: 1em;
+  height: 1em;
+  background-image: url(../images/ico-fermer.svg);
+  margin-right: 0.25em;
+}
+
+.nav--closed > .nav__control:before {
+  background-image: url(../images/ico-menu.svg);
+}
+
+/* Liste du menu */
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: none;
+}
+
+@media (min-width: 600px) {
+  .nav__list-item {
+    display: inline-block;
+  }
+}
+/* Liens du menu */
+.nav__list-lien {
+  background-color: #CE9133;
+  display: block;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.nav__list-lien:hover {
+  color: #fff;
+  background-color: #CE9133;
+}
+.nav__list-lien:visited, .nav__list-lien :link {
+  text-decoration: none;
+}
+.nav__list-lien:active {
+  color: #fff;
+  background-color: #CE9133;
+}
+@media (min-width: 600px) {
+  .nav__list-lien:focus {
+    outline-offset: 0;
+  }
+}
+
+/** Une classe nav__link--active
+    sert à définir un état différent
+    pour l'item de menu actif
+    **/
+.nav__link--active {
+  border-left: 5px solid rgb(101, 68, 180);
+}
+@media (min-width: 600px) {
+  .nav__link--active {
+    border-left: none;
+    border-bottom: 5px solid rgb(101, 68, 180);
+  }
+}
+
+/**
+ * Styles conditionnels au JavaScript
+ * L'ajout par JavaScript de la classe .js
+ * permet de rédiger des sélecteurs conditionnels à ce que Javascript est actif
+ * De cette façon,
+ *** en l'absence de JavaScript le menu restera visible et accessible
+ *** en présence de JavaScript le menu est caché
+ */
+@media (max-width: 599px) {
+  .js .nav__list {
+    max-height: 100vh;
+    overflow: hidden;
+    transition: max-height 2s;
+  }
+  .js .nav--closed .nav__list {
+    max-height: 0;
+    transition: max-height 0.5s;
+  }
+}
+/* AJOUT FAIT PAR DAREN */
+.entete {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.aller-au-contenu:focus {
+  padding-left: 10px;
+  background-color: #45A2A4;
+  color: white;
+  font-size: 18px;
+}
+.aller-au-contenu:focus:hover {
+  background-color: #E06251;
+}
+
+.nav-conteneur {
+  background-color: #CE9133;
+}
+
+.logo__lien {
+  width: 50%;
+}
+@media (min-width: 800px) {
+  .logo__lien {
+    width: 30%;
+  }
+}
+
+.nav-conteneur {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  width: 100%;
+  height: auto;
+  padding: 20px 7%;
+  display: flex;
+  flex-direction: column;
+  background-color: #CE9133;
+}
+@media (min-width: 800px) {
+  .nav {
+    width: 80%;
+    padding: 20px 0;
+  }
+}
+
+.nav__list {
+  flex-direction: column;
+  width: 2%;
+}
+@media (min-width: 800px) {
+  .nav__list {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.haut-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list-lien {
+  padding: 20px 0 0 0;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+@media (min-width: 800px) {
+  .nav__list-lien {
+    margin-right: 60px;
+  }
+}
+
+.lien-passeport {
+  padding: 10px 2% 10px 2%;
+  border-radius: 5px;
+  border-bottom: 3px solid #E06251;
+  background-color: #45A2A4;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  align-self: flex-end;
+  margin: 20px 10% 0 0;
+}
+.lien-passeport:hover {
+  border-color: #45A2A4;
+  background-color: #E06251;
+}
+
+/* MENU HAMBURGER */
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  background-color: #CE9133;
+  margin-left: auto;
+  align-self: flex-end;
+}
+@media (min-width: 800px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+.menu-btn__burger {
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(16px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* FOOTER */
+footer .logo__lien {
+  width: 100%;
+}
+footer .logo__lien img {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(25%) saturate(143%) hue-rotate(308deg) brightness(114%) contrast(100%);
+  margin: 0 0 30px 0;
+  width: 80%;
+}
+@media (min-width: 800px) {
+  footer .logo__lien img {
+    width: 60%;
+  }
+}
+
+.pied-de-page {
+  margin-top: 40px;
+  color: white;
+}
+
+.nav-secondaire__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-secondaire__list .list__lien {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* GRILLE */
+.liste {
+  grid-area: liste;
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.reseaux {
+  grid-area: reseaux;
+}
+
+.infolettre {
+  grid-area: infolettre;
+}
+
+.footer-conteneur {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: "liste liste liste" "contact contact contact" "reseaux reseaux reseaux" "infolettre infolettre infolettre";
+  gap: 0;
+  padding: 2% 0 0 0;
+  margin-bottom: 30px;
+}
+.footer-conteneur section {
+  margin: 10px 0;
+}
+@media (min-width: 1200px) {
+  .footer-conteneur {
+    grid-template-areas: "liste contact reseaux" "liste contact reseaux" "liste contact infolettre" "liste contact infolettre";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10%;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact a {
+  color: white;
+  padding-bottom: 5px;
+}
+.contact a:hover {
+  color: #E9BA40;
+}
+
+.pied {
+  margin: 0;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  background-color: #171717;
+}
+
+.footer__titre {
+  text-align: left;
+  margin: 0 0 30px 0;
+  font-size: 3rem;
+}
+
+.reseaux-sociaux__lien {
+  width: 13%;
+  margin-right: 2%;
+}
+.reseaux-sociaux__lien img {
+  display: block;
+}
+
+.reseaux-sociaux__lien:hover, footer .logo__lien:hover {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(72%) saturate(7247%) hue-rotate(321deg) brightness(93%) contrast(95%);
+}
+
+.reseaux div {
+  display: flex;
+  align-items: center;
+}
+
+.infolettre__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.infolettre__form input[type=email] {
+  height: 40px;
+  border-radius: 10px;
+}
+
+h1, h2, h3, h4, p, .lieu__list li, .prix__list li, .texte__lien {
+  color: white;
+}
+
+.texte__lien {
+  font-weight: 700;
+}
+.texte__lien:hover {
+  color: rgb(29, 29, 29);
+}
+
+.page {
+  margin: auto;
+  width: 80%;
+}
+
+body {
+  background-color: #1C1C1C;
+}
+
+.banniere-conteneur {
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+  border: 4px solid #E06251;
+  padding: 1%;
+}
+.banniere-conteneur h1 {
+  width: 70%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  z-index: 5;
+}
+@media (max-width: 1200px) {
+  .banniere-conteneur h1 {
+    font-size: 6.4vw;
+  }
+}
+@media (min-width: 800px) {
+  .banniere-conteneur h1 {
+    width: 100%;
+  }
+}
+.banniere-conteneur h2 {
+  width: 70%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+@media (max-width: 1200px) {
+  .banniere-conteneur h2 {
+    font-size: 5.4vw;
+  }
+}
+@media (min-width: 800px) {
+  .banniere-conteneur h2 {
+    width: 100%;
+  }
+}
+
+.banniere {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  filter: brightness(50%);
+  z-index: -4;
+}
+
+section h3 {
+  text-align: center;
+}
+
+/* LIEUX DE SPECTACLE */
+.liste-lieu {
+  padding: 0;
+  list-style: none;
+}
+
+.lieu {
+  margin: auto;
+}
+
+.lieu__lien {
+  display: block;
+  border: 4px solid #45A2A4;
+  border-radius: 20px;
+}
+.lieu__lien:visited {
+  border: 4px solid #e59d9b;
+}
+.lieu__lien:hover, .lieu__lien:focus {
+  border: 4px solid #E06251;
+}
+.lieu__lien img {
+  padding: 2%;
+  display: block;
+  border-radius: 20px;
+}
+
+/* ACTUALITÉS */
+.actualites {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.article {
+  border: 4px solid #CE9133;
+  padding-inline: 2%;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+.article footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.article__titre {
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .article__titre {
+    text-align: left;
+  }
+}
+
+.article__lien {
+  padding: 10px 8% 10px 8%;
+  border-radius: 5px;
+  border-bottom: 3px solid #E06251;
+  background-color: #45A2A4;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.article__lien:hover {
+  border-color: #45A2A4;
+  background-color: #E06251;
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.article__date {
+  margin: auto 0;
+  color: white;
+  font-size: 1.9rem;
+}
+
+/* GRILLE */
+.article__titre {
+  grid-area: titre;
+}
+
+.article__image {
+  grid-area: image;
+}
+
+.article__description {
+  grid-area: description;
+}
+
+.article__date {
+  grid-area: date;
+}
+
+.article__lien {
+  grid-area: lien;
+}
+
+.article {
+  display: grid;
+  grid-template-areas: "image" "titre" "description" "date" "lien";
+  gap: 20px;
+  padding: 2%;
+}
+@media (min-width: 1200px) {
+  .article {
+    width: 49%;
+    grid-template-areas: "titre titre titre titre titre titre titre" "image image image image image image image" "description description description description description description description" "date date date lien lien lien lien";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.4fr auto 0.6fr 0.1fr;
+  }
+}
+
+/* ARTISTES À DÉCOUVRIR */
+.artistes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artiste__lien {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  align-self: flex-start;
+}
+.artiste__lien:nth-of-type(2n) {
+  align-self: flex-end;
+}
+.artiste__lien:hover .artiste__nom {
+  color: #E06251;
+}
+.artiste__lien:focus {
+  border: 4px solid #E06251;
+  border-radius: 20px;
+}
+@media (min-width: 1000px) {
+  .artiste__lien {
+    width: 60%;
+  }
+}
+
+.artiste__nom { /* = 40px */
+  font-size: 4rem;
+  color: #45A2A4;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .artiste__nom { /* = 70px */
+    font-size: 5rem;
+  }
+}
+@media (min-width: 800px) {
+  .artiste__nom { /* = 100px */
+    font-size: 7rem;
+  }
+}
+p, li {
+  font-size: 19px;
+}
+
+.artiste-image__img {
+  width: 100%;
+}
+
+/* TARIF ET LIEUX DE VENTE */
+.section-tarif {
+  display: flex;
+  border-radius: 20px;
+  padding: 3%;
+  justify-content: space-between;
+  justify-items: center;
+  background-color: #45A2A4;
+}
+.section-tarif div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.section-tarif .p {
+  margin: 0 0 30px 0;
+}
+.section-tarif h4 {
+  margin: 0 0 20px 0;
+}
+
+.section-lieu-de-vente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 4px solid #CE9133;
+}
+.section-lieu-de-vente .conteneur {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-tarif-et-lieu div {
+  margin-top: 50px;
+}
+
+/* LIEUX */
+@media (min-width: 1200px) {
+  .liste-lieu {
+    display: flex;
+  }
+}
+
+.lieu {
+  margin: 20px auto;
+}
+@media (min-width: 1200px) {
+  .lieu {
+    margin: 20px 20px;
+  }
+}
+
+/*# sourceMappingURL=style-daren.css.map */

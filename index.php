@@ -77,6 +77,29 @@ $pdosArtisteResultat->closeCursor();
 
 $arrArtisteAleatoire = shuffle($arrArtiste);
 
+//On libère la requête principale
+$pdosResultatActualite->closeCursor();
+
+//Récupère les artistes à afficher de façon aléatoire
+$strRequete =  'SELECT id_lieu, nom_lieu
+	FROM t_lieu';
+
+//Initialisation de l'objet PDOStatement et exécution de la requête
+$pdosLieuResultat = $pdoConnexion->prepare($strRequete);
+$pdosLieuResultat->execute();
+
+$arrLieu=array();
+$ligne=$pdosLieuResultat->fetch();
+
+for($intCptEnr2=0;$intCptEnr2<$pdosLieuResultat->rowCount();$intCptEnr2++){
+    $arrLieu[$intCptEnr2]['id_lieu'] = $ligne['id_lieu'];
+    $arrLieu[$intCptEnr2]['nom_lieu'] = $ligne['nom_lieu'];
+    $ligne=$pdosLieuResultat->fetch();
+}
+
+//On libère la requête des styles
+$pdosLieuResultat->closeCursor();
+
 ?>
 
 <!doctype html>
@@ -87,12 +110,11 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
     <meta charset="UTF-8">
     <title>Festival OFF de Québec - Accueil</title>
     <link rel="stylesheet" href="css/style-daren.css">
-    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
     <?php include($niveau . "inc/fragments/header.inc.php") ?>
     <div class="page">
-        <main id="contenu">
+        <main class="contenu" id="contenu">
             <div class="banniere-conteneur">
                 <h1>Festival OFF de Québec</h1>
                 <h2>Le 22 Novembre 2023</h2>
@@ -127,14 +149,20 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
                 <div class="artistes">
                     <?php
                     for($intCpt2=0;$intCpt2<$nombreArtisteAfficher;$intCpt2++){
+                    
+                        if ($arrArtiste[$intCpt2]['id_artiste'] == 3) {
+                            $formatImage = 'webp';
+                        } else {
+                            $formatImage = 'jpg';
+                        }
                     ?>
                         <a class="artiste__lien" href="artistes/fiche/index.php?id_artiste=<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>">
                             <figure>
                                 <figcaption class="artiste__nom"><?php echo $arrArtiste[$intCpt2]['nom_artiste'];?></figcaption>
                                 <picture class="artiste__image">
-                                <source media="(max-width:1000px)" srcset="<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>_<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?>_p__w900.jpg">
-                                    <source media="(min-width:500px)" srcset="<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>_<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?>_p__w540.jpg">
-                                    <img class="artiste-image__img" src="images/photos_artistes/photosFormes/<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>_<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?>_p__w900.jpg" alt="<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?> en concert">
+                                <source media="(max-width:1000px)" srcset="images/photos_artistes/photosFormes/<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>_<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?><?php echo '_p__w900.' . $formatImage;?>">
+                                    <source media="(min-width:500px)" srcset="images/photos_artistes/photosFormes/<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>_<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?><?php echo '_p__w540.' . $formatImage;?>">
+                                    <img class="artiste-image__img" src="images/photos_artistes/photosFormes/<?php echo $arrArtiste[$intCpt2]['id_artiste'];?>_<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?><?php echo '_p__w900.' . $formatImage;?>" alt="<?php echo $arrArtiste[$intCpt2]['nom_artiste'];?> en concert">
                                 </picture>
                             </figure>
                         </a>
@@ -144,15 +172,19 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
             <section>
                 <h3>Lieux de spectacle</h3>
                 <ul class="liste-lieu">
+                <?php
+                    for($intCpt3=0;$intCpt3<count($arrLieu) -1 ;$intCpt3++){
+                    ?>
                     <li class="lieu">
                         <a class="lieu__lien" href="">
                             <picture class="lieu__image">
-                                <source media="(min-width:1000px)" srcset="images/actualites/actualite<?php echo $arrActualite[$intCpt]['id_lieu'];?>_w324.jpg">
-                                <source media="(min-width:250px)" srcset="images/actualites/actualite<?php echo $arrActualite[$intCpt]['id_lieu'];?>_w560.jpg">
-                                <img src="images/actualites/actualite<?php echo $arrActualite[$intCpt]['id_actualite'];?>_w886.jpg" alt="">
+                                <source media="(min-width:1000px)" srcset="images/lieux/lieux_<?php echo $arrLieu[$intCpt3]['id_lieu'];?>_w324.jpg">
+                                <source media="(min-width:250px)" srcset="images/lieux/lieux_<?php echo $arrLieu[$intCpt3]['id_lieu'];?>_w560.jpg">
+                                <img src="images/lieux/lieux_<?php echo $arrLieu[$intCpt3]['id_lieu'];?>_w560.jpg" alt="">
                             </picture>
                         </a>
                     </li>
+                <?php } ?>
                 </ul>
 
             </section>
@@ -184,9 +216,9 @@ $arrArtisteAleatoire = shuffle($arrArtiste);
                     </div>
                 </div>
             </section>
-        </main>
-        <?php include ($niveau . "inc/fragments/footer.inc.php") ?>           
+        </main>         
     </div>
+    <?php include ($niveau . "inc/fragments/footer.inc.php") ?>  
     <script src="js/menu.js"></script>
 </body>
 </html>
