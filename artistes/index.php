@@ -151,8 +151,6 @@ for ($intCptArtChoisi = 0; $intCptArtChoisi < $nbSuggestion; $intCptArtChoisi++)
 $pdosResultat->closeCursor();
 
 ?>
-
-
 <!doctype html>
 <html>
 <head>
@@ -161,7 +159,7 @@ $pdosResultat->closeCursor();
     <meta charset="UTF-8">
     <title>Liste_Artistes</title>
     <link rel="stylesheet" href="<?php echo $niveau ?>css/style-marianne.css">
-    <link rel="stylesheet" href="<?php echo $niveau ?>css/menu.css">
+<!--    <link rel="stylesheet" href="--><?php //echo $niveau ?><!--css/menu.css">-->
     <?php include($niveau . "inc/fragments/header.inc.php") ?>
 </head>
 <body >
@@ -352,6 +350,6 @@ $pdosResultat->closeCursor();
 <footer>
     <?php include($niveau . "inc/fragments/footer.inc.php") ?>
 </footer>
-<script src=" <?php echo $niveau ?>js/menu.js"></script>
+<script src="<?php echo $niveau ?>js/menu.js"></script>
 </body>
 </html>
