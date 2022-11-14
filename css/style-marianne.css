@@ -6,7 +6,8 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Karla:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -517,6 +518,11 @@ h4,
     font-size: 2.2rem;
   }
 }
+.pied {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 /* Typographie ARTISTES*/
 h1,
 .h1-artistes { /* = 60px */
@@ -663,6 +669,9 @@ h4,
  * - Liste du menu
  * - Liens du menu
  * Styles conditionnels au JavaScript
+ * Header
+ * Menu Hamburgerv
+ * Footer
  */
 /* Utilitaires
    ========================================================================== */
@@ -854,6 +863,16 @@ abbr[title]:hover {
   margin-bottom: 40px;
 }
 
+.aller-au-contenu:focus {
+  padding-left: 10px;
+  background-color: #45A2A4;
+  color: white;
+  font-size: 18px;
+}
+.aller-au-contenu:focus:hover {
+  background-color: #E06251;
+}
+
 .nav-conteneur {
   background-color: #CE9133;
 }
@@ -908,7 +927,6 @@ abbr[title]:hover {
   padding: 20px 0 0 0;
   text-decoration: none;
   color: rgb(0, 0, 0);
-  font-size: 2em;
 }
 @media (min-width: 800px) {
   .nav__list-lien {
@@ -994,6 +1012,129 @@ abbr[title]:hover {
 
 .menu-btn.open .menu-btn__burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* FOOTER */
+footer .logo__lien {
+  width: 100%;
+}
+footer .logo__lien img {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(25%) saturate(143%) hue-rotate(308deg) brightness(114%) contrast(100%);
+  margin: 0 0 30px 0;
+  width: 80%;
+}
+@media (min-width: 800px) {
+  footer .logo__lien img {
+    width: 60%;
+  }
+}
+
+.pied-de-page {
+  margin-top: 40px;
+  color: white;
+}
+
+.nav-secondaire__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-secondaire__list .list__lien {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* GRILLE */
+.liste {
+  grid-area: liste;
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.reseaux {
+  grid-area: reseaux;
+}
+
+.infolettre {
+  grid-area: infolettre;
+}
+
+.footer-conteneur {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: "liste liste liste" "contact contact contact" "reseaux reseaux reseaux" "infolettre infolettre infolettre";
+  gap: 0;
+  padding: 2% 0 0 0;
+  margin-bottom: 30px;
+}
+.footer-conteneur section {
+  margin: 10px 0;
+}
+@media (min-width: 1200px) {
+  .footer-conteneur {
+    grid-template-areas: "liste contact reseaux" "liste contact reseaux" "liste contact infolettre" "liste contact infolettre";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10%;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact a {
+  color: white;
+  padding-bottom: 5px;
+}
+.contact a:hover {
+  color: #E9BA40;
+}
+
+.pied {
+  margin: 0;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  background-color: #171717;
+}
+
+.footer__titre {
+  text-align: left;
+  margin: 0 0 30px 0;
+  font-size: 3rem;
+}
+
+.reseaux-sociaux__lien {
+  width: 13%;
+  margin-right: 2%;
+}
+.reseaux-sociaux__lien img {
+  display: block;
+}
+
+.reseaux-sociaux__lien:hover, footer .logo__lien:hover {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(72%) saturate(7247%) hue-rotate(321deg) brightness(93%) contrast(95%);
+}
+
+.reseaux div {
+  display: flex;
+  align-items: center;
+}
+
+.infolettre__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.infolettre__form input[type=email] {
+  height: 40px;
+  border-radius: 10px;
 }
 
 /**GENERAL**/

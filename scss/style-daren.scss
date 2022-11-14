@@ -29,6 +29,10 @@
    ========================================================================== */
 @import "base/grille";
 
+/* Grille
+   ========================================================================== */
+   @import "modules/menu";
+
 h1, h2,h3,h4, p, .lieu__list li, .prix__list li, .texte__lien  {
     color: white;
 }
@@ -116,20 +120,20 @@ section {
 }
 
 .lieu {
-    width: max-content;
     margin: auto;
-    border: 4px solid $corail;
-    border-radius: 20px;
 }
 
 .lieu__lien {
+    display: block;
+    border: 4px solid $turquoise;
+    border-radius: 20px;
 
-    &:hover, &:visited {
-        border-color: $rose;
+    &:visited {
+        border: 4px solid $rose;
     }
 
-    &:focus {
-        outline: 4px solid white;
+    &:hover, &:focus {
+        border: 4px solid $corail;
     }
 
     img {
@@ -238,7 +242,7 @@ section {
 }
 
 .artiste__lien {
-    width: 60%;
+    width: 100%;
     display: block;
     text-decoration: none;
     align-self: flex-start;
@@ -254,6 +258,10 @@ section {
     &:focus {
         border: 4px solid $corail;
         border-radius: 20px;
+    }
+
+    @media (min-width: 1000px) {
+        width: 60%;
     }
 }
 
@@ -280,7 +288,7 @@ p, li {
 }
 
 .artiste-image__img {
-    width: 75%;
+    width: 100%;
 }
 
 /* TARIF ET LIEUX DE VENTE */
@@ -329,5 +337,21 @@ p, li {
 .section-tarif-et-lieu {
     div {
         margin-top: 50px;
+    }
+}
+
+/* LIEUX */ 
+
+.liste-lieu {
+    @media (min-width: 1200px) {
+        display: flex;
+    }
+}
+
+.lieu {
+    margin: 20px auto;
+
+    @media (min-width: 1200px) {
+        margin: 20px 20px;
     }
 }
