@@ -29,16 +29,16 @@
             <h4 class="footer__titre">Réseaux sociaux</h4>
             <div>
                 <a class="reseaux-sociaux__lien" href="#">
-                    <img src="images/medias-sociaux/instagram.svg" alt="Instagram">
+                    <img src="<?php echo $niveau ?>images/medias-sociaux/instagram.svg" alt="Instagram">
                 </a>
                 <a class="reseaux-sociaux__lien" href="#">
-                    <img src="images/medias-sociaux/facebook.svg" alt="Facebook">
+                    <img src="<?php echo $niveau ?>images/medias-sociaux/facebook.svg" alt="Facebook">
                 </a>
                 <a class="reseaux-sociaux__lien" href="#">
-                    <img src="images/medias-sociaux/twitter.svg" alt="Twitter">
+                    <img src="<?php echo $niveau ?>images/medias-sociaux/twitter.svg" alt="Twitter">
                 </a>
                 <a class="reseaux-sociaux__lien" href="#">
-                    <img src="images/medias-sociaux/youtube.svg" alt="Youtube">
+                    <img src="<?php echo $niveau ?>images/medias-sociaux/youtube.svg" alt="Youtube">
                 </a>
             </div>                    
         </section>
