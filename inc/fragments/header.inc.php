@@ -1,7 +1,7 @@
 <?php
 ?>
 <header class="entete">
-    <a href="#contenu" class="visuallyhidden focusable">Allez au contenu</a>
+    <a href="#contenu" class="visuallyhidden focusable aller-au-contenu">Allez au contenu</a>
     <div class="nav-conteneur">
         <nav class="nav" aria-label="Menu principal">
             <div class="haut-nav">

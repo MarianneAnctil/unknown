@@ -10,6 +10,9 @@
  * - Liste du menu
  * - Liens du menu
  * Styles conditionnels au JavaScript
+ * Header
+ * Menu Hamburgerv
+ * Footer
  */
 
 /* Utilitaires
@@ -146,6 +149,17 @@
   margin-bottom: 40px;
 }
 
+.aller-au-contenu:focus {
+  padding-left: 10px;
+  background-color: $turquoise;
+  color: white;
+  font-size: 18px;
+
+  &:hover {
+    background-color: $corail;
+  }
+}
+
 .nav-conteneur {
   background-color: $dore;
 }
@@ -197,7 +211,6 @@
   padding: 20px 0 0 0;
   text-decoration: none;
   color: rgb(0, 0, 0);
-  font-size: 2em;
 
   @media (min-width: 800px) {
     margin-right: 60px;
@@ -275,4 +288,134 @@
 }
 .menu-btn.open .menu-btn__burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+
+/* FOOTER */
+footer {
+  .logo__lien {
+    width: 100%;
+     img {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(25%) saturate(143%) hue-rotate(308deg) brightness(114%) contrast(100%);
+        margin: 0 0 30px 0;
+        width: 80%;
+
+        @media (min-width: 800px) {
+          width: 60%;
+        }
+     }
+  }
+}
+
+.pied-de-page {
+  margin-top: 40px;
+  color: white;
+}
+
+.nav-secondaire__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .list__lien {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+/* GRILLE */
+.liste { grid-area: liste; }
+.contact { grid-area: contact; }
+.reseaux { grid-area: reseaux; }
+.infolettre { grid-area: infolettre; }
+
+.footer-conteneur {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    'liste liste liste'
+    'contact contact contact'
+    'reseaux reseaux reseaux'
+    'infolettre infolettre infolettre';
+  gap: 0;
+  padding: 2% 0 0 0;
+  margin-bottom: 30px;
+
+  section {
+    margin: 10px 0;
+  }
+
+  @media(min-width: 1200px){ 
+    grid-template-areas:
+    'liste contact reseaux'
+    'liste contact reseaux'
+    'liste contact infolettre'
+    'liste contact infolettre';
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 10%;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  a {
+   color: white; 
+   padding-bottom: 5px;
+
+   &:hover {
+      color: $jaune;
+   }
+  }
+  
+}
+
+.pied {
+  margin: 0;
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  background-color: #171717;
+}
+
+.footer__titre {
+    text-align: left;
+    margin: 0 0 30px 0;
+    font-size: 3rem;
+}
+
+.reseaux-sociaux__lien {
+  width: 13%;
+  margin-right: 2%;
+
+  img {
+    display: block;
+  }
+}
+
+.reseaux-sociaux__lien:hover, footer .logo__lien:hover {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(72%) saturate(7247%) hue-rotate(321deg) brightness(93%) contrast(95%);
+}
+
+.reseaux {
+  div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.infolettre__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.infolettre__form input[type=email] {
+  height: 40px;
+  border-radius: 10px;
 }
