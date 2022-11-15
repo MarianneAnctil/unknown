@@ -236,9 +236,7 @@ if($nbImages == 3){
 </ul>
     <?php }?>
 </main>
-<footer>
     <?php include($niveau . "inc/fragments/footer.inc.php") ?>
-</footer>
 <script src="<?php echo $niveau ?>js/menu.js"></script>
 </body>
 </html>

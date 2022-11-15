@@ -37,7 +37,7 @@
 
 /* Interactivite
    ========================================================================== */
-a:not(.list-link_artiste):not(.lien-passeport):not(.nav__list-lien){
+a.lien-artiste{
   color: $turquoise;
   &:hover,
   &:active {
