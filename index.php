@@ -34,6 +34,7 @@ for($intCptEnr=0;$intCptEnr<$pdosResultatActualite->rowCount();$intCptEnr++){
     //Recupere le chiffre du mois et renvoie le mois en texte
     $arrMoisTexte = array( "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" );
     $Mois_texte = $arrMoisTexte[$ligne['Mois'] - 1];
+    
     $arrArticle = explode(" ", $ligne['article']);
 
     //Raccourcie le texte de l'actualite a 45 mots 

@@ -124,6 +124,7 @@ section {
 }
 
 .lieu__lien {
+    width: fit-content;
     display: block;
     border: 4px solid $turquoise;
     border-radius: 20px;
@@ -349,8 +350,9 @@ p, li {
 }
 
 .lieu {
+    display: flex;
     margin: 20px auto;
-
+    justify-content: center;
     @media (min-width: 1200px) {
         margin: 20px 20px;
     }

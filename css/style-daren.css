@@ -1309,6 +1309,7 @@ section h3 {
 }
 
 .lieu__lien {
+  width: fit-content;
   display: block;
   border: 4px solid #45A2A4;
   border-radius: 20px;
@@ -1523,7 +1524,9 @@ p, li {
 }
 
 .lieu {
+  display: flex;
   margin: 20px auto;
+  justify-content: center;
 }
 @media (min-width: 1200px) {
   .lieu {
